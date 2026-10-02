@@ -1,28 +1,240 @@
 <title>Op Peil zoektermen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700&family=Public+Sans:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: één smalle kolom, tijdelijk skelet (F0); de echte pagina volgt in F1 */
-:root{--bg:#f3f6f7;--fg:#14262e;--muted:#5a6d75;--accent:#0f6e8c;--line:#d5e0e4}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1a1f;--fg:#e2eef2;--muted:#93a9b1;--accent:#5cc3e4;--line:#24363d;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0e1a1f;--fg:#e2eef2;--muted:#93a9b1;--accent:#5cc3e4;--line:#24363d;color-scheme:dark}
-body{background:var(--bg);color:var(--fg);font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px;padding-block:32px}
-main{max-width:40rem;margin:0 auto;display:grid;gap:12px}
-h1{font-size:1.4rem;margin:0;text-wrap:balance}
-p{margin:0;color:var(--muted)}
-.label{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
-#status{border-top:1px solid var(--line);padding-top:12px}
+/* Layout: één werkkolom; links invoer, daarna drie standen als een peilschaal: op proef, live, afgewezen */
+:root{
+  --bg:#eef3f4; --surface:#ffffff; --fg:#13252c; --muted:#56696f; --line:#d3dfe2;
+  --accent:#0b6a86; --accent-fg:#ffffff;
+  --proef:#a86a00; --proef-bg:#fbf1dd; --live:#1d7a46; --live-bg:#e1f2e7; --af:#8a3b3b; --af-bg:#f6e4e4;
+  --display:"Archivo","Segoe UI",system-ui,sans-serif; --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0c181c; --surface:#122329; --fg:#e1edf0; --muted:#94aab0; --line:#24393f;
+  --accent:#58bfdf; --accent-fg:#06222b;
+  --proef:#f0b54a; --proef-bg:#2d2312; --live:#5fcf8c; --live-bg:#13291c; --af:#e48e8e; --af-bg:#2e1818; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0c181c; --surface:#122329; --fg:#e1edf0; --muted:#94aab0; --line:#24393f;
+  --accent:#58bfdf; --accent-fg:#06222b;
+  --proef:#f0b54a; --proef-bg:#2d2312; --live:#5fcf8c; --live-bg:#13291c; --af:#e48e8e; --af-bg:#2e1818; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.55 var(--body);padding-inline:16px;padding-block:28px 48px}
+.wrap{max-width:46rem;margin:0 auto;display:grid;gap:28px}
+header{display:grid;gap:6px}
+.label{font:500 .72rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+h1{font:700 1.75rem/1.15 var(--display);margin:0;text-wrap:balance}
+h2{font:700 1.05rem/1.2 var(--display);margin:0;display:flex;align-items:center;gap:10px}
+p{margin:0}
+.lead{color:var(--muted);max-width:62ch}
+.steps{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;font-size:.85rem;color:var(--muted)}
+.steps span{display:inline-flex;align-items:center;gap:6px}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
+.dot.proef{background:var(--proef)}.dot.live{background:var(--live)}.dot.afgewezen{background:var(--af)}
+form{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;display:grid;gap:14px}
+.row{display:grid;grid-template-columns:2fr 1fr;gap:12px}
+@media (max-width:560px){.row{grid-template-columns:1fr}}
+label{display:grid;gap:5px;font-weight:600;font-size:.88rem;min-width:0}
+label small{font-weight:400;color:var(--muted)}
+input,select,textarea{font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:9px 10px;width:100%;min-width:0}
+textarea{resize:vertical;min-height:2.6em}
+input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.formfoot{display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between}
+.msg{font-size:.88rem;color:var(--muted);min-height:1.2em}
+.msg.err{color:var(--af)}
+button{font:600 .86rem/1 var(--body);border-radius:6px;padding:9px 13px;cursor:pointer;border:1px solid var(--line);background:var(--surface);color:var(--fg)}
+button:disabled{opacity:.5;cursor:not-allowed}
+button.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+button.go{border-color:var(--live);color:var(--live)}
+button.stop{border-color:var(--af);color:var(--af)}
+button.plain{border-color:transparent;background:transparent;color:var(--muted);padding-inline:6px}
+section{display:grid;gap:12px}
+.count{font:500 .78rem/1 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.hint{font-size:.85rem;color:var(--muted)}
+.empty{color:var(--muted);font-size:.9rem;border:1px dashed var(--line);border-radius:10px;padding:14px}
+ul.terms{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.term{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--line);border-radius:8px;padding:14px;display:grid;gap:10px;min-width:0}
+.term.proef{border-left-color:var(--proef)}.term.live{border-left-color:var(--live)}.term.afgewezen{border-left-color:var(--af)}
+.thead{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;justify-content:space-between}
+.tname{font:700 1.05rem/1.3 var(--display);overflow-wrap:anywhere}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:500 .72rem/1 var(--mono);padding:5px 7px;border-radius:999px;background:var(--bg);color:var(--muted);white-space:nowrap}
+.chip.proef{background:var(--proef-bg);color:var(--proef)}.chip.live{background:var(--live-bg);color:var(--live)}.chip.afgewezen{background:var(--af-bg);color:var(--af)}
+.note{color:var(--muted);font-size:.9rem;overflow-wrap:anywhere}
+.actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.confirm{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.88rem}
+details{border-top:1px solid var(--line);padding-top:8px}
+summary{cursor:pointer;font-size:.88rem;font-weight:600;color:var(--accent)}
+.day{margin-top:10px;display:grid;gap:6px}
+.day h3{font:500 .75rem/1 var(--mono);color:var(--muted);margin:0;letter-spacing:.04em}
+.res{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.res li{display:grid;gap:2px;min-width:0}
+.res a{color:var(--fg);font-weight:600;text-decoration-color:var(--accent);overflow-wrap:anywhere}
+.res time{font:400 .75rem/1.3 var(--mono);color:var(--muted)}
+.res p{font-size:.88rem;color:var(--muted)}
+.notice{border-radius:10px;padding:12px 14px;background:var(--surface);border:1px solid var(--line);font-size:.9rem}
+@media (prefers-reduced-motion:no-preference){.term{transition:border-color .2s}}
 </style>
-<main>
-  <span class="label">Lutrea · Op Peil</span>
-  <h1>Zoektermen</h1>
-  <p>Hier komen je eigen zoektermen: eerst op proef, daarna live na jouw akkoord. De invoer volgt binnenkort.</p>
-  <p id="status">Opslag wordt gecontroleerd…</p>
-</main>
+
+<div class="wrap">
+  <header>
+    <span class="label">Lutrea · Op Peil</span>
+    <h1>Zoektermen</h1>
+    <p class="lead">Eigen onderwerpen die Op Peil aanvullen. Een nieuwe term draait eerst op proef: de ochtendroutine zoekt erop, maar alleen jij ziet de resultaten. Zet je hem live, dan zoekt hij vanaf de volgende werkdag mee in de brief.</p>
+    <div class="steps" aria-label="Standen">
+      <span><i class="dot proef"></i>Op proef: alleen hier zichtbaar</span>
+      <span><i class="dot live"></i>Live: zoekt mee in de brief</span>
+      <span><i class="dot afgewezen"></i>Afgewezen: wordt niet gezocht</span>
+    </div>
+  </header>
+
+  <p class="notice" id="notice" hidden></p>
+
+  <form id="form" autocomplete="off">
+    <h2>Nieuwe zoekterm</h2>
+    <div class="row">
+      <label for="term">Zoekterm <small>bijvoorbeeld een project, norm of leverancier</small>
+        <input id="term" name="term" maxlength="80" required placeholder="bijv. Lekdijk Amerongen-Wijk bij Duurstede">
+      </label>
+      <label for="cat">Rubriek
+        <select id="cat" name="cat"></select>
+      </label>
+    </div>
+    <label for="notitie">Notitie <small>waarom deze term, waar let je op (optioneel)</small>
+      <textarea id="notitie" name="notitie" maxlength="300" rows="2"></textarea>
+    </label>
+    <div class="formfoot">
+      <p class="msg" id="msg" role="status"></p>
+      <button class="primary" id="add" type="submit">Op proef zetten</button>
+    </div>
+  </form>
+
+  <section aria-labelledby="h-proef">
+    <h2 id="h-proef"><i class="dot proef"></i>Op proef <span class="count" id="n-proef">0</span></h2>
+    <p class="hint" id="hint-proef">De ochtendroutine neemt per werkdag de 5 oudste proeftermen mee. Resultaten verschijnen hier de volgende werkdag.</p>
+    <ul class="terms" id="list-proef"></ul>
+  </section>
+
+  <section aria-labelledby="h-live">
+    <h2 id="h-live"><i class="dot live"></i>Live <span class="count" id="n-live">0</span></h2>
+    <ul class="terms" id="list-live"></ul>
+  </section>
+
+  <section aria-labelledby="h-afgewezen">
+    <h2 id="h-afgewezen"><i class="dot afgewezen"></i>Afgewezen <span class="count" id="n-afgewezen">0</span></h2>
+    <ul class="terms" id="list-afgewezen"></ul>
+  </section>
+</div>
+
 <script>
-(async()=>{
-  const el=document.getElementById("status");
-  const db=await window.claude?.use?.("db");
-  if(!db){el.textContent="Opslag is in deze weergave niet beschikbaar.";return}
-  try{const s=await db.collection("zoektermen").get();el.textContent=`Opslag werkt: ${s.size} zoekterm(en) opgeslagen.`}
-  catch(e){el.textContent="Opslag kon niet worden gelezen ("+(e.code||"onbekend")+")."}
+(()=>{
+  const RUBRIEKEN=[["civil3d","Civil 3D"],["dijk","Dijkontwerp"],["stedelijk","Binnenstedelijk"],["grondwerk","Grondwerk"],["inmeten","Inmeten & drones"],["ai","AI"],["software","Software"],["markt","Markt"],["kennis","Normen & kennis"],["leren","Leren"],["internationaal","Internationaal"]];
+  const RNAAM=Object.fromEntries(RUBRIEKEN);
+  const MAX_PROEF=5;
+  const LEEG={
+    proef:"Nog geen termen op proef. Vul hierboven een zoekterm in en kies \"Op proef zetten\".",
+    live:"Nog geen live termen. Zet een proefterm live als de resultaten bruikbaar zijn.",
+    afgewezen:"Geen afgewezen termen."
+  };
+  const $=id=>document.getElementById(id);
+  const state={terms:[],proef:{},db:null,owner:false,me:null,confirm:null,busy:false};
+
+  $("cat").innerHTML='<option value="">Laat de routine kiezen</option>'+RUBRIEKEN.map(([id,n])=>`<option value="${id}">${n}</option>`).join("");
+
+  const vandaag=()=>new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/Amsterdam"}).format(new Date());
+  const dagen=(van)=>{const a=Date.parse(van+"T00:00:00Z"),b=Date.parse(vandaag()+"T00:00:00Z");return Number.isFinite(a)?Math.max(0,Math.round((b-a)/864e5)):0};
+  const fmt=d=>{const t=Date.parse((d||"")+"T12:00:00Z");return Number.isFinite(t)?new Intl.DateTimeFormat("nl-NL",{day:"numeric",month:"short",year:"numeric",timeZone:"UTC"}).format(t):(d||"")};
+  const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const veiligeUrl=u=>typeof u==="string"&&/^https?:\/\//i.test(u)?u:null;
+  const melding=(t,err)=>{const m=$("msg");m.textContent=t;m.classList.toggle("err",!!err)};
+  const toon=(t)=>{const n=$("notice");n.textContent=t;n.hidden=!t};
+  const fout=e=>e&&e.code==="quota_exceeded"?"De opslag is vol. Verwijder eerst afgewezen termen.":e&&e.code==="invalid_argument"?"Alleen de eigenaar van deze pagina kan zoektermen wijzigen.":"Opslaan lukte niet. Probeer het zo opnieuw.";
+
+  function proefVoor(id){return (state.proef[id]||[]).slice().sort((a,b)=>String(b.datum).localeCompare(String(a.datum)))}
+
+  function kaart(t){
+    const d=t.data, s=d.status;
+    const runs=proefVoor(t.id), aantal=runs.reduce((n,r)=>n+(Array.isArray(r.resultaten)?r.resultaten.length:0),0);
+    const chips=[`<span class="chip ${s}">${s==="proef"?"op proef":s}</span>`,`<span class="chip">${esc(d.cat?RNAAM[d.cat]||d.cat:"rubriek: routine kiest")}</span>`];
+    if(s==="proef") chips.push(`<span class="chip">${dagen(d.toegevoegd)} dag(en) op proef</span>`);
+    if(s!=="proef"&&d.besloten) chips.push(`<span class="chip">${s==="live"?"live sinds":"afgewezen op"} ${esc(fmt(d.besloten))}</span>`);
+    if(runs.length) chips.push(`<span class="chip">${aantal} ${aantal===1?"resultaat":"resultaten"} · ${runs.length} zoekdag${runs.length===1?"":"en"}</span>`);
+    let knoppen="";
+    if(state.owner){
+      if(state.confirm===t.id){
+        knoppen=`<div class="confirm"><span>"${esc(d.term)}" definitief verwijderen?</span><button class="stop" data-act="wis" data-id="${t.id}">Verwijderen</button><button class="plain" data-act="annuleer">Annuleren</button></div>`;
+      }else{
+        const b=[];
+        if(s==="proef"){b.push(["live","go","Live zetten"],["afgewezen","stop","Afwijzen"])}
+        if(s==="live"){b.push(["proef","","Terug naar proef"],["afgewezen","stop","Afwijzen"])}
+        if(s==="afgewezen"){b.push(["proef","","Terug naar proef"])}
+        knoppen=`<div class="actions">${b.map(([to,c,l])=>`<button class="${c}" data-act="status" data-to="${to}" data-id="${t.id}" ${state.busy?"disabled":""}>${l}</button>`).join("")}<button class="plain" data-act="vraag" data-id="${t.id}">Verwijderen</button></div>`;
+      }
+    }
+    const live=s==="live"?`<p class="hint">Zoekt mee in de brief vanaf de eerste werkdag na ${esc(fmt(d.besloten))}.</p>`:"";
+    const res=runs.length?`<details ${s==="proef"?"open":""}><summary>Proefresultaten</summary>${runs.map(r=>{
+        const lijst=Array.isArray(r.resultaten)?r.resultaten:[];
+        const items=lijst.length?lijst.map(x=>{const u=veiligeUrl(Array.isArray(x.urls)?x.urls[0]:null);
+          return `<li>${u?`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(x.title)}</a>`:`<strong>${esc(x.title)}</strong>`}${x.date?`<time>${esc(x.date)}</time>`:""}${x.summary?`<p>${esc(x.summary)}</p>`:""}</li>`}).join(""):`<li><p>Geen resultaten${r.opmerking?": "+esc(r.opmerking):"."}</p></li>`;
+        return `<div class="day"><h3>${esc(fmt(r.datum))}</h3><ul class="res">${items}</ul></div>`}).join("")}</details>`
+      :(s==="proef"?`<p class="hint">Nog geen proefresultaten. De eerstvolgende ochtendroutine zoekt op deze term.</p>`:"");
+    return `<li class="term ${s}"><div class="thead"><span class="tname">${esc(d.term)}</span><div class="chips">${chips.join("")}</div></div>${d.notitie?`<p class="note">${esc(d.notitie)}</p>`:""}${live}${res}${knoppen}</li>`;
+  }
+
+  function render(){
+    for(const s of ["proef","live","afgewezen"]){
+      const lijst=state.terms.filter(t=>t.data.status===s).sort((a,b)=>String(a.data.toegevoegd).localeCompare(String(b.data.toegevoegd)));
+      $("n-"+s).textContent=lijst.length;
+      $("list-"+s).innerHTML=lijst.length?lijst.map(kaart).join(""):`<li class="empty">${LEEG[s]}</li>`;
+    }
+    const np=state.terms.filter(t=>t.data.status==="proef").length;
+    $("hint-proef").textContent=np>MAX_PROEF
+      ?`Er staan ${np} termen op proef. De ochtendroutine neemt per werkdag de ${MAX_PROEF} oudste mee; de rest komt later aan de beurt.`
+      :`De ochtendroutine neemt per werkdag de ${MAX_PROEF} oudste proeftermen mee. Resultaten verschijnen hier de volgende werkdag.`;
+  }
+
+  async function schrijf(fn){
+    if(state.busy)return; state.busy=true; render();
+    try{await fn()}catch(e){toon(fout(e))}finally{state.busy=false;render()}
+  }
+
+  document.addEventListener("click",e=>{
+    const b=e.target.closest("button[data-act]"); if(!b||!state.db)return;
+    const id=b.dataset.id, act=b.dataset.act;
+    if(act==="vraag"){state.confirm=id;render();return}
+    if(act==="annuleer"){state.confirm=null;render();return}
+    if(act==="wis"){state.confirm=null;schrijf(()=>state.db.collection("zoektermen").doc(id).delete());return}
+    if(act==="status"){
+      const to=b.dataset.to;
+      schrijf(()=>state.db.collection("zoektermen").doc(id).update({status:to,besloten:to==="proef"?null:vandaag(),beslotenDoor:to==="proef"?null:state.me}));
+    }
+  });
+
+  $("form").addEventListener("submit",e=>{
+    e.preventDefault(); if(!state.db||!state.owner)return;
+    const term=$("term").value.trim().replace(/\s+/g," ");
+    if(term.length<2){melding("Vul een zoekterm van minstens 2 tekens in.",true);return}
+    if(state.terms.some(t=>String(t.data.term).toLowerCase()===term.toLowerCase())){melding(`"${term}" staat al in de lijst.`,true);return}
+    const data={term,cat:$("cat").value||null,notitie:$("notitie").value.trim(),status:"proef",toegevoegd:vandaag(),besloten:null,beslotenDoor:null};
+    schrijf(async()=>{await state.db.collection("zoektermen").add(data);$("form").reset();melding(`"${term}" staat op proef. De eerstvolgende ochtendroutine zoekt erop.`)});
+  });
+
+  function zetFormulier(aan){for(const el of $("form").elements)el.disabled=!aan}
+
+  render(); zetFormulier(false);
+  (async()=>{
+    const db=await window.claude?.use?.("db");
+    if(!db){toon("De opslag is in deze weergave niet beschikbaar. Open de pagina ingelogd op claude.ai.");return}
+    const user=await window.claude?.use?.("user");
+    state.owner=user?await user.isOwner():false;
+    state.me=user?await user.id():null;
+    state.db=db;
+    if(!state.owner){toon("Alleen de eigenaar van deze pagina kan zoektermen bekijken en wijzigen.");return}
+    zetFormulier(true);
+    db.collection("zoektermen").onSnapshot(s=>{state.terms=s.docs.filter(d=>d.exists).map(d=>({id:d.id,data:d.data()}));render()},e=>toon(fout(e)));
+    db.collection("proef").onSnapshot(s=>{
+      const p={}; for(const d of s.docs){const x=d.data(); if(x&&x.termId)(p[x.termId]=p[x.termId]||[]).push(x)}
+      state.proef=p; render();
+    },e=>toon(fout(e)));
+  })();
 })();
 </script>
