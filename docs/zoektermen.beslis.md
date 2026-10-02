@@ -12,7 +12,7 @@ status: in-uitvoering        # berekend door de skill, nooit met de hand gezet
 # Beslisdocument: Eigen zoektermen met proefperiode en beslismoment
 
 > **Nu van jou gevraagd:** proeftermen invullen vóór maandag 06:30; F2 wordt na de eerste run getoetst.
-> **Later nodig:** B2 (vóór F2), B4 (vóór F3).
+> **Later nodig:** vrijgave voor F3 (na de toetsing van F2 op maandag 5 oktober).
 
 Je krijgt een eigen invoerveld voor zoektermen die Op Peil aanvullen. Een nieuwe term draait eerst op proef: de ochtendroutine zoekt erop, maar alleen jij ziet de resultaten; pas als jij de term live zet, gaat hij mee in de nieuwsbrief. Het werk is verdeeld in vier fasen; je geeft per fase akkoord.
 
