@@ -31,7 +31,7 @@ p{margin:0}
 .dot{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
 .dot.proef{background:var(--proef)}.dot.live{background:var(--live)}.dot.afgewezen{background:var(--af)}
 form{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;display:grid;gap:14px}
-.row{display:grid;grid-template-columns:2fr 1fr;gap:12px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media (max-width:560px){.row{grid-template-columns:1fr}}
 label{display:grid;gap:5px;font-weight:600;font-size:.88rem;min-width:0}
 label small{font-weight:400;color:var(--muted)}
@@ -51,7 +51,12 @@ section{display:grid;gap:12px}
 .count{font:500 .78rem/1 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
 .hint{font-size:.85rem;color:var(--muted)}
 .empty{color:var(--muted);font-size:.9rem;border:1px dashed var(--line);border-radius:10px;padding:14px}
-ul.terms{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+ul.terms{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.group ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.group{display:grid;gap:8px}
+.group h3{font:500 .78rem/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:6px 0 0}
+.groupsel{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;color:var(--muted);font-weight:400}
+.groupsel select{width:auto;padding:5px 8px;font-size:.82rem}
 .term{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--line);border-radius:8px;padding:14px;display:grid;gap:10px;min-width:0}
 .term.proef{border-left-color:var(--proef)}.term.live{border-left-color:var(--live)}.term.afgewezen{border-left-color:var(--af)}
 .thead{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;justify-content:space-between}
@@ -92,13 +97,16 @@ summary{cursor:pointer;font-size:.88rem;font-weight:600;color:var(--accent)}
   <form id="form" autocomplete="off">
     <h2>Nieuwe zoekterm</h2>
     <div class="row">
-      <label for="term">Zoekterm <small>bijvoorbeeld een project, norm of leverancier</small>
-        <input id="term" name="term" maxlength="80" required placeholder="bijv. Lekdijk Amerongen-Wijk bij Duurstede">
+      <label for="groep">Hoofdgroep
+        <select id="groep" name="groep" required></select>
       </label>
-      <label for="cat">Rubriek
+      <label for="cat">Rubriek <small>waar het bericht in de brief landt</small>
         <select id="cat" name="cat"></select>
       </label>
     </div>
+    <label for="term">Zoekterm <small>bijvoorbeeld een project, norm of leverancier</small>
+        <input id="term" name="term" maxlength="80" required placeholder="bijv. Lekdijk Amerongen-Wijk bij Duurstede">
+      </label>
     <label for="notitie">Notitie <small>waarom deze term, waar let je op (optioneel)</small>
       <textarea id="notitie" name="notitie" maxlength="300" rows="2"></textarea>
     </label>
@@ -129,6 +137,9 @@ summary{cursor:pointer;font-size:.88rem;font-weight:600;color:var(--accent)}
 (()=>{
   const RUBRIEKEN=[["civil3d","Civil 3D"],["dijk","Dijkontwerp"],["stedelijk","Binnenstedelijk"],["grondwerk","Grondwerk"],["inmeten","Inmeten & drones"],["ai","AI"],["software","Software"],["markt","Markt"],["kennis","Normen & kennis"],["leren","Leren"],["internationaal","Internationaal"]];
   const RNAAM=Object.fromEntries(RUBRIEKEN);
+  const GROEPEN=[["waterveiligheid","Waterveiligheid","dijk"],["stad","Stad en openbare ruimte","stedelijk"],["grond","Grond en bodem","grondwerk"],["inmeten","Inmeten en data","inmeten"],["software","Ontwerpsoftware en AI","software"],["regels","Regels en kennis","kennis"],["markt","Markt en opdrachtgevers","markt"]];
+  const GNAAM=Object.fromEntries(GROEPEN.map(([id,n])=>[id,n]));
+  const GRUBRIEK=Object.fromEntries(GROEPEN.map(([id,,c])=>[id,c]));
   const MAX_PROEF=5;
   const LEEG={
     proef:"Nog geen termen op proef. Vul hierboven een zoekterm in en kies \"Op proef zetten\".",
@@ -138,6 +149,11 @@ summary{cursor:pointer;font-size:.88rem;font-weight:600;color:var(--accent)}
   const $=id=>document.getElementById(id);
   const state={terms:[],proef:{},db:null,owner:false,me:null,confirm:null,busy:false};
 
+  $("groep").innerHTML='<option value="">Kies een hoofdgroep</option>'+GROEPEN.map(([id,n])=>`<option value="${id}">${n}</option>`).join("");
+  let catAuto=true;
+  $("cat").addEventListener("change",()=>{catAuto=false});
+  $("groep").addEventListener("change",()=>{if(catAuto)$("cat").value=GRUBRIEK[$("groep").value]||""});
+  const groepOpties=sel=>`<option value="" ${sel?"":"selected"}>Zonder groep</option>`+GROEPEN.map(([id,n])=>`<option value="${id}" ${sel===id?"selected":""}>${n}</option>`).join("");
   $("cat").innerHTML='<option value="">Laat de routine kiezen</option>'+RUBRIEKEN.map(([id,n])=>`<option value="${id}">${n}</option>`).join("");
 
   const vandaag=()=>new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/Amsterdam"}).format(new Date());
@@ -167,7 +183,7 @@ summary{cursor:pointer;font-size:.88rem;font-weight:600;color:var(--accent)}
         if(s==="proef"){b.push(["live","go","Live zetten"],["afgewezen","stop","Afwijzen"])}
         if(s==="live"){b.push(["proef","","Terug naar proef"],["afgewezen","stop","Afwijzen"])}
         if(s==="afgewezen"){b.push(["proef","","Terug naar proef"])}
-        knoppen=`<div class="actions">${b.map(([to,c,l])=>`<button class="${c}" data-act="status" data-to="${to}" data-id="${t.id}" ${state.busy?"disabled":""}>${l}</button>`).join("")}<button class="plain" data-act="vraag" data-id="${t.id}">Verwijderen</button></div>`;
+        knoppen=`<div class="actions"><label class="groupsel" for="g-${t.id}">Hoofdgroep <select id="g-${t.id}" data-act="groep" data-id="${t.id}" ${state.busy?"disabled":""}>${groepOpties(d.groep||"")}</select></label>${b.map(([to,c,l])=>`<button class="${c}" data-act="status" data-to="${to}" data-id="${t.id}" ${state.busy?"disabled":""}>${l}</button>`).join("")}<button class="plain" data-act="vraag" data-id="${t.id}">Verwijderen</button></div>`;
       }
     }
     const live=s==="live"?`<p class="hint">Zoekt mee in de brief vanaf de eerste werkdag na ${esc(fmt(d.besloten))}.</p>`:"";
@@ -184,7 +200,9 @@ summary{cursor:pointer;font-size:.88rem;font-weight:600;color:var(--accent)}
     for(const s of ["proef","live","afgewezen"]){
       const lijst=state.terms.filter(t=>t.data.status===s).sort((a,b)=>String(a.data.toegevoegd).localeCompare(String(b.data.toegevoegd)));
       $("n-"+s).textContent=lijst.length;
-      $("list-"+s).innerHTML=lijst.length?lijst.map(kaart).join(""):`<li class="empty">${LEEG[s]}</li>`;
+      const ids=[...GROEPEN.map(g=>g[0]),""];
+      $("list-"+s).innerHTML=lijst.length?ids.map(g=>{const sub=lijst.filter(t=>(GNAAM[t.data.groep]?t.data.groep:"")===g);
+        return sub.length?`<li class="group"><h3>${g?GNAAM[g]:"Zonder groep"} · ${sub.length}</h3><ul>${sub.map(kaart).join("")}</ul></li>`:""}).join(""):`<li class="empty">${LEEG[s]}</li>`;
     }
     const np=state.terms.filter(t=>t.data.status==="proef").length;
     $("hint-proef").textContent=np>MAX_PROEF
@@ -209,13 +227,20 @@ summary{cursor:pointer;font-size:.88rem;font-weight:600;color:var(--accent)}
     }
   });
 
+  document.addEventListener("change",e=>{
+    const el=e.target.closest('select[data-act="groep"]'); if(!el||!state.db)return;
+    schrijf(()=>state.db.collection("zoektermen").doc(el.dataset.id).update({groep:el.value||null}));
+  });
+
   $("form").addEventListener("submit",e=>{
     e.preventDefault(); if(!state.db||!state.owner)return;
     const term=$("term").value.trim().replace(/\s+/g," ");
     if(term.length<2){melding("Vul een zoekterm van minstens 2 tekens in.",true);return}
     if(state.terms.some(t=>String(t.data.term).toLowerCase()===term.toLowerCase())){melding(`"${term}" staat al in de lijst.`,true);return}
-    const data={term,cat:$("cat").value||null,notitie:$("notitie").value.trim(),status:"proef",toegevoegd:vandaag(),besloten:null,beslotenDoor:null};
-    schrijf(async()=>{await state.db.collection("zoektermen").add(data);$("form").reset();melding(`"${term}" staat op proef. De eerstvolgende ochtendroutine zoekt erop.`)});
+    const groep=$("groep").value;
+    if(!GNAAM[groep]){melding("Kies een hoofdgroep.",true);return}
+    const data={term,groep,cat:$("cat").value||null,notitie:$("notitie").value.trim(),status:"proef",toegevoegd:vandaag(),besloten:null,beslotenDoor:null};
+    schrijf(async()=>{await state.db.collection("zoektermen").add(data);$("form").reset();catAuto=true;melding(`"${term}" staat op proef. De eerstvolgende ochtendroutine zoekt erop.`)});
   });
 
   function zetFormulier(aan){for(const el of $("form").elements)el.disabled=!aan}
