@@ -25,10 +25,12 @@
 - _(nog leeg: wordt gevuld door de `brbnt-memory`-skill zodra er een eerste correctie of incident is)_
 
 ## Referentie
-- _(nog leeg)_
+- [Zoektermenpagina en opslag](reference_zoektermen_pagina.md): URL, collecties en routinestap 2b
 
 ## Architectuur-besluiten & valkuilen (project)
-- _(nog leeg)_
+- [Beslisser is Marco](project_beslisser_marco.md): inhoud, ontvangers en vrijgaven
+- [Zoektermen pas na goedkeuring live](project_zoektermen_goedkeuring.md): volgende werkdag, één brief per dag, proef nooit in de brief
+- [Opzet zoektermen](project_zoektermen_opzet.md): vaste zoektocht ongewijzigd, elke dag zoeken, herkomst alleen voor Marco
 
 ## Gebouwd / afgerond
 <!-- Verplaats memories hierheen zodra een stuk werk klaar is: status is zichtbaar
