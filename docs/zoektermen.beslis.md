@@ -4,14 +4,14 @@ titel: Eigen zoektermen met proefperiode en beslismoment
 plan: zoektermen.plan.md
 beslisser: Marco van Steenbrugge, beheerder
 voorgelegd: 2026-10-02 17:32          # datum en tijd waarop de beslisser dit heeft gekregen; wordt door de skill gezet
-status: ter-akkoord        # berekend door de skill, nooit met de hand gezet
+status: deels-vrijgegeven        # berekend door de skill, nooit met de hand gezet
 ---
 
 > Legenda: ✅ akkoord of klaar · ✏️ akkoord, maar anders · ⏳ nog niet beoordeeld · 🔨 wordt gebouwd · ▶ vrijgegeven, nog niet gestart · ○ nog niet vrijgegeven · ⚠ vrijgave vervallen door planwijziging
 
 # Beslisdocument: Eigen zoektermen met proefperiode en beslismoment
 
-> **Nu van jou gevraagd:** vrijgave voor F0 en F1.
+> **Nu van jou gevraagd:** niets; F0 en F1 worden gebouwd.
 > **Later nodig:** B2 (vóór F2), B4 (vóór F3).
 
 Je krijgt een eigen invoerveld voor zoektermen die Op Peil aanvullen. Een nieuwe term draait eerst op proef: de ochtendroutine zoekt erop, maar alleen jij ziet de resultaten; pas als jij de term live zet, gaat hij mee in de nieuwsbrief. Het werk is verdeeld in vier fasen; je geeft per fase akkoord.
@@ -21,10 +21,12 @@ Een fase mag pas starten als de vrijgave er staat én alle besluiten waar de fas
 
 | Fase | Wat wordt gebouwd | Vrijgave | Door, wanneer | Leunt op | Gebouwd |
 |---|---|---|---|---|---|
-| F0 | Proef op de techniek: kan de ochtendroutine bij de opslag van je zoektermen? Er gaat geen mail uit en er wordt niets gepubliceerd. | ○ nog niet | - | B1 | - |
-| F1 | Je eigen pagina: zoektermen invullen, proefresultaten bekijken en per term live zetten of afwijzen | ○ nog niet | - | B1, B3 | - |
+| F0 | Proef op de techniek: kan de ochtendroutine bij de opslag van je zoektermen? Er gaat geen mail uit en er wordt niets gepubliceerd. | ✅ ja, op planversie 1 | Marco van Steenbrugge · 2026-10-02 17:38 | B1 | - |
+| F1 | Je eigen pagina: zoektermen invullen, proefresultaten bekijken en per term live zetten of afwijzen | ✅ ja, op planversie 1 | Marco van Steenbrugge · 2026-10-02 17:38 | B1, B3 | - |
 | F2 | De ochtendroutine zoekt op je proeftermen en zet de resultaten alleen op jouw pagina | ○ nog niet | - | B2 | - |
 | F3 | Termen die jij live zet, zoeken mee in de gewone nieuwsbrief | ○ nog niet | - | B4 | - |
+
+Letterlijk akkoord (F0 tot en met F1, via chat): op de vraag "akkoord om te bouwen op plan zoektermen, versie 1, fase F0 tot en met F1?": "ja begin met F0 en het vervolg"
 
 ## Overzicht besluiten
 | | # | Onderwerp | Besluit | Nodig vóór |
@@ -117,3 +119,4 @@ Alleen aanvullen, nooit herschrijven. De technische uitvoeringsdetails staan in 
 | 2026-10-02 17:36 | B1 besloten: akkoord met ons voorstel, via chat | Marco van Steenbrugge |
 | 2026-10-02 17:36 | B3: "knop is goed", met de vraag of de brief dan direct wordt bijgewerkt of een dag later; nog niet vastgelegd tot de vraag is beantwoord | Marco van Steenbrugge |
 | 2026-10-02 17:37 | B3 besloten: akkoord met ons voorstel (knoppen op de eigen pagina; een live term komt de volgende werkdag in de brief, één brief per dag), via chat | Marco van Steenbrugge |
+| 2026-10-02 17:38 | Vrijgave F0 tot en met F1 op planversie 1, via chat | Marco van Steenbrugge |
