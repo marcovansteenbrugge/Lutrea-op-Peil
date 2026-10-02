@@ -120,6 +120,7 @@ Alleen aanvullen, nooit herschrijven. Alle meetgegevens per fase; het beslisdocu
 | Fase | Start | Einde | Opdracht van | Uitgevoerd door | Effort | Tokens invoer / uitvoer | Commits | Bron |
 |---|---|---|---|---|---|---|---|---|
 | F0 | 2026-10-02 17:38 | 2026-10-02 17:44 | Marco van Steenbrugge | claude-opus-5-5, sessie 6a787076-ce2d-5379-9282-08bfe806fdd8 | medium | 38 / 9.291 | 3fb8f7e | transcript (Claude Code 2.1.287); testroutine apart, sessie cse_01EM9Uf9R95r2HZ8HRieThoB, tokens onbekend |
+| F1 | 2026-10-02 17:45 | 2026-10-02 19:07 | Marco van Steenbrugge | claude-opus-5-5, sessie 6a787076-ce2d-5379-9282-08bfe806fdd8 | medium | 96 / 56.743 | 26e271c, fd91410 | transcript (Claude Code 2.1.287) |
 
 Tokens zijn invoer en uitvoer zonder cache. Is een waarde niet te meten, dan staat er "onbekend"; nooit een schatting.
 
@@ -132,6 +133,12 @@ Vóórdat een fase als gebouwd wordt gemarkeerd, is elk acceptatiecriterium uit 
 | F0 | 2026-10-02 17:44 | 2. De testroutine heeft één testdocument gelezen en één document geschreven; terug te lezen met `ArtifactData` | Testroutine trig_01ME15ocxucms6dpb37qmmcK, run SUCCEEDED (sessie cse_01EM9Uf9R95r2HZ8HRieThoB, 17:43:50-17:44:08 UTC), eindregel "F0-RESULTAAT: stap 2, 3 en 4 zijn alle drie gelukt". Vanuit deze sessie `list proef`: document f0-test-2026-10-02 met gelezenTerm "F0-testterm (wordt verwijderd)", version 1 | gehaald |
 | F0 | 2026-10-02 17:44 | 3. De testroutine heeft geen mail verstuurd en niets gepubliceerd | Routine aangemaakt zonder connectors (`mcp_connections: []`), dus Gmail was niet beschikbaar. Transcript (list_events, assistant): alleen ToolSearch, ArtifactData get, ArtifactData set, ArtifactData get; geen Artifact publish | gehaald |
 | F0 | 2026-10-02 17:44 | 4. Het testdocument en de testroutine zijn opgeruimd | `ArtifactData batch` delete zoektermen/f0-test en proef/f0-test-2026-10-02: committed; daarna `list zoektermen` en `list proef`: "No documents matched". `delete_trigger`: verwijderd; `get_trigger`: "not found" | gehaald |
+| F1 | 2026-10-02 19:07 | 1. Marco kan een term met hoofdgroep, rubriek en notitie toevoegen; die staat daarna in `zoektermen` (ArtifactData) | Echte opslag: Marco voegde "Autodesk" toe via de pagina (versie 2); `ArtifactData list zoektermen` 18:41: document 5w2h4dn4ul203g21qy4z met status proef en toegevoegd 2026-10-02. Velden van versie 3 (groep, rubriek, notitie): browsertest met nagebootste opslag (`t2.mjs`): opgeslagen {"term":"Kavel 10","groep":"inmeten","cat":"inmeten","notitie":"luchtkartering","status":"proef",...}; zonder hoofdgroep geweigerd | gehaald |
+| F1 | 2026-10-02 19:07 | 2. Live zetten, afwijzen, terug naar proef en verwijderen veranderen de status met datum | Browsertest met nagebootste opslag (`t.mjs` op versie 2 en `t2.mjs` op versie 3): live met besloten 2026-10-02 en beslotenDoor, afwijzen, terug naar proef wist besloten, verwijderen na bevestiging. Schrijven naar de echte opslag via dezelfde `update`-aanroep bewezen door criterium 6 | gehaald |
+| F1 | 2026-10-02 19:07 | 3. Een met ArtifactData geplaatst `proef`-document verschijnt bij de juiste term | `ArtifactData set proef/5w2h4dn4ul203g21qy4z-f1-test` (18:41); Marco, 19:04 via chat: "ja ik zie de test". Daarna verwijderd (delete committed) | gehaald |
+| F1 | 2026-10-02 19:07 | 4. Een kijker die niet de eigenaar is kan niet schrijven | `ArtifactData set` met `as_level: admin`: "db write failed (invalid_argument) ... no access"; `list zoektermen` met `as_level: admin`: "No documents matched". Pagina toont niet-eigenaar een melding en schakelt het formulier uit (browsertest) | gehaald |
+| F1 | 2026-10-02 19:07 | 5. De pagina werkt op telefoonbreedte en in donkere modus | Browsertest: scrollWidth 390 bij 390 px (licht en donker) en 1100 bij 1100 px; schermafbeelding f1v3_390_light.png bekeken: geen overlap of afgesneden tekst | gehaald |
+| F1 | 2026-10-02 19:07 | 6. Termen staan gegroepeerd per hoofdgroep; een term zonder groep staat onder "Zonder groep" en de groep is te wijzigen | Browsertest: koppen "Stad en openbare ruimte · 1 | Inmeten en data · 1 | Zonder groep · 1"; groep wijzigen naar software verplaatst de term. Echte opslag: Marco zette "Autodesk" via de pagina in groep software (`list zoektermen`: groep "software", version 2, 19:04) | gehaald |
 
 ## 12. Afwijkingen
 Ook een afwijkend model of afwijkende effort ten opzichte van "Gepland model en effort" (punt 7) staat hier, met de reden of "reden onbekend".
@@ -141,6 +148,8 @@ Ook een afwijkend model of afwijkende effort ten opzichte van "Gepland model en 
 | F0 | Scope: de testroutine is aangemaakt zonder het veld connectors (het eerste verzoek met `connectors: []` werd geweigerd: "not available for this organization"); de routine kreeg toch geen connectors (`mcp_connections: []`) | Beperking van de organisatie |
 | F0 | Scope: de toegangsregel is strenger dan in punt 6 (lezen én schrijven alleen door de eigenaar, op de hele opslag) | "Voor mezelf" (punt 5); de routine draait als Marco en voldoet daaraan, zoals F0 aantoonde |
 | F0 | Scope: de bron van het skelet staat al in `site/zoektermen.html` (punt 7 noemt dat pas bij F1) | Dezelfde pagina wordt in F1 uitgebouwd |
+| F1 | Scope: tussen 17:45 en 18:53 gebouwd op planversie 1; na de planwijziging (versie 2 en 3) uitgebreid met hoofdgroepen; de uitvoeringsrij beslaat beide delen | Planwijziging op verzoek van Marco |
+| F1 | Toetsing: criteria 1 en 2 deels met een nagebootste opslag in de browser getoetst, omdat Claude de pagina niet zelf kan bedienen; het schrijven naar de echte opslag is aangetoond met Marco's eigen acties (toevoegen, groep wijzigen) | Beperking van de omgeving |
 
 ## 13. Wijzigingslog
 | Versie | Datum | Wat | Geraakt | Gevolg voor vrijgave |
