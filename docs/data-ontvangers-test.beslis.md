@@ -22,7 +22,7 @@ Een fase mag pas starten als de vrijgave er staat én alle besluiten waar de fas
 | Fase | Wat wordt gebouwd | Vrijgave | Door, wanneer | Leunt op | Gebouwd |
 |---|---|---|---|---|---|
 | F0 | Controle van het nieuwsbestand: klopt de opbouw en volgt het de regels van de ochtendroutine | ✅ ja, op planversie 1 | Marco van Steenbrugge · 2026-10-02 17:25 | B1, B2 | ✅ 2026-10-02 17:25 |
-| F1 | Controle dat de ontvangers in de ontvangerslijst en in de routine-instructie gelijk zijn | ✅ ja, op planversie 1 | Marco van Steenbrugge · 2026-10-02 17:25 | B1 | - |
+| F1 | Controle dat de ontvangers in de ontvangerslijst en in de routine-instructie gelijk zijn | ✅ ja, op planversie 1 | Marco van Steenbrugge · 2026-10-02 17:25 | B1 | ✅ 2026-10-02 17:26 |
 | F2 | De controles draaien vanzelf op GitHub bij elke wijziging, en de projectregels noemen ze als afgedwongen | ✅ ja, op planversie 1 | Marco van Steenbrugge · 2026-10-02 17:25 | - | - |
 | F3 | De ochtendroutine draait de controle zelf voordat hij publiceert | ○ nog niet | - | B3 | - |
 
@@ -101,3 +101,4 @@ Alleen aanvullen, nooit herschrijven. De technische uitvoeringsdetails staan in 
 | 2026-10-02 17:25 | B1 en B2 besloten: akkoord met ons voorstel, via chat | Marco van Steenbrugge |
 | 2026-10-02 17:25 | Vrijgave F0 tot en met F2 op planversie 1, via chat | Marco van Steenbrugge |
 | 2026-10-02 17:25 | F0 gebouwd: controle van het nieuwsbestand | agent (Claude Code, Opus 5.5) |
+| 2026-10-02 17:26 | F1 gebouwd: controle van de ontvangerslijst | agent (Claude Code, Opus 5.5) |
