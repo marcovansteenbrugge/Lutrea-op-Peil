@@ -2,8 +2,8 @@
 plan: data-ontvangers-test
 titel: Test voor data.json en de ontvangerslijst
 versie: 1
-status: deels-vrijgegeven        # berekend door de skill, nooit met de hand gezet
-voortgang: F0 ▶ · F1 ▶ · F2 ▶ · F3 ⏳           # berekend door de skill
+status: in-uitvoering        # berekend door de skill, nooit met de hand gezet
+voortgang: F0 ✅ · F1 ▶ · F2 ▶ · F3 ⏳           # berekend door de skill
 opgesteld: 2026-10-02
 opgesteld_door: agent (Claude Code, Opus 5.5)
 beslisser: Marco van Steenbrugge, beheerder
@@ -73,8 +73,8 @@ Een fase mag starten als de vrijgave voor die fase er is én alle besluiten waar
 
 | Fase | Status | Scope | Acceptatie (toetsbaar) | Hangt af van | Omvang | Gepland model en effort | Commit-prefix |
 |---|---|---|---|---|---|---|---|
-| F0 | ▶ vrijgegeven | `tests/test_data.py` met de controles (a) t/m (h) uit punt 6 | 1. `python3 -m unittest discover -s tests -v` is groen op de huidige `site/data.json`. 2. Een kopie met een kapotte komma, een onbekende item-cat, 6 highlights of een item zonder URL laat de test elk afzonderlijk rood worden met een leesbare melding. 3. Geen andere afhankelijkheid dan de Python-standaardbibliotheek. | B1, B2 | S | Opus 5.5, medium | `F0:` |
-| F1 | ▶ vrijgegeven, na F0 | `tests/test_ontvangers.py` | 1. Groen op de huidige twee bestanden. 2. Een adres weghalen uit één van beide, of een adres van BCC naar Aan verplaatsen, maakt de test rood met een melding die het adres en het bestand noemt. 3. Een ongeldig of dubbel adres maakt de test rood. | F0, B1 | S | Opus 5.5, medium | `F1:` |
+| F0 | ✅ gebouwd | `tests/test_data.py` met de controles (a) t/m (h) uit punt 6 | 1. `python3 -m unittest discover -s tests -v` is groen op de huidige `site/data.json`. 2. Een kopie met een kapotte komma, een onbekende item-cat, 6 highlights of een item zonder URL laat de test elk afzonderlijk rood worden met een leesbare melding. 3. Geen andere afhankelijkheid dan de Python-standaardbibliotheek. | B1, B2 | S | Opus 5.5, medium | `F0:` |
+| F1 | ▶ vrijgegeven | `tests/test_ontvangers.py` | 1. Groen op de huidige twee bestanden. 2. Een adres weghalen uit één van beide, of een adres van BCC naar Aan verplaatsen, maakt de test rood met een melding die het adres en het bestand noemt. 3. Een ongeldig of dubbel adres maakt de test rood. | F0, B1 | S | Opus 5.5, medium | `F1:` |
 | F2 | ▶ vrijgegeven, na F1 | `.github/workflows/tests.yml` en CLAUDE.md (Afgedwongen, Testing Strategy, Tech Stack) | 1. De workflow draait groen op GitHub na de push. 2. De workflow heeft alleen `contents: read` en actions op een volledige commit. 3. CLAUDE.md noemt beide regels onder "Afgedwongen" met het pad naar de test, en niet meer onder "Nog niet afgedwongen". | F1 | S | Opus 5.5, medium | `F2:` |
 | F3 | ⏳ wacht op B3 | De routine draait de data-test vóór publiceren (`routine/ochtendroutine.md` en de routine op claude.ai) | Wordt ingevuld na B3 en de open vraag over toegang tot de repo; vóór vrijgave komt hier een planwijziging. | F2, B3 | S | Opus 5.5, medium | `F3:` |
 
@@ -103,6 +103,7 @@ Alleen aanvullen, nooit herschrijven. Alle meetgegevens per fase; het beslisdocu
 
 | Fase | Start | Einde | Opdracht van | Uitgevoerd door | Effort | Tokens invoer / uitvoer | Commits | Bron |
 |---|---|---|---|---|---|---|---|---|
+| F0 | 2026-10-02 17:25 | 2026-10-02 17:25 | Marco van Steenbrugge | claude-opus-5-5, sessie 6a787076-ce2d-5379-9282-08bfe806fdd8 | medium | 8 / 4.862 | 13e3fb6 | transcript (Claude Code 2.1.287) |
 
 Tokens zijn invoer en uitvoer zonder cache. Is een waarde niet te meten, dan staat er "onbekend"; nooit een schatting.
 
@@ -111,12 +112,20 @@ Vóórdat een fase als gebouwd wordt gemarkeerd, is elk acceptatiecriterium uit 
 
 | Fase | Tijdstip | Criterium | Controle en uitkomst | Oordeel |
 |---|---|---|---|---|
+| F0 | 2026-10-02 17:25 | 1. `python3 -m unittest discover -s tests -v` is groen op de huidige `site/data.json` | Uitgevoerd: 11 tests, "Ran 11 tests ... OK" | gehaald |
+| F0 | 2026-10-02 17:25 | 2a. Kapotte komma laat de test rood worden met leesbare melding | Kopie met eerste komma verwijderd, `OP_PEIL_DATA=komma2.json`: "komma2.json is geen geldige JSON: Expecting ',' delimiter: line 3 column 2", FAILED (failures=11) | gehaald |
+| F0 | 2026-10-02 17:25 | 2b. Onbekende item-cat laat de test rood worden | Kopie met items[0].cat = "onbekend": FAIL test_cat_bestaat, "items[0] 'AU 2026: Civil 3D wordt een Forma Connected Client': onbekende cat 'onbekend'", failures=1 | gehaald |
+| F0 | 2026-10-02 17:25 | 2c. 6 highlights laat de test rood worden | Kopie met zesde highlight: FAIL test_highlights, "verwacht 5 highlights, gevonden 6", failures=1 | gehaald |
+| F0 | 2026-10-02 17:25 | 2d. Item zonder URL laat de test rood worden | Kopie met items[0].urls = []: FAIL test_urls, "items[0] 'AU 2026: ...' heeft geen URL", failures=1 | gehaald |
+| F0 | 2026-10-02 17:25 | 3. Geen andere afhankelijkheid dan de Python-standaardbibliotheek | `tests/test_data.py` regels 6-11: alleen datetime, json, os, re, unittest, pathlib | gehaald |
 
 ## 12. Afwijkingen
 Ook een afwijkend model of afwijkende effort ten opzichte van "Gepland model en effort" (punt 7) staat hier, met de reden of "reden onbekend".
 
 | Fase | Wat week af van het plan | Waarom |
 |---|---|---|
+| F0 | Scope: ook de volgorde van de rubrieken wordt gecontroleerd (`test_rubrieken`), niet genoemd in punt 6 | Default van de open vraag in punt 10 ("Ja, de volgorde ... volgen") |
+| F0 | Scope: de te toetsen data is in te stellen met de omgevingsvariabele `OP_PEIL_DATA` | Nodig om acceptatiecriterium 2 op kopieën te toetsen; handig voor F3 |
 
 ## 13. Wijzigingslog
 | Versie | Datum | Wat | Geraakt | Gevolg voor vrijgave |
