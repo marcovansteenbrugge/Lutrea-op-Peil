@@ -1,0 +1,28 @@
+<title>Op Peil zoektermen</title>
+<style>
+/* Layout: één smalle kolom, tijdelijk skelet (F0); de echte pagina volgt in F1 */
+:root{--bg:#f3f6f7;--fg:#14262e;--muted:#5a6d75;--accent:#0f6e8c;--line:#d5e0e4}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1a1f;--fg:#e2eef2;--muted:#93a9b1;--accent:#5cc3e4;--line:#24363d;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1a1f;--fg:#e2eef2;--muted:#93a9b1;--accent:#5cc3e4;--line:#24363d;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px;padding-block:32px}
+main{max-width:40rem;margin:0 auto;display:grid;gap:12px}
+h1{font-size:1.4rem;margin:0;text-wrap:balance}
+p{margin:0;color:var(--muted)}
+.label{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+#status{border-top:1px solid var(--line);padding-top:12px}
+</style>
+<main>
+  <span class="label">Lutrea · Op Peil</span>
+  <h1>Zoektermen</h1>
+  <p>Hier komen je eigen zoektermen: eerst op proef, daarna live na jouw akkoord. De invoer volgt binnenkort.</p>
+  <p id="status">Opslag wordt gecontroleerd…</p>
+</main>
+<script>
+(async()=>{
+  const el=document.getElementById("status");
+  const db=await window.claude?.use?.("db");
+  if(!db){el.textContent="Opslag is in deze weergave niet beschikbaar.";return}
+  try{const s=await db.collection("zoektermen").get();el.textContent=`Opslag werkt: ${s.size} zoekterm(en) opgeslagen.`}
+  catch(e){el.textContent="Opslag kon niet worden gelezen ("+(e.code||"onbekend")+")."}
+})();
+</script>
