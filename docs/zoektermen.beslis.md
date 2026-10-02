@@ -36,7 +36,7 @@ Letterlijk akkoord (F1 tot en met F2, via chat): op de voorgelegde zin "Akkoord 
 | ✅ | B1 | Waar komt het invoerveld | **Akkoord met ons voorstel** | F0 |
 | ✅ | B2 | Hoe de proefzoektocht draait | **Akkoord met ons voorstel** | F2 |
 | ✅ | B3 | Het beslismoment | **Akkoord met ons voorstel** | F1 |
-| ⏳ | B4 | Zijn berichten uit je zoektermen herkenbaar | **Nog niet beoordeeld** | F3 |
+| ✅ | B4 | Zijn berichten uit je zoektermen herkenbaar | **Akkoord met ons voorstel** | F3 |
 | ✅ | B5 | Hoofdgroepen | **Akkoord met ons voorstel** | F1 |
 | ✏️ | B6 | Hoe vaak een term wordt gezocht | **Anders: elke dag** | F1 |
 
@@ -96,7 +96,7 @@ Meer uitleg: plan, punt 6, B2
 
 Meer uitleg: plan, punt 6, B3
 
-### ⏳ B4 · Zijn berichten uit je zoektermen herkenbaar
+### ✅ B4 · Zijn berichten uit je zoektermen herkenbaar
 **Je beslist:** of je later kunt zien welke berichten in de nieuwsbrief uit jouw zoektermen kwamen.
 
 | | Ons voorstel | Alternatief |
@@ -106,11 +106,11 @@ Meer uitleg: plan, punt 6, B3
 | **Nadeel** | Geen | De teampagina moet worden aangepast |
 
 **Jouw keuze**
-- [ ] Akkoord met ons voorstel
+- [x] Akkoord met ons voorstel
 - [ ] Anders:
 - [ ] Vervalt
 
-**Besloten door** nog niemand · **status** nog niet beoordeeld · **wacht op** Marco van Steenbrugge · **voorgelegd op** 2026-10-02 17:32 · **nodig vóór** F3
+**Besloten door** Marco van Steenbrugge · **op** 2026-10-02 19:16 · **via** chat · **over** ons voorstel, planversie 3 ("B4 is akkoord... ik wil het eerst zelf zien")
 
 Meer uitleg: plan, punt 6, B4
 
@@ -172,3 +172,4 @@ Alleen aanvullen, nooit herschrijven. De technische uitvoeringsdetails staan in 
 | 2026-10-02 18:59 | Vrijgave F1 tot en met F2 op planversie 3, via chat | Marco van Steenbrugge |
 | 2026-10-02 19:07 | F1 gebouwd: zoektermenpagina met hoofdgroepen, proefresultaten en beslisknoppen; testresultaat opgeruimd | agent (Claude Code, Opus 5.5) |
 | 2026-10-02 19:10 | F2 uitgevoerd: stap 2b toegevoegd aan de ochtendroutine (claude.ai en repo); toetsing volgt na de eerste run op maandag 5 oktober | agent (Claude Code, Opus 5.5) |
+| 2026-10-02 19:16 | B4 besloten: akkoord met ons voorstel (herkenbaar alleen op de eigen pagina), via chat | Marco van Steenbrugge |
