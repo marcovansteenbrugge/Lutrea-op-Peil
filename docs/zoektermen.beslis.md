@@ -11,7 +11,7 @@ status: ter-akkoord        # berekend door de skill, nooit met de hand gezet
 
 # Beslisdocument: Eigen zoektermen met proefperiode en beslismoment
 
-> **Nu van jou gevraagd:** besluit B3 (vraag over het moment van live gaan beantwoord, bevestiging nodig), en vrijgave voor F0 en F1.
+> **Nu van jou gevraagd:** vrijgave voor F0 en F1.
 > **Later nodig:** B2 (vóór F2), B4 (vóór F3).
 
 Je krijgt een eigen invoerveld voor zoektermen die Op Peil aanvullen. Een nieuwe term draait eerst op proef: de ochtendroutine zoekt erop, maar alleen jij ziet de resultaten; pas als jij de term live zet, gaat hij mee in de nieuwsbrief. Het werk is verdeeld in vier fasen; je geeft per fase akkoord.
@@ -31,7 +31,7 @@ Een fase mag pas starten als de vrijgave er staat én alle besluiten waar de fas
 |---|---|---|---|---|
 | ✅ | B1 | Waar komt het invoerveld | **Akkoord met ons voorstel** | F0 |
 | ⏳ | B2 | Hoe de proefzoektocht draait | **Nog niet beoordeeld** | F2 |
-| ⏳ | B3 | Het beslismoment | **Nog niet beoordeeld** | F1 |
+| ✅ | B3 | Het beslismoment | **Akkoord met ons voorstel** | F1 |
 | ⏳ | B4 | Zijn berichten uit je zoektermen herkenbaar | **Nog niet beoordeeld** | F3 |
 
 ## Besluiten
@@ -72,7 +72,7 @@ Meer uitleg: plan, punt 6, B1
 
 Meer uitleg: plan, punt 6, B2
 
-### ⏳ B3 · Het beslismoment
+### ✅ B3 · Het beslismoment
 **Je beslist:** hoe je een term van proef naar live zet.
 
 | | Ons voorstel | Alternatief |
@@ -82,11 +82,11 @@ Meer uitleg: plan, punt 6, B2
 | **Nadeel** | Geen | Je bent afhankelijk van een gesprek met Claude |
 
 **Jouw keuze**
-- [ ] Akkoord met ons voorstel
+- [x] Akkoord met ons voorstel
 - [ ] Anders:
 - [ ] Vervalt
 
-**Besloten door** nog niemand · **status** nog niet beoordeeld · **wacht op** Marco van Steenbrugge · **voorgelegd op** 2026-10-02 17:32 · **nodig vóór** F1
+**Besloten door** Marco van Steenbrugge · **op** 2026-10-02 17:37 · **via** chat · **over** ons voorstel, planversie 1; live vanaf de volgende werkdag ("B3 knop is goed" en "ja ik wil ook maar 1 brief per dag ontvangen")
 
 Meer uitleg: plan, punt 6, B3
 
@@ -116,3 +116,4 @@ Alleen aanvullen, nooit herschrijven. De technische uitvoeringsdetails staan in 
 | 2026-10-02 17:32 | Plan opgesteld en voorgelegd | agent (Claude Code, Opus 5.5) |
 | 2026-10-02 17:36 | B1 besloten: akkoord met ons voorstel, via chat | Marco van Steenbrugge |
 | 2026-10-02 17:36 | B3: "knop is goed", met de vraag of de brief dan direct wordt bijgewerkt of een dag later; nog niet vastgelegd tot de vraag is beantwoord | Marco van Steenbrugge |
+| 2026-10-02 17:37 | B3 besloten: akkoord met ons voorstel (knoppen op de eigen pagina; een live term komt de volgende werkdag in de brief, één brief per dag), via chat | Marco van Steenbrugge |
