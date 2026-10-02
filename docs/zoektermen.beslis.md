@@ -11,7 +11,7 @@ status: in-uitvoering        # berekend door de skill, nooit met de hand gezet
 
 # Beslisdocument: Eigen zoektermen met proefperiode en beslismoment
 
-> **Nu van jou gevraagd:** vrijgave voor F1 en F2 op planversie 3.
+> **Nu van jou gevraagd:** niets; F1 en F2 worden gebouwd.
 > **Later nodig:** B2 (vóór F2), B4 (vóór F3).
 
 Je krijgt een eigen invoerveld voor zoektermen die Op Peil aanvullen. Een nieuwe term draait eerst op proef: de ochtendroutine zoekt erop, maar alleen jij ziet de resultaten; pas als jij de term live zet, gaat hij mee in de nieuwsbrief. Het werk is verdeeld in vier fasen; je geeft per fase akkoord.
@@ -22,11 +22,13 @@ Een fase mag pas starten als de vrijgave er staat én alle besluiten waar de fas
 | Fase | Wat wordt gebouwd | Vrijgave | Door, wanneer | Leunt op | Gebouwd |
 |---|---|---|---|---|---|
 | F0 | Proef op de techniek: kan de ochtendroutine bij de opslag van je zoektermen? Er gaat geen mail uit en er wordt niets gepubliceerd. | ✅ ja, op planversie 1 | Marco van Steenbrugge · 2026-10-02 17:38 | B1 | ✅ 2026-10-02 17:44 |
-| F1 | Je eigen pagina: zoektermen invullen met hoofdgroep, proefresultaten bekijken en per term live zetten of afwijzen | ⚠ vervallen (was: ja, op planversie 1) | Marco van Steenbrugge · 2026-10-02 17:38 | B1, B3, B5, B6 | - |
-| F2 | De ochtendroutine zoekt op je proeftermen en zet de resultaten alleen op jouw pagina | ○ nog niet | - | B2 | - |
+| F1 | Je eigen pagina: zoektermen invullen met hoofdgroep, proefresultaten bekijken en per term live zetten of afwijzen | ✅ ja, op planversie 3 | Marco van Steenbrugge · 2026-10-02 18:59 | B1, B3, B5, B6 | - |
+| F2 | De ochtendroutine zoekt op je proeftermen en zet de resultaten alleen op jouw pagina | ✅ ja, op planversie 3 | Marco van Steenbrugge · 2026-10-02 18:59 | B2 | - |
 | F3 | Termen die jij live zet, zoeken mee in de gewone nieuwsbrief | ○ nog niet | - | B4, B6 | - |
 
 Letterlijk akkoord (F0 tot en met F1, via chat): op de vraag "akkoord om te bouwen op plan zoektermen, versie 1, fase F0 tot en met F1?": "ja begin met F0 en het vervolg" (F1 vervallen op versie 2)
+
+Letterlijk akkoord (F1 tot en met F2, via chat): op de voorgelegde zin "Akkoord om te bouwen op plan zoektermen, versie 3, fase F1 tot en met F2.": "akkoord om te bouwen.. daarna graag een voorbeeld van de nieuwe brief"
 
 ## Overzicht besluiten
 | | # | Onderwerp | Besluit | Nodig vóór |
@@ -167,3 +169,4 @@ Alleen aanvullen, nooit herschrijven. De technische uitvoeringsdetails staan in 
 | 2026-10-02 18:53 | Plan naar versie 2: hoofdgroepen (B5) en zoekfrequentie (B6); vrijgave F1 vervallen | agent (Claude Code, Opus 5.5) |
 | 2026-10-02 18:57 | B2 en B5 besloten: akkoord met ons voorstel; B6 besloten: anders, elke dag zoeken, via chat | Marco van Steenbrugge |
 | 2026-10-02 18:57 | Plan naar versie 3: B6 verwerkt (geen frequentie per term) | agent (Claude Code, Opus 5.5) |
+| 2026-10-02 18:59 | Vrijgave F1 tot en met F2 op planversie 3, via chat | Marco van Steenbrugge |
