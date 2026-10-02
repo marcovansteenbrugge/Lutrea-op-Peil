@@ -11,7 +11,7 @@ status: in-uitvoering        # berekend door de skill, nooit met de hand gezet
 
 # Beslisdocument: Eigen zoektermen met proefperiode en beslismoment
 
-> **Nu van jou gevraagd:** besluiten B5, B6 en B2, en vrijgave voor F1 (opnieuw, op planversie 2) en F2.
+> **Nu van jou gevraagd:** vrijgave voor F1 en F2 op planversie 3.
 > **Later nodig:** B2 (vóór F2), B4 (vóór F3).
 
 Je krijgt een eigen invoerveld voor zoektermen die Op Peil aanvullen. Een nieuwe term draait eerst op proef: de ochtendroutine zoekt erop, maar alleen jij ziet de resultaten; pas als jij de term live zet, gaat hij mee in de nieuwsbrief. Het werk is verdeeld in vier fasen; je geeft per fase akkoord.
@@ -22,7 +22,7 @@ Een fase mag pas starten als de vrijgave er staat én alle besluiten waar de fas
 | Fase | Wat wordt gebouwd | Vrijgave | Door, wanneer | Leunt op | Gebouwd |
 |---|---|---|---|---|---|
 | F0 | Proef op de techniek: kan de ochtendroutine bij de opslag van je zoektermen? Er gaat geen mail uit en er wordt niets gepubliceerd. | ✅ ja, op planversie 1 | Marco van Steenbrugge · 2026-10-02 17:38 | B1 | ✅ 2026-10-02 17:44 |
-| F1 | Je eigen pagina: zoektermen invullen met hoofdgroep en zoekfrequentie, proefresultaten bekijken en per term live zetten of afwijzen | ⚠ vervallen (was: ja, op planversie 1) | Marco van Steenbrugge · 2026-10-02 17:38 | B1, B3, B5, B6 | - |
+| F1 | Je eigen pagina: zoektermen invullen met hoofdgroep, proefresultaten bekijken en per term live zetten of afwijzen | ⚠ vervallen (was: ja, op planversie 1) | Marco van Steenbrugge · 2026-10-02 17:38 | B1, B3, B5, B6 | - |
 | F2 | De ochtendroutine zoekt op je proeftermen en zet de resultaten alleen op jouw pagina | ○ nog niet | - | B2 | - |
 | F3 | Termen die jij live zet, zoeken mee in de gewone nieuwsbrief | ○ nog niet | - | B4, B6 | - |
 
@@ -32,11 +32,11 @@ Letterlijk akkoord (F0 tot en met F1, via chat): op de vraag "akkoord om te bouw
 | | # | Onderwerp | Besluit | Nodig vóór |
 |---|---|---|---|---|
 | ✅ | B1 | Waar komt het invoerveld | **Akkoord met ons voorstel** | F0 |
-| ⏳ | B2 | Hoe de proefzoektocht draait | **Nog niet beoordeeld** | F2 |
+| ✅ | B2 | Hoe de proefzoektocht draait | **Akkoord met ons voorstel** | F2 |
 | ✅ | B3 | Het beslismoment | **Akkoord met ons voorstel** | F1 |
 | ⏳ | B4 | Zijn berichten uit je zoektermen herkenbaar | **Nog niet beoordeeld** | F3 |
-| ⏳ | B5 | Hoofdgroepen | **Nog niet beoordeeld** | F1 |
-| ⏳ | B6 | Hoe vaak een term wordt gezocht | **Nog niet beoordeeld** | F1 |
+| ✅ | B5 | Hoofdgroepen | **Akkoord met ons voorstel** | F1 |
+| ✏️ | B6 | Hoe vaak een term wordt gezocht | **Anders: elke dag** | F1 |
 
 ## Besluiten
 
@@ -58,7 +58,7 @@ Letterlijk akkoord (F0 tot en met F1, via chat): op de vraag "akkoord om te bouw
 
 Meer uitleg: plan, punt 6, B1
 
-### ⏳ B2 · Hoe de proefzoektocht draait
+### ✅ B2 · Hoe de proefzoektocht draait
 **Je beslist:** of de proefresultaten de volgende werkdag klaarstaan, of dat je ook een knop krijgt om meteen te zoeken.
 
 | | Ons voorstel | Alternatief |
@@ -68,11 +68,11 @@ Meer uitleg: plan, punt 6, B1
 | **Nadeel** | Je wacht tot de volgende ochtend | Extra routine, extra kosten per klik, meer om te onderhouden |
 
 **Jouw keuze**
-- [ ] Akkoord met ons voorstel
+- [x] Akkoord met ons voorstel
 - [ ] Anders:
 - [ ] Vervalt
 
-**Besloten door** nog niemand · **status** nog niet beoordeeld · **wacht op** Marco van Steenbrugge · **voorgelegd op** 2026-10-02 17:32 · **nodig vóór** F2
+**Besloten door** Marco van Steenbrugge · **op** 2026-10-02 18:57 · **via** chat · **over** ons voorstel, planversie 2 ("B5 is akkoord B6 elke dag B2 akkoord")
 
 Meer uitleg: plan, punt 6, B2
 
@@ -112,7 +112,7 @@ Meer uitleg: plan, punt 6, B3
 
 Meer uitleg: plan, punt 6, B4
 
-### ⏳ B5 · Hoofdgroepen
+### ✅ B5 · Hoofdgroepen
 **Je beslist:** hoe je zoektermen in hoofdgroepen worden geordend.
 
 | | Ons voorstel | Alternatief |
@@ -124,15 +124,15 @@ Meer uitleg: plan, punt 6, B4
 Proef, live en afwijzen blijven per term, ook binnen een groep.
 
 **Jouw keuze**
-- [ ] Akkoord met ons voorstel
+- [x] Akkoord met ons voorstel
 - [ ] Anders:
 - [ ] Vervalt
 
-**Besloten door** nog niemand · **status** nog niet beoordeeld · **wacht op** Marco van Steenbrugge · **voorgelegd op** 2026-10-02 18:53 · **nodig vóór** F1
+**Besloten door** Marco van Steenbrugge · **op** 2026-10-02 18:57 · **via** chat · **over** ons voorstel, planversie 2 ("B5 is akkoord B6 elke dag B2 akkoord")
 
 Meer uitleg: plan, punt 6, B5
 
-### ⏳ B6 · Hoe vaak een term wordt gezocht
+### ✏️ B6 · Hoe vaak een term wordt gezocht
 **Je beslist:** of elke live term dagelijks wordt gezocht, of dat je per term ook "wekelijks" kunt kiezen.
 
 | | Ons voorstel | Alternatief |
@@ -145,10 +145,10 @@ Het blijft één brief per dag.
 
 **Jouw keuze**
 - [ ] Akkoord met ons voorstel
-- [ ] Anders:
+- [x] Anders: **elke dag**; alle termen (proef en live) worden elke werkdag gezocht
 - [ ] Vervalt
 
-**Besloten door** nog niemand · **status** nog niet beoordeeld · **wacht op** Marco van Steenbrugge · **voorgelegd op** 2026-10-02 18:53 · **nodig vóór** F1
+**Besloten door** Marco van Steenbrugge · **op** 2026-10-02 18:57 · **via** chat · **over** anders dan ons voorstel: alle termen elke werkdag zoeken, geen keuze per term, planversie 2 ("B5 is akkoord B6 elke dag B2 akkoord")
 
 Meer uitleg: plan, punt 6, B6
 
@@ -165,3 +165,5 @@ Alleen aanvullen, nooit herschrijven. De technische uitvoeringsdetails staan in 
 | 2026-10-02 17:44 | F0 gebouwd: de ochtendroutine kan de opslag van de zoektermen lezen en beschrijven; testgegevens en testroutine opgeruimd | agent (Claude Code, Opus 5.5) |
 | 2026-10-02 18:53 | Gekozen: optie 1, hoofdgroepen alleen voor de eigen termen; de vaste zoektocht blijft ongewijzigd ("optie 1) daarna beslissen we maandag welke we houden"), via chat | Marco van Steenbrugge |
 | 2026-10-02 18:53 | Plan naar versie 2: hoofdgroepen (B5) en zoekfrequentie (B6); vrijgave F1 vervallen | agent (Claude Code, Opus 5.5) |
+| 2026-10-02 18:57 | B2 en B5 besloten: akkoord met ons voorstel; B6 besloten: anders, elke dag zoeken, via chat | Marco van Steenbrugge |
+| 2026-10-02 18:57 | Plan naar versie 3: B6 verwerkt (geen frequentie per term) | agent (Claude Code, Opus 5.5) |
