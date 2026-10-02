@@ -11,7 +11,7 @@ status: in-uitvoering        # berekend door de skill, nooit met de hand gezet
 
 # Beslisdocument: Eigen zoektermen met proefperiode en beslismoment
 
-> **Nu van jou gevraagd:** niets; F2 wordt gebouwd.
+> **Nu van jou gevraagd:** proeftermen invullen vóór maandag 06:30; F2 wordt na de eerste run getoetst.
 > **Later nodig:** B2 (vóór F2), B4 (vóór F3).
 
 Je krijgt een eigen invoerveld voor zoektermen die Op Peil aanvullen. Een nieuwe term draait eerst op proef: de ochtendroutine zoekt erop, maar alleen jij ziet de resultaten; pas als jij de term live zet, gaat hij mee in de nieuwsbrief. Het werk is verdeeld in vier fasen; je geeft per fase akkoord.
@@ -171,3 +171,4 @@ Alleen aanvullen, nooit herschrijven. De technische uitvoeringsdetails staan in 
 | 2026-10-02 18:57 | Plan naar versie 3: B6 verwerkt (geen frequentie per term) | agent (Claude Code, Opus 5.5) |
 | 2026-10-02 18:59 | Vrijgave F1 tot en met F2 op planversie 3, via chat | Marco van Steenbrugge |
 | 2026-10-02 19:07 | F1 gebouwd: zoektermenpagina met hoofdgroepen, proefresultaten en beslisknoppen; testresultaat opgeruimd | agent (Claude Code, Opus 5.5) |
+| 2026-10-02 19:10 | F2 uitgevoerd: stap 2b toegevoegd aan de ochtendroutine (claude.ai en repo); toetsing volgt na de eerste run op maandag 5 oktober | agent (Claude Code, Opus 5.5) |
