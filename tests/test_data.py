@@ -91,7 +91,8 @@ class TestDataJson(unittest.TestCase):
                 for veld, soort in OPTIONEEL.get(lijst, {}).items():
                     if veld in el and not isinstance(el[veld], soort):
                         fouten.append(f"{lijst}[{n}].{veld} moet {soort.__name__} zijn")
-        self.assertEqual(fouten, [], "\n".join(fouten))
+        if fouten:
+            self.fail("\n".join(fouten))
 
     def test_highlights(self):
         hl = self.d["highlights"]
@@ -119,7 +120,8 @@ class TestDataJson(unittest.TestCase):
         fouten += [f"sources[{n}] '{s['name']}': onbekende cat '{s['cat']}'"
                    for n, s in enumerate(self.d["sources"])
                    if s["cat"] not in ids | EXTRA_BRON_RUBRIEKEN]
-        self.assertEqual(fouten, [], "\n".join(fouten))
+        if fouten:
+            self.fail("\n".join(fouten))
 
     def test_datums(self):
         fouten = []
@@ -131,7 +133,8 @@ class TestDataJson(unittest.TestCase):
                 for veld in velden:
                     if datum(el[veld]) is None:
                         fouten.append(f"{lijst}[{n}].{veld} '{el[veld]}' is geen ISO-datum")
-        self.assertEqual(fouten, [], "\n".join(fouten))
+        if fouten:
+            self.fail("\n".join(fouten))
 
     def test_urls(self):
         fouten = []
@@ -143,7 +146,8 @@ class TestDataJson(unittest.TestCase):
         for lijst in ("events", "recurring", "sources"):
             fouten += [f"{lijst}[{n}]: ongeldige URL '{el['url']}'"
                        for n, el in enumerate(self.d[lijst]) if not URL.match(el["url"])]
-        self.assertEqual(fouten, [], "\n".join(fouten))
+        if fouten:
+            self.fail("\n".join(fouten))
 
     # Tijdsregels worden getoetst tegen de editiedatum, niet tegen vandaag (besluit B2).
     def test_geen_oude_items(self):
@@ -153,7 +157,8 @@ class TestDataJson(unittest.TestCase):
                   for n, i in enumerate(self.d["items"])
                   if not i.get("tip") and datum(i["added"])
                   and (editie - datum(i["added"])).days > MAX_DAGEN_ITEM]
-        self.assertEqual(fouten, [], "\n".join(fouten))
+        if fouten:
+            self.fail("\n".join(fouten))
 
     def test_geen_verlopen_events(self):
         editie = datum(self.d["edition"])
@@ -161,7 +166,8 @@ class TestDataJson(unittest.TestCase):
         fouten = [f"events[{n}] '{e['name']}': end {e['end']} is meer dan {MAX_DAGEN_NA_EVENT} dagen vóór de editie"
                   for n, e in enumerate(self.d["events"])
                   if datum(e["end"]) and (editie - datum(e["end"])).days > MAX_DAGEN_NA_EVENT]
-        self.assertEqual(fouten, [], "\n".join(fouten))
+        if fouten:
+            self.fail("\n".join(fouten))
 
 
 if __name__ == "__main__":
