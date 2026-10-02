@@ -3,7 +3,7 @@ plan: data-ontvangers-test
 titel: Test voor data.json en de ontvangerslijst
 versie: 1
 status: in-uitvoering        # berekend door de skill, nooit met de hand gezet
-voortgang: F0 ✅ · F1 ✅ · F2 ▶ · F3 ⏳           # berekend door de skill
+voortgang: F0 ✅ · F1 ✅ · F2 ✅ · F3 ⏳           # berekend door de skill
 opgesteld: 2026-10-02
 opgesteld_door: agent (Claude Code, Opus 5.5)
 beslisser: Marco van Steenbrugge, beheerder
@@ -75,7 +75,7 @@ Een fase mag starten als de vrijgave voor die fase er is én alle besluiten waar
 |---|---|---|---|---|---|---|---|
 | F0 | ✅ gebouwd | `tests/test_data.py` met de controles (a) t/m (h) uit punt 6 | 1. `python3 -m unittest discover -s tests -v` is groen op de huidige `site/data.json`. 2. Een kopie met een kapotte komma, een onbekende item-cat, 6 highlights of een item zonder URL laat de test elk afzonderlijk rood worden met een leesbare melding. 3. Geen andere afhankelijkheid dan de Python-standaardbibliotheek. | B1, B2 | S | Opus 5.5, medium | `F0:` |
 | F1 | ✅ gebouwd | `tests/test_ontvangers.py` | 1. Groen op de huidige twee bestanden. 2. Een adres weghalen uit één van beide, of een adres van BCC naar Aan verplaatsen, maakt de test rood met een melding die het adres en het bestand noemt. 3. Een ongeldig of dubbel adres maakt de test rood. | F0, B1 | S | Opus 5.5, medium | `F1:` |
-| F2 | ▶ vrijgegeven | `.github/workflows/tests.yml` en CLAUDE.md (Afgedwongen, Testing Strategy, Tech Stack) | 1. De workflow draait groen op GitHub na de push. 2. De workflow heeft alleen `contents: read` en actions op een volledige commit. 3. CLAUDE.md noemt beide regels onder "Afgedwongen" met het pad naar de test, en niet meer onder "Nog niet afgedwongen". | F1 | S | Opus 5.5, medium | `F2:` |
+| F2 | ✅ gebouwd | `.github/workflows/tests.yml` en CLAUDE.md (Afgedwongen, Testing Strategy, Tech Stack) | 1. De workflow draait groen op GitHub na de push. 2. De workflow heeft alleen `contents: read` en actions op een volledige commit. 3. CLAUDE.md noemt beide regels onder "Afgedwongen" met het pad naar de test, en niet meer onder "Nog niet afgedwongen". | F1 | S | Opus 5.5, medium | `F2:` |
 | F3 | ⏳ wacht op B3 | De routine draait de data-test vóór publiceren (`routine/ochtendroutine.md` en de routine op claude.ai) | Wordt ingevuld na B3 en de open vraag over toegang tot de repo; vóór vrijgave komt hier een planwijziging. | F2, B3 | S | Opus 5.5, medium | `F3:` |
 
 Werkafspraak: één fase per keer, groene tests vóór de volgende fase, commit-berichten beginnen met de fase-prefix.
@@ -105,6 +105,7 @@ Alleen aanvullen, nooit herschrijven. Alle meetgegevens per fase; het beslisdocu
 |---|---|---|---|---|---|---|---|---|
 | F0 | 2026-10-02 17:25 | 2026-10-02 17:25 | Marco van Steenbrugge | claude-opus-5-5, sessie 6a787076-ce2d-5379-9282-08bfe806fdd8 | medium | 8 / 4.862 | 13e3fb6 | transcript (Claude Code 2.1.287) |
 | F1 | 2026-10-02 17:26 | 2026-10-02 17:26 | Marco van Steenbrugge | claude-opus-5-5, sessie 6a787076-ce2d-5379-9282-08bfe806fdd8 | medium | 6 / 3.822 | b35e566 | transcript (Claude Code 2.1.287) |
+| F2 | 2026-10-02 17:27 | 2026-10-02 17:27 | Marco van Steenbrugge | claude-opus-5-5, sessie 6a787076-ce2d-5379-9282-08bfe806fdd8 | medium | 18 / 3.314 | 358c634 | transcript (Claude Code 2.1.287) |
 
 Tokens zijn invoer en uitvoer zonder cache. Is een waarde niet te meten, dan staat er "onbekend"; nooit een schatting.
 
@@ -124,6 +125,9 @@ Vóórdat een fase als gebouwd wordt gemarkeerd, is elk acceptatiecriterium uit 
 | F1 | 2026-10-02 17:26 | 2b. Adres van BCC naar Aan maakt de test rood | n.egberts op Aan: "'n.egberts@lutrea.nl' staat als AAN in o_aan.md, maar niet in 'to' van ochtendroutine.md", FAILED | gehaald |
 | F1 | 2026-10-02 17:26 | 3a. Ongeldig adres maakt de test rood | c.otter@lutrea: FAIL test_geldige_adressen, "o_ongeldig.md: ongeldig adres 'c.otter@lutrea'" | gehaald |
 | F1 | 2026-10-02 17:26 | 3b. Dubbel adres maakt de test rood | j.otter dubbel: FAIL test_geen_dubbele_adressen, "o_dubbel.md: 'j.otter@lutrea.nl' staat 2 keer in de lijst" | gehaald |
+| F2 | 2026-10-02 17:27 | 1. De workflow draait groen op GitHub na de push | GitHub Actions run 37040822834 (tests.yml, commit 358c634, tak claude/wizardly-wright-7iwf18): job "tests" status completed, conclusion success; stap "Tests" success | gehaald |
+| F2 | 2026-10-02 17:27 | 2. Alleen `contents: read` en actions op een volledige commit | `.github/workflows/tests.yml` regel 9-10 `permissions: contents: read`; regel 16 `actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1`; geen andere actions | gehaald |
+| F2 | 2026-10-02 17:27 | 3. CLAUDE.md noemt beide regels onder "Afgedwongen" met pad, niet meer onder "Nog niet afgedwongen" | `CLAUDE.md` regels 69-70 noemen `tests/test_data.py` en `tests/test_ontvangers.py` onder "Afgedwongen"; onder "Nog niet afgedwongen" (regel 72 e.v.) staat alleen nog de live data.json | gehaald |
 
 ## 12. Afwijkingen
 Ook een afwijkend model of afwijkende effort ten opzichte van "Gepland model en effort" (punt 7) staat hier, met de reden of "reden onbekend".
@@ -133,6 +137,8 @@ Ook een afwijkend model of afwijkende effort ten opzichte van "Gepland model en 
 | F0 | Scope: ook de volgorde van de rubrieken wordt gecontroleerd (`test_rubrieken`), niet genoemd in punt 6 | Default van de open vraag in punt 10 ("Ja, de volgorde ... volgen") |
 | F0 | Scope: de te toetsen data is in te stellen met de omgevingsvariabele `OP_PEIL_DATA` | Nodig om acceptatiecriterium 2 op kopieën te toetsen; handig voor F3 |
 | F1 | Scope: de foutmeldingen in `tests/test_data.py` (F0) zijn ingekort (`self.fail` in plaats van een lijstvergelijking); de F0-proeven met kopieën zijn daarna opnieuw rood (komma2 11, cat 1, hl6 1, nourl 1) | Leesbaarheid van de meldingen |
+| F2 | Scope: de workflow draait bij elke push op elke tak, niet alleen op main | Op main pushen mocht in deze sessie niet (werktak), en criterium 1 vraagt een groene run; een testrun op een andere tak kost niets |
+| F2 | Scope: CLAUDE.md onder "Nog niet afgedwongen" noemt nu de live data.json bij het artifact | De tests dekken alleen de momentopname (plan punt 3) |
 
 ## 13. Wijzigingslog
 | Versie | Datum | Wat | Geraakt | Gevolg voor vrijgave |
