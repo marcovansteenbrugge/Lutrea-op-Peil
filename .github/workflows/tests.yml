@@ -1,0 +1,20 @@
+# Draait de tests in tests/: site/data.json en de ontvangerslijst (plan data-ontvangers-test, F2).
+# Alleen leesrecht; actions staan vast op een volledige commit. Python zit standaard op de runner.
+name: tests
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Tests
+        run: python3 -m unittest discover -s tests -v

@@ -22,7 +22,7 @@ Lutrea Op Peil is een dagelijks vaknieuwsoverzicht voor civiel ontwerpers (Civil
 | Data | `site/data.json`, door de pagina geladen met `fetch` |
 | Hosting | Claude-artifact https://claude.ai/artifact/TeBB5UtsHJaTdeymdMsX3A |
 | Automatisering | Claude-routine (werkdagen, `30 4 * * 1-5` UTC) met de Gmail-connector |
-| CI/CD | {{nog geen CI}} |
+| CI/CD | GitHub Actions: `.github/workflows/tests.yml` (tests bij elke push) en `brbnt-scan.yml` |
 
 ## Architectuur
 - `site/index.html` is vast; dagelijkse wijzigingen gaan alleen in `data.json`. De routine publiceert index.html ongewijzigd opnieuw.
@@ -38,7 +38,11 @@ Lutrea Op Peil is een dagelijks vaknieuwsoverzicht voor civiel ontwerpers (Civil
 - Nooit `--force` zonder expliciete toestemming.
 
 ## Testing Strategy
-Er is nog geen testsuite. De routine valideert `data.json` met Python (`json.load`) voordat hij publiceert.
+Tests staan in `tests/` (Python `unittest`, alleen de standaardbibliotheek) en draaien met `python3 -m unittest discover -s tests -v`, lokaal en bij elke push via `.github/workflows/tests.yml`.
+- `tests/test_data.py`: structuur van `site/data.json` en de regels uit de ochtendroutine (5 highlights, maximaal 30 archiefregels, bekende rubrieken in vaste volgorde, ISO-datums, URL's). Datumregels gelden vanaf `edition`, niet vanaf vandaag. Een ander bestand toetsen: `OP_PEIL_DATA=pad/naar/data.json`.
+- `tests/test_ontvangers.py`: ontvangers in `routine/ontvangers.md` en stap 5 van `routine/ochtendroutine.md` gelijk, per veld (Aan/BCC).
+
+De routine valideert `data.json` daarnaast met Python (`json.load`) voordat hij publiceert.
 
 ---
 
@@ -62,8 +66,8 @@ Er is nog geen testsuite. De routine valideert `data.json` met Python (`json.loa
 
 ## Conventies die worden afgedwongen (niet alleen gedocumenteerd)
 Afgedwongen:
-- {{Regel}}: afgedwongen door `{{pad naar test/lint-regel}}`
+- `site/data.json` is geldige JSON en volgt de structuur en regels van de ochtendroutine: afgedwongen door `tests/test_data.py`
+- De ontvangers in `routine/ontvangers.md` en in `routine/ochtendroutine.md` zijn gelijk: afgedwongen door `tests/test_ontvangers.py`
 
 Nog niet afgedwongen, wel afgesproken:
-- `site/data.json` is geldige JSON: alleen een controle in de routine, nog geen test in de repo.
-- De ontvangers in `routine/ontvangers.md` en in `routine/ochtendroutine.md` zijn gelijk: alleen een afspraak, nog niet getest.
+- De live `data.json` bij het artifact: alleen de `json.load`-controle in de routine; de tests dekken de momentopname in de repo.
