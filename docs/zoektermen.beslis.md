@@ -11,7 +11,7 @@ status: in-uitvoering        # berekend door de skill, nooit met de hand gezet
 
 # Beslisdocument: Eigen zoektermen met proefperiode en beslismoment
 
-> **Nu van jou gevraagd:** niets; F0 en F1 worden gebouwd.
+> **Nu van jou gevraagd:** besluiten B5, B6 en B2, en vrijgave voor F1 (opnieuw, op planversie 2) en F2.
 > **Later nodig:** B2 (vóór F2), B4 (vóór F3).
 
 Je krijgt een eigen invoerveld voor zoektermen die Op Peil aanvullen. Een nieuwe term draait eerst op proef: de ochtendroutine zoekt erop, maar alleen jij ziet de resultaten; pas als jij de term live zet, gaat hij mee in de nieuwsbrief. Het werk is verdeeld in vier fasen; je geeft per fase akkoord.
@@ -22,11 +22,11 @@ Een fase mag pas starten als de vrijgave er staat én alle besluiten waar de fas
 | Fase | Wat wordt gebouwd | Vrijgave | Door, wanneer | Leunt op | Gebouwd |
 |---|---|---|---|---|---|
 | F0 | Proef op de techniek: kan de ochtendroutine bij de opslag van je zoektermen? Er gaat geen mail uit en er wordt niets gepubliceerd. | ✅ ja, op planversie 1 | Marco van Steenbrugge · 2026-10-02 17:38 | B1 | ✅ 2026-10-02 17:44 |
-| F1 | Je eigen pagina: zoektermen invullen, proefresultaten bekijken en per term live zetten of afwijzen | ✅ ja, op planversie 1 | Marco van Steenbrugge · 2026-10-02 17:38 | B1, B3 | - |
+| F1 | Je eigen pagina: zoektermen invullen met hoofdgroep en zoekfrequentie, proefresultaten bekijken en per term live zetten of afwijzen | ⚠ vervallen (was: ja, op planversie 1) | Marco van Steenbrugge · 2026-10-02 17:38 | B1, B3, B5, B6 | - |
 | F2 | De ochtendroutine zoekt op je proeftermen en zet de resultaten alleen op jouw pagina | ○ nog niet | - | B2 | - |
-| F3 | Termen die jij live zet, zoeken mee in de gewone nieuwsbrief | ○ nog niet | - | B4 | - |
+| F3 | Termen die jij live zet, zoeken mee in de gewone nieuwsbrief | ○ nog niet | - | B4, B6 | - |
 
-Letterlijk akkoord (F0 tot en met F1, via chat): op de vraag "akkoord om te bouwen op plan zoektermen, versie 1, fase F0 tot en met F1?": "ja begin met F0 en het vervolg"
+Letterlijk akkoord (F0 tot en met F1, via chat): op de vraag "akkoord om te bouwen op plan zoektermen, versie 1, fase F0 tot en met F1?": "ja begin met F0 en het vervolg" (F1 vervallen op versie 2)
 
 ## Overzicht besluiten
 | | # | Onderwerp | Besluit | Nodig vóór |
@@ -35,6 +35,8 @@ Letterlijk akkoord (F0 tot en met F1, via chat): op de vraag "akkoord om te bouw
 | ⏳ | B2 | Hoe de proefzoektocht draait | **Nog niet beoordeeld** | F2 |
 | ✅ | B3 | Het beslismoment | **Akkoord met ons voorstel** | F1 |
 | ⏳ | B4 | Zijn berichten uit je zoektermen herkenbaar | **Nog niet beoordeeld** | F3 |
+| ⏳ | B5 | Hoofdgroepen | **Nog niet beoordeeld** | F1 |
+| ⏳ | B6 | Hoe vaak een term wordt gezocht | **Nog niet beoordeeld** | F1 |
 
 ## Besluiten
 
@@ -110,6 +112,46 @@ Meer uitleg: plan, punt 6, B3
 
 Meer uitleg: plan, punt 6, B4
 
+### ⏳ B5 · Hoofdgroepen
+**Je beslist:** hoe je zoektermen in hoofdgroepen worden geordend.
+
+| | Ons voorstel | Alternatief |
+|---|---|---|
+| **Wat** | De zeven hoofdgroepen uit het zoekboomvoorstel staan vast in de pagina | Je maakt zelf groepen aan en geeft ze een naam |
+| **Voordeel** | Eenvoudig; past bij de rubrieken van de brief | Volledig vrij |
+| **Nadeel** | Een groep erbij of anders vraagt een kleine aanpassing door Claude | Meer knoppen en meer om bij te houden |
+
+Proef, live en afwijzen blijven per term, ook binnen een groep.
+
+**Jouw keuze**
+- [ ] Akkoord met ons voorstel
+- [ ] Anders:
+- [ ] Vervalt
+
+**Besloten door** nog niemand · **status** nog niet beoordeeld · **wacht op** Marco van Steenbrugge · **voorgelegd op** 2026-10-02 18:53 · **nodig vóór** F1
+
+Meer uitleg: plan, punt 6, B5
+
+### ⏳ B6 · Hoe vaak een term wordt gezocht
+**Je beslist:** of elke live term dagelijks wordt gezocht, of dat je per term ook "wekelijks" kunt kiezen.
+
+| | Ons voorstel | Alternatief |
+|---|---|---|
+| **Wat** | Proeftermen elke werkdag; live termen per term dagelijks of wekelijks (op maandag, over de hele week, in de maandagbrief) | Alles dagelijks |
+| **Voordeel** | Nichetermen zoals Kavel 10 leveren dan niet elke dag niets op, en hun nieuws mist niet | Eenvoudiger |
+| **Nadeel** | Eén keuze meer per term | Veel lege zoekopdrachten bij nichetermen |
+
+Het blijft één brief per dag.
+
+**Jouw keuze**
+- [ ] Akkoord met ons voorstel
+- [ ] Anders:
+- [ ] Vervalt
+
+**Besloten door** nog niemand · **status** nog niet beoordeeld · **wacht op** Marco van Steenbrugge · **voorgelegd op** 2026-10-02 18:53 · **nodig vóór** F1
+
+Meer uitleg: plan, punt 6, B6
+
 ## Historie
 Alleen aanvullen, nooit herschrijven. De technische uitvoeringsdetails staan in het plan, punt 11.
 
@@ -121,3 +163,5 @@ Alleen aanvullen, nooit herschrijven. De technische uitvoeringsdetails staan in 
 | 2026-10-02 17:37 | B3 besloten: akkoord met ons voorstel (knoppen op de eigen pagina; een live term komt de volgende werkdag in de brief, één brief per dag), via chat | Marco van Steenbrugge |
 | 2026-10-02 17:38 | Vrijgave F0 tot en met F1 op planversie 1, via chat | Marco van Steenbrugge |
 | 2026-10-02 17:44 | F0 gebouwd: de ochtendroutine kan de opslag van de zoektermen lezen en beschrijven; testgegevens en testroutine opgeruimd | agent (Claude Code, Opus 5.5) |
+| 2026-10-02 18:53 | Gekozen: optie 1, hoofdgroepen alleen voor de eigen termen; de vaste zoektocht blijft ongewijzigd ("optie 1) daarna beslissen we maandag welke we houden"), via chat | Marco van Steenbrugge |
+| 2026-10-02 18:53 | Plan naar versie 2: hoofdgroepen (B5) en zoekfrequentie (B6); vrijgave F1 vervallen | agent (Claude Code, Opus 5.5) |
