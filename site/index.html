@@ -1,0 +1,255 @@
+<title>Lutrea Op Peil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#EDF1EF; --surface:#F8FAF9; --ink:#14222A; --muted:#56676D; --line:#D2DBD8;
+  --accent:#2C6848; --accent-soft:#DCE9E1; --water:#1D5C86; --water-soft:#DCE8F1;
+  --warn:#8E5B0E; --warn-soft:#F3E7D2;
+  --display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --body:"Newsreader",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0E1619; --surface:#142024; --ink:#E2EBE9; --muted:#93A5A7; --line:#26363A;
+    --accent:#76C49B; --accent-soft:#1B3328; --water:#6FB2E1; --water-soft:#17303F;
+    --warn:#E3B462; --warn-soft:#352914;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0E1619; --surface:#142024; --ink:#E2EBE9; --muted:#93A5A7; --line:#26363A;
+  --accent:#76C49B; --accent-soft:#1B3328; --water:#6FB2E1; --water-soft:#17303F;
+  --warn:#E3B462; --warn-soft:#352914;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.55;margin:0}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--water);outline-offset:2px;border-radius:3px}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px;padding-block:28px 64px}
+
+/* Masthead */
+.mast{display:grid;grid-template-columns:1fr auto;gap:12px 32px;align-items:end;border-bottom:2px solid var(--ink);padding-bottom:14px}
+.mast h1{font-family:var(--display);font-stretch:68%;font-weight:850;font-size:clamp(40px,9vw,100px);line-height:.86;letter-spacing:-.01em;margin:0}
+.mast .meta{font-family:var(--mono);font-size:13px;color:var(--muted);text-align:right;display:grid;gap:2px}
+.mast .meta strong{color:var(--ink);font-weight:500}
+.brand{display:flex;align-items:center;gap:clamp(10px,2vw,20px)}
+.mark{height:clamp(52px,10vw,100px);width:auto;flex:none}
+.h-lutrea{color:var(--accent)}
+.mk-board{fill:var(--surface);stroke:var(--ink);stroke-width:2}
+.mk-tick{stroke:var(--ink);stroke-width:2;fill:none}
+.mk-wave{stroke:var(--water);stroke-width:2.5;fill:none;stroke-linecap:round}
+.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0}
+.tagline{font-family:var(--display);font-stretch:85%;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:10px 0 0}
+.profile{display:block;width:100%;height:auto;max-width:100%;margin-top:18px}
+.profile .soil{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.5}
+.profile .water{fill:var(--water-soft)}
+.profile .wl{stroke:var(--water);stroke-width:1.2;stroke-dasharray:5 4}
+.profile .ground{stroke:var(--muted);stroke-width:1}
+.profile text{font-family:var(--mono);font-size:11px;fill:var(--muted)}
+.profile .wlt{fill:var(--water)}
+@media (max-width:640px){.mast{grid-template-columns:1fr}.mast .meta{text-align:left}}
+
+/* Kort */
+.brief{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:32px;margin-top:28px}
+.brief h2,.sec h2{font-family:var(--display);font-stretch:80%;font-weight:750;font-size:28px;line-height:1.1;margin:0 0 10px;text-wrap:balance}
+.intro{font-size:20px;line-height:1.5;margin:0;max-width:34ch}
+.kort{list-style:none;margin:0;padding:0;display:grid;gap:12px;counter-reset:k}
+.kort li{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline;border-top:1px solid var(--line);padding-top:10px}
+.kort li::before{counter-increment:k;content:counter(k);font-family:var(--mono);font-size:13px;color:var(--accent)}
+@media (max-width:760px){.brief{grid-template-columns:1fr}}
+
+/* Nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);margin-top:36px;padding-block:10px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.nav button{font-family:var(--display);font-stretch:85%;font-size:14px;font-weight:600;letter-spacing:.03em;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:6px 12px;border-radius:999px;cursor:pointer}
+.nav button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.nav .count{font-family:var(--mono);font-size:11px;opacity:.7;margin-left:4px}
+.nav .toggle{margin-left:auto;font-family:var(--mono);font-size:13px;color:var(--muted);display:flex;gap:6px;align-items:center}
+
+/* Sections */
+.sec{margin-top:40px}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;border-bottom:1px solid var(--ink);padding-bottom:6px;margin-bottom:4px}
+.sec-head h2{margin:0}
+.sec-head p{margin:0;color:var(--muted);font-size:16px;font-style:italic}
+.items{list-style:none;margin:0;padding:0}
+.item{display:grid;grid-template-columns:128px minmax(0,1fr);gap:4px 20px;padding-block:16px;border-bottom:1px solid var(--line)}
+.item .when{font-family:var(--mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;display:grid;gap:4px;align-content:start}
+.item h3{font-family:var(--display);font-stretch:92%;font-weight:650;font-size:20px;line-height:1.2;margin:0 0 4px;text-wrap:balance}
+.item h3 a{text-decoration:none}
+.item h3 a:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.item p{margin:0;max-width:68ch}
+.item .src{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:6px;display:flex;flex-wrap:wrap;gap:4px 12px}
+.item .src a{color:var(--water)}
+.pill{display:inline-block;font-family:var(--mono);font-size:11px;padding:1px 7px;border-radius:4px;width:fit-content}
+.pill.new{background:var(--accent);color:var(--bg)}
+.pill.unsure{background:var(--warn-soft);color:var(--warn)}
+.pill.tip{background:var(--water-soft);color:var(--water)}
+@media (max-width:600px){.item{grid-template-columns:1fr}.item .when{display:flex;flex-wrap:wrap;gap:8px}}
+
+/* Agenda */
+.events{list-style:none;margin:0;padding:0}
+.event{display:grid;grid-template-columns:128px minmax(0,1fr);gap:4px 20px;padding-block:14px;border-bottom:1px solid var(--line)}
+.event .d{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.event .d b{display:block;font-family:var(--display);font-stretch:75%;font-weight:800;font-size:26px;line-height:1}
+.event .d span{font-size:12px;color:var(--muted)}
+.event h3{font-family:var(--display);font-stretch:92%;font-weight:650;font-size:19px;margin:0 0 2px}
+.event h3 a{text-decoration:none}
+.event h3 a:hover{text-decoration:underline}
+.event .place{font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:4px}
+.event p{margin:0;max-width:68ch;font-size:17px}
+.event.past{opacity:.55}
+.subhead{font-family:var(--display);font-stretch:85%;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:24px 0 0}
+@media (max-width:600px){.event{grid-template-columns:1fr}}
+
+/* Bronnen */
+.srcgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:24px;margin-top:14px}
+.srcgrid h3{font-family:var(--display);font-stretch:85%;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 6px}
+.srcgrid ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:16px}
+.srcgrid a{color:var(--water);text-decoration-thickness:1px;text-underline-offset:2px}
+
+.archive{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:6px;font-size:16px}
+.archive li{display:grid;grid-template-columns:128px 1fr;gap:20px}
+.archive time{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.foot{margin-top:48px;border-top:2px solid var(--ink);padding-top:14px;font-size:15px;color:var(--muted);max-width:75ch}
+.empty{color:var(--muted);font-style:italic;padding:16px 0}
+</style>
+
+<div class="wrap">
+  <header class="mast">
+    <div>
+      <div class="brand">
+        <svg class="mark" viewBox="0 0 40 48" aria-hidden="true">
+          <rect x="13" y="2" width="14" height="44" rx="2" class="mk-board"/>
+          <path d="M13 8h7M13 14h4M13 20h7M13 26h4M13 32h7M13 38h4" class="mk-tick"/>
+          <path d="M1 29c4-3 8 3 12 0s8-3 12 0 8 3 14 0" class="mk-wave"/>
+        </svg>
+        <h1><span class="h-lutrea">Lutrea</span> Op Peil</h1>
+      </div>
+      <p class="tagline">Civil 3D · dijken · stad · grondwerk · drones · AI · markt</p>
+    </div>
+    <div class="meta" id="meta"><strong>Laden…</strong></div>
+  </header>
+  <svg class="profile" viewBox="0 0 1040 78" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+    <path class="water" d="M0 44 H300 L340 70 H0 Z"/>
+    <line class="wl" x1="0" y1="44" x2="330" y2="44"/>
+    <path class="soil" d="M0 70 H250 L430 14 H520 L700 70 H1040 V78 H0 Z"/>
+    <line class="ground" x1="700" y1="70" x2="1040" y2="70"/>
+    <text x="8" y="38" class="wlt">peil</text>
+    <text x="448" y="10">kruin</text>
+    <text x="290" y="26">buitentalud 1:3</text>
+    <text x="604" y="32">binnentalud 1:3</text>
+    <text x="900" y="64">achterland</text>
+  </svg>
+
+  <section class="brief" aria-labelledby="kort-h">
+    <div>
+      <h2 id="kort-h">Vandaag in het kort</h2>
+      <p class="intro" id="intro"></p>
+    </div>
+    <ol class="kort" id="kort"></ol>
+  </section>
+
+  <nav class="nav" id="nav" aria-label="Rubrieken"></nav>
+
+  <main id="main"></main>
+
+  <section class="sec" id="agenda" aria-labelledby="agenda-h">
+    <div class="sec-head"><h2 id="agenda-h">Agenda</h2><p>Beurzen, congressen en kennisdagen</p></div>
+    <ul class="events" id="events"></ul>
+    <p class="subhead">Terugkerend, datum 2027 nog niet bekend</p>
+    <ul class="events" id="recurring"></ul>
+  </section>
+
+  <section class="sec" id="bronnen" aria-labelledby="bronnen-h">
+    <div class="sec-head"><h2 id="bronnen-h">Bronnen om te volgen</h2><p>Waar het nieuws vandaan komt</p></div>
+    <div class="srcgrid" id="sources"></div>
+  </section>
+
+  <section class="sec" aria-labelledby="arch-h">
+    <div class="sec-head"><h2 id="arch-h">Eerdere edities</h2></div>
+    <ul class="archive" id="archive"></ul>
+  </section>
+
+  <p class="foot" id="foot"></p>
+</div>
+
+<script>
+(function(){
+  const MONTHS=["jan","feb","mrt","apr","mei","jun","jul","aug","sep","okt","nov","dec"];
+  const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const host=u=>{try{return new URL(u).hostname.replace(/^www\./,"")}catch(e){return u}};
+  const fmtLong=iso=>{const d=new Date(iso+"T12:00:00");return d.toLocaleDateString("nl-NL",{weekday:"long",day:"numeric",month:"long",year:"numeric"})};
+  let state={cat:"alle",onlyNew:false};
+  try{const s=JSON.parse(localStorage.getItem("dijkbrief-state")||"null");if(s)state=Object.assign(state,s)}catch(e){}
+  const save=()=>{try{localStorage.setItem("dijkbrief-state",JSON.stringify(state))}catch(e){}};
+
+  function render(D){
+    document.getElementById("meta").innerHTML=
+      `<strong>${esc(fmtLong(D.edition))}</strong><span>Editie ${esc(D.editionNo)} · ${D.items.length} berichten</span>`;
+    document.getElementById("intro").textContent=D.intro;
+    document.getElementById("kort").innerHTML=D.highlights.map(h=>`<li><span>${esc(h)}</span></li>`).join("");
+
+    const nav=document.getElementById("nav");
+    const cats=[{id:"alle",name:"Alles"}].concat(D.categories);
+    const count=id=>D.items.filter(i=>(id==="alle"||i.cat===id)&&(!state.onlyNew||i.added===D.edition)).length;
+    nav.innerHTML=cats.map(c=>`<button type="button" data-cat="${c.id}" aria-pressed="${state.cat===c.id}">${esc(c.name)}<span class="count">${count(c.id)}</span></button>`).join("")
+      +`<label class="toggle"><input type="checkbox" id="onlynew" ${state.onlyNew?"checked":""}> alleen nieuw vandaag</label>`;
+    nav.querySelectorAll("button").forEach(b=>b.onclick=()=>{state.cat=b.dataset.cat;save();render(D)});
+    document.getElementById("onlynew").onchange=e=>{state.onlyNew=e.target.checked;save();render(D)};
+
+    const main=document.getElementById("main");
+    const shown=D.categories.filter(c=>state.cat==="alle"||state.cat===c.id);
+    main.innerHTML=shown.map(c=>{
+      const its=D.items.filter(i=>i.cat===c.id&&(!state.onlyNew||i.added===D.edition))
+        .sort((a,b)=>(b.sort||"").localeCompare(a.sort||""));
+      const list=its.length?its.map(i=>`
+        <li class="item">
+          <div class="when">
+            <span>${esc(i.date||"doorlopend")}</span>
+            ${i.added===D.edition?'<span class="pill new">nieuw</span>':""}
+            ${i.unsure?'<span class="pill unsure">datum onzeker</span>':""}
+            ${i.tip?'<span class="pill tip">tip</span>':""}
+          </div>
+          <div>
+            <h3><a href="${esc(i.urls[0])}" target="_blank" rel="noopener">${esc(i.title)}</a></h3>
+            <p>${esc(i.summary)}</p>
+            <div class="src">${i.urls.map(u=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(host(u))}</a>`).join("")}</div>
+          </div>
+        </li>`).join(""):`<li class="empty">Vandaag niets nieuws in deze rubriek.</li>`;
+      return `<section class="sec" id="cat-${c.id}"><div class="sec-head"><h2>${esc(c.name)}</h2><p>${esc(c.blurb)}</p></div><ul class="items">${list}</ul></section>`;
+    }).join("");
+
+    const today=D.edition;
+    const ev=e=>{
+      const [y,m,d]=(e.start||"").split("-");
+      const big=d?String(+d):"?";const small=m?`${MONTHS[+m-1]} ${y}`:"";
+      return `<li class="event ${e.end&&e.end<today?"past":""}">
+        <div class="d"><b>${esc(big)}</b><span>${esc(e.dateLabel||small)}</span></div>
+        <div>
+          <h3><a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.name)}</a></h3>
+          <div class="place">${esc(e.place)}${e.unconfirmed?' · <span class="pill unsure">onbevestigd</span>':""}</div>
+          <p>${esc(e.why)}</p>
+        </div></li>`};
+    document.getElementById("events").innerHTML=D.events.filter(e=>!e.end||e.end>=today).sort((a,b)=>a.start.localeCompare(b.start)).map(ev).join("");
+    document.getElementById("recurring").innerHTML=(D.recurring||[]).map(r=>`
+      <li class="event"><div class="d"><b>—</b><span>${esc(r.when)}</span></div>
+      <div><h3><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.name)}</a></h3><p>${esc(r.why)}</p></div></li>`).join("");
+
+    document.getElementById("sources").innerHTML=D.categories.concat([{id:"agenda",name:"Agenda"}]).map(c=>{
+      const s=D.sources.filter(x=>x.cat===c.id);if(!s.length)return"";
+      return `<div><h3>${esc(c.name)}</h3><ul>${s.map(x=>`<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.name)}</a></li>`).join("")}</ul></div>`}).join("");
+
+    document.getElementById("archive").innerHTML=(D.archive||[]).length
+      ?D.archive.map(a=>`<li><time>${esc(a.date)}</time><span>${esc(a.headline)}</span></li>`).join("")
+      :`<li><time>—</time><span>Dit is de eerste editie. Vanaf morgen verschijnen hier de koppen van eerdere dagen.</span></li>`;
+    document.getElementById("foot").textContent=D.footnote;
+  }
+
+  fetch("data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()})
+    .then(render)
+    .catch(()=>{document.getElementById("main").innerHTML='<p class="empty">De nieuwsdata kon niet worden geladen. Ververs de pagina om het opnieuw te proberen.</p>'});
+})();
+</script>

@@ -1,0 +1,2422 @@
+{
+ "edition": "2026-10-02",
+ "editionNo": 9,
+ "intro": "Een rustige vrijdag, maar met een mijlpaal: de versterking van de Afsluitdijk is afgerond. Daarnaast nieuwe CROW-publicaties voor wegontwerp, AI-samenwerking tussen Arcadis en Autodesk, en volgende week het Infra Aanbestedingscongres en Bentley YII.",
+ "highlights": [
+  "Afsluitdijk: gemaal en nieuwe spuisluizen bij Den Oever zijn in gebruik genomen; de versterking is afgerond en de spuicapaciteit is 45% groter.",
+  "Arcadis en Autodesk werken samen aan AI-tools en agents; Arcadis koppelt eigen MCP-mogelijkheden aan Autodesk Assistant.",
+  "Binnenstedelijk: CROW publiceerde de RAW-wijziging september 2026, en per 1 oktober geldt een uniforme validatiesystematiek voor asfaltinnovaties.",
+  "Markt: Haskoning neemt Nelissen over; Wetterskip Fryslân heeft de dijkversterking Ternaard-Peazens-Moddergat (ca. 130 mln) in aanbesteding (sluiting 12 oktober, nog te bevestigen).",
+  "Weekend: 40 jaar Oosterscheldekering (4 oktober); volgende week Infra Aanbestedingscongres en Bentley YII (6 oktober)."
+ ],
+ "categories": [
+  {
+   "id": "civil3d",
+   "name": "Civil 3D",
+   "blurb": "Releases, Autodesk-nieuws en tips"
+  },
+  {
+   "id": "dijk",
+   "name": "Dijkontwerp",
+   "blurb": "Waterveiligheid, HWBP en projecten"
+  },
+  {
+   "id": "stedelijk",
+   "name": "Binnenstedelijk",
+   "blurb": "Riolering, openbare ruimte, klimaatadaptatie en kabels & leidingen"
+  },
+  {
+   "id": "grondwerk",
+   "name": "Grondwerk",
+   "blurb": "Grondverzet, machinebesturing, bodemregels en grondstoffen"
+  },
+  {
+   "id": "inmeten",
+   "name": "Inmeten & drones",
+   "blurb": "Drones, LiDAR, puntenwolken, AHN en satellietdata"
+  },
+  {
+   "id": "ai",
+   "name": "AI",
+   "blurb": "AI in ontwerp, inspectie en modellen"
+  },
+  {
+   "id": "software",
+   "name": "Software",
+   "blurb": "Deltares, GIS, geotechniek en openBIM"
+  },
+  {
+   "id": "markt",
+   "name": "Markt",
+   "blurb": "Aanbestedingen, bedrijven, budgetten en werk"
+  },
+  {
+   "id": "kennis",
+   "name": "Normen & kennis",
+   "blurb": "Geotechniek, regels, klimaat en duurzaamheid"
+  },
+  {
+   "id": "leren",
+   "name": "Leren",
+   "blurb": "Cursussen, certificering en terugkijken"
+  },
+  {
+   "id": "internationaal",
+   "name": "Internationaal",
+   "blurb": "Dijken en kustwerk buiten Nederland"
+  }
+ ],
+ "items": [
+  {
+   "cat": "civil3d",
+   "date": "15–17 sep 2026",
+   "sort": "2026-09-16",
+   "added": "2026-09-24",
+   "title": "AU 2026: Civil 3D wordt een Forma Connected Client",
+   "summary": "Civil 3D koppelt nu net als Revit aan Forma, zonder export of import. Er is ook een gedeelde geolocatie-engine voor Forma, Revit en Civil 3D. Die moet handmatige coördinaattransformaties en verschoven modellen voorkomen.",
+   "urls": [
+    "https://aecmag.com/civil-engineering/autodesk-pushes-forma-upstream-and-connects-civil-3d/",
+    "https://www.enr.com/articles/63666-autodesk-connects-civil3d-to-forma-creates-unified-coordinate-system",
+    "https://www.autodesk.com/solutions/autodesk-university-2026-product-announcements"
+   ]
+  },
+  {
+   "cat": "civil3d",
+   "date": "sep 2026",
+   "sort": "2026-09-16",
+   "added": "2026-09-24",
+   "title": "AU 2026: Content Catalog, drainage in het ontwerpbestand en Forma Street Design",
+   "summary": "Er is een Content Catalog (beta) om subassemblies te beheren en te hergebruiken, en ontwerp en drainage-analyse staan voortaan in één bestand. Verder zijn de koppelingen met Esri ArcGIS en met Fugro GeoDin/GroundIQ voor ondergronddata uitgebreid.",
+   "urls": [
+    "https://www.autodesk.com/solutions/autodesk-university-2026-product-announcements",
+    "https://constructionmanagement.co.uk/autodesk-boosts-civils-functionality/"
+   ]
+  },
+  {
+   "cat": "civil3d",
+   "date": "4 aug 2026",
+   "sort": "2026-08-04",
+   "added": "2026-09-24",
+   "title": "Civil 3D 2027.1 update is uit",
+   "summary": "In drainage stel je tailwater nu per bui in en kun je bekende debieten gebruiken als instroom. De Reference Manager heeft een nieuw DREF-tabblad om data shortcuts te controleren en te repareren. De .NET API is uitgebreid en Dynamo gaat naar 4.1.",
+   "urls": [
+    "https://cadpilot.com/home/jump-on-c3d/jump-on-c3d/2026/08/06/civil-3d-2027.1-update-arrives/",
+    "https://btl-blog.com/2026/08/05/whats-new-in-autodesk-civil-3d-2027-1-essential-features-fixes/"
+   ]
+  },
+  {
+   "cat": "civil3d",
+   "date": "aug 2026",
+   "sort": "2026-08-10",
+   "unsure": true,
+   "added": "2026-09-24",
+   "title": "Dynamo 4.1 in 2027.1: voorkeuren en packages blijven staan",
+   "summary": "Volgens het Dynamo-forum hoef je bij deze update, anders dan bij eerdere, je voorkeuren niet te resetten en je packages niet opnieuw te installeren.",
+   "urls": [
+    "https://forum.dynamobim.com/t/civil-3d-2027-1-and-dynamo-4-1/115039"
+   ]
+  },
+  {
+   "cat": "civil3d",
+   "date": "2026",
+   "sort": "2026-06-01",
+   "unsure": true,
+   "added": "2026-09-24",
+   "title": "Dutch Content (Country Kit NL) voor 2027 in twee releases",
+   "summary": "Eerst kwam een directe port van de 2026-kit, later dit jaar volgt een bijgewerkte versie. Die tweede versie is mogelijk nog niet uit. Je downloadt de kit via je Autodesk-account, onder Civil 3D en dan het tabblad Libraries.",
+   "urls": [
+    "https://forums.autodesk.com/t5/civil-3d-forum/what-about-autodesk-civil-3d-2027-country-kits/td-p/14078592",
+    "https://www.autodesk.com/support/technical/article/caas/tsarticles/ts/3uqRXEJB9PIb6x8OSNtSX3.html"
+   ]
+  },
+  {
+   "cat": "civil3d",
+   "date": "mei 2026",
+   "sort": "2026-05-15",
+   "unsure": true,
+   "added": "2026-09-24",
+   "title": "Nederlandstalig: What's new in Civil 3D 2027 (Cadac)",
+   "summary": "Blog van een Nederlandse reseller over de nieuwe functies van 2027, waaronder Autodesk Assistant, Daylight Feature Lines en de nieuwe rioleringsworkflow.",
+   "urls": [
+    "https://www.cadac.com/nieuws/blog--whats-new-in-autodesk-civil-3d-2027/"
+   ]
+  },
+  {
+   "cat": "civil3d",
+   "date": "2 apr 2026",
+   "sort": "2026-04-02",
+   "added": "2026-09-24",
+   "title": "Civil 3D 2027: Autodesk Assistant, Daylight Feature Line, ML-regressie",
+   "summary": "Autodesk Assistant zit erin als Tech Preview: je stelt vragen in gewone taal, bijvoorbeeld voor een standaardcheck of om stijlen op te vragen. Nieuw zijn ook een Daylight Feature Line voor grading, horizontale regressie met machine learning en een rioleringsworkflow op basis van InfoDrainage.",
+   "urls": [
+    "https://www.autodesk.com/blogs/aec/2026/04/02/whats-new-in-civil-3d-2027/"
+   ]
+  },
+  {
+   "cat": "civil3d",
+   "date": "doorlopend",
+   "sort": "2000-01-02",
+   "tip": true,
+   "added": "2026-09-24",
+   "title": "Tip: Camber, het Dynamo-package voor Civil 3D",
+   "summary": "Open-source package met honderden nodes voor labels, xrefs, data shortcuts en stijlen. Civil3DToolkit wordt niet meer onderhouden; een deel van de nodes zit nu in The Civil Nodes.",
+   "urls": [
+    "https://github.com/mzjensen/Camber",
+    "https://primer2.dynamobim.org/dynamo-for-civil-3d/useful-packages"
+   ]
+  },
+  {
+   "cat": "civil3d",
+   "date": "doorlopend",
+   "sort": "2000-01-01",
+   "tip": true,
+   "added": "2026-09-24",
+   "title": "Tip: de openbare Civil 3D-roadmap van Autodesk",
+   "summary": "Op Productboard zie je welke functies gepland staan, en je kunt er zelf ideeën stemmen.",
+   "urls": [
+    "https://portal.productboard.com/aec-bid/3-civil-infrastructure-public-roadmap"
+   ]
+  },
+  {
+   "cat": "civil3d",
+   "date": "15 sep 2026",
+   "sort": "2026-09-15",
+   "added": "2026-09-24",
+   "title": "Dynamo Core 4.2: Autodesk Assistant werkt nu ín de Dynamo-grafiek",
+   "summary": "Via DynamoMCP kan de Autodesk Assistant nodes zoeken, plaatsen en verbinden, waarden instellen en de graaf uitvoeren, in plaats van er alleen over te praten. Vooralsnog alleen aangekondigd voor Revit/Dynamo Sandbox; een Civil 3D-koppeling is niet genoemd.",
+   "urls": [
+    "https://dynamobim.org/dynamo-4-2-in-revit-2027-3-autodesk-assistant-dynamo-mcp/",
+    "https://dynamobim.org/dynamo-core-4-2-release/"
+   ]
+  },
+  {
+   "cat": "dijk",
+   "date": "25–26 sep 2026",
+   "sort": "2026-09-25",
+   "added": "2026-09-24",
+   "title": "Feestelijke opening versterkte Lauwersmeerdijk en nieuwe dijkdoorlaat Marnewaard",
+   "summary": "Waterschap Noorderzijlvest opent op 26 september de versterkte Lauwersmeerdijk en een nieuwe toegangsweg naar de haven van Lauwersoog; een dag eerder gaat een nieuwe dijkdoorlaat open die de Waddenzee verbindt met een nieuw getijdengebied van 70 ha in de Marnewaard. Vervolg op de eerder gemelde circulaire Lauwersmeerdijk.",
+   "urls": [
+    "https://drimble.nl/regio/groningen/winsum/108001697/26-september-feestelijke-opening-toegangsweg-en-dijkversterking-lauwersoog.html"
+   ]
+  },
+  {
+   "cat": "dijk",
+   "date": "22 sep 2026",
+   "sort": "2026-09-22",
+   "added": "2026-09-24",
+   "title": "Concept-voorkeursalternatief dijkversterking Elden-Heteren bekend",
+   "summary": "Waterschap Rivierenland stelde het concept-VKA vast voor de dijkversterking tussen Elden en Heteren, onderdeel van project Sprok-Sterreschans-Heteren. De stukken liggen ter inzage van 21 september tot 2 november, met het milieueffectrapport fase 1.",
+   "urls": [
+    "https://www.waterschaprivierenland.nl/voorkeursoplossing-voor-dijkversterking-tussen-elden-en-heteren-bekend"
+   ]
+  },
+  {
+   "cat": "dijk",
+   "date": "19 sep 2026",
+   "sort": "2026-09-19",
+   "added": "2026-09-24",
+   "title": "Onderwaterversterking dijken Oude Maas bij Spijkenisse en Hoogvliet",
+   "summary": "Waterschap Hollandse Delta gaat dijken langs de Oude Maas onder water versterken tegen zettingsvloeiing (ZV3T-aanpak). Start half november 2026, gereed naar verwachting maart 2027.",
+   "urls": [
+    "https://drimble.nl/regio/zuid-holland/voorne-putten/108036275/waterschap-gaat-dijken-langs-oude-maas-onder-water-versterken.html"
+   ]
+  },
+  {
+   "cat": "dijk",
+   "date": "8 sep 2026",
+   "sort": "2026-09-08",
+   "added": "2026-09-24",
+   "title": "Deltacommissaris: nieuwe Deltawerken nodig, vervanging Maeslantkering op tafel",
+   "summary": "Co Verdaas presenteerde de tweede toetsing van het Deltaprogramma aan minister Karremans: vervanging van de Maeslantkering, miljardeninvesteringen in nieuwe gemalen bij IJmuiden en later de Afsluitdijk, rivierverruiming en aanpassing van het IJsselmeerpeil. Vervolg op de eerder gemelde tweede herijking (7 sep).",
+   "urls": [
+    "https://www.infrasite.nl/waterbouw-deltas/2026/09/08/nieuwe-deltawerken-nodig-nederland-moet-nu-al-voorbereidingen-treffen/"
+   ]
+  },
+  {
+   "cat": "dijk",
+   "date": "8 sep 2026",
+   "sort": "2026-09-08",
+   "added": "2026-09-24",
+   "title": "Derde dijkverbetering Amstelland gereed bij Ouderkerk aan de Amstel",
+   "summary": "Waterschap AGV rondde de dijkverbetering af die de Nieuwe Bullewijk en de Holendrechter-/Bullewijker Polder Noord beschermt, met een klimaatbestendiger dijk en een nieuwe noodinlaat voor extreme situaties.",
+   "urls": [
+    "https://www.agv.nl/nieuws/2026/september/derde-dijkverbetering-amstelland-klaar/"
+   ]
+  },
+  {
+   "cat": "dijk",
+   "date": "23–24 sep 2026",
+   "sort": "2026-09-24",
+   "added": "2026-09-24",
+   "title": "Waterschappen oefenen met sluiten coupures in Delfzijl",
+   "summary": "Noorderzijlvest en Hunze en Aa's oefenden op 24 september, zoals elk jaar vóór het stormseizoen, met het sluiten van dijkdoorgangen (coupures) in Delfzijl om de procedure en bediening te testen.",
+   "urls": [
+    "https://www.eemskrant.nl/waterschappen-oefenen-met-sluiten-dijkdoorgangen-in-delfzijl/"
+   ]
+  },
+  {
+   "cat": "dijk",
+   "date": "23 sep 2026",
+   "sort": "2026-09-23",
+   "added": "2026-09-24",
+   "title": "WDODelta start halfjaarlijkse najaarscontrole van de dijken",
+   "summary": "Waterschap Drents Overijsselse Delta begint op 28 september met de dijkinspectie voor het hoogwaterseizoen. Door de droge zomer was dierschade (mol, bever, muskusrat) bij laag water juist beter zichtbaar, maar grote problemen zijn niet gevonden.",
+   "urls": [
+    "https://www.wdodelta.nl/hoogwaterseizoen-begint-met-lage-waterstanden-grote-rivieren-waterschap-start-najaarscontrole",
+    "https://dalfsencity.nl/2026/09/23/waterschap-inspecteert-dijken-voor-hoogwater/"
+   ]
+  },
+  {
+   "cat": "dijk",
+   "date": "22 sep 2026",
+   "sort": "2026-09-22",
+   "added": "2026-09-24",
+   "title": "Rijkswaterstaat test stormvloedkering Ramspol op 6 oktober",
+   "summary": "Ter voorbereiding op het stormseizoen wordt de balgstuw bij Ramspol proefgesloten.",
+   "urls": [
+    "https://www.infrasite.nl/hoogwaterbescherming/2026/09/22/rijkswaterstaat-test-stormvloedkering-ramspol-voor-stormseizoen/"
+   ]
+  },
+  {
+   "cat": "dijk",
+   "date": "15 sep 2026",
+   "sort": "2026-09-15",
+   "added": "2026-09-24",
+   "title": "Deltaprogramma 2027 gepresenteerd op Prinsjesdag",
+   "summary": "Met herijkte deltabeslissingen en voorkeursstrategieën. Volgens de eerste berichten blijft de deltabeslissing Waterveiligheid ongewijzigd en zitten de grootste wijzigingen in Zoetwater en Ruimtelijke adaptatie. Controleer dat in het DP2027 zelf.",
+   "urls": [
+    "https://www.deltaprogramma.nl/",
+    "https://www.bpnieuws.nl/article/9872199/koerswijziging-deltaprogramma-2027-raakt-ook-glastuinbouw/"
+   ]
+  },
+  {
+   "cat": "dijk",
+   "date": "7 sep 2026",
+   "sort": "2026-09-07",
+   "added": "2026-09-24",
+   "title": "Tweede herijking Deltaprogramma: Nederland moet sneller aanpassen",
+   "summary": "Deltacommissaris Co Verdaas vindt de huidige koers niet genoeg. Hij pleit ervoor de uitgaven aan water te verhogen van ongeveer 1% naar minstens 2% van het bbp, grofweg een verdubbeling van de huidige 11 miljard euro per jaar.",
+   "urls": [
+    "https://tpo.nl/2026/09/07/deltacommissaris-miljarden-wateraanpak-delta/",
+    "https://www.deltares.nl/nieuws/tweede-herijking-deltaprogramma-fundamentele-keuzes-nodig-over-water-ruimte-en-landgebruik",
+    "https://www.hhnk.nl/herijking-deltaprogramma-benadrukt-noodzaak-aanvullende-maatregelen-en-keuzes"
+   ]
+  },
+  {
+   "cat": "dijk",
+   "date": "aug–sep 2026",
+   "sort": "2026-09-01",
+   "added": "2026-09-24",
+   "title": "Recorddroogte: laagste Rijnafvoer ooit en scheuren in veendijken",
+   "summary": "Bij Lobith zakte de Rijnafvoer op 17 augustus naar 565 m³/s, het laagste sinds 1901. Elf waterschappen voerden extra inspecties uit. Rijnland vond bijna 150 scheuren over 265 km en Delfland 180 over 42 km. Het hoogwaterseizoen begint nu met lage rivierstanden.",
+   "urls": [
+    "https://www.knmi.nl/over-het-knmi/nieuws/zeer-lage-rijnafvoer-door-aanhoudende-droogte-in-stroomgebied",
+    "https://www.rijkswaterstaat.nl/nieuws/archief/2026/09/hoe-droogte-het-waterbeheer-compleet-veranderde",
+    "https://www.rijnland.net/actueel/droogte-zomermonitor/",
+    "https://www.wdodelta.nl/hoogwaterseizoen-begint-met-lage-waterstanden-grote-rivieren-waterschap-start-najaarscontrole"
+   ]
+  },
+  {
+   "cat": "dijk",
+   "date": "13 aug 2026",
+   "sort": "2026-08-13",
+   "added": "2026-09-24",
+   "title": "IJsseldijk Zwolle-Olst: vergunningen voor uitvoering ter inzage",
+   "summary": "Het gaat om ongeveer 30 km dijk in 15 trajecten. Provincie Overijssel legt de vergunningen voor trajecten 02, 03 en een deel van 04 ter inzage.",
+   "urls": [
+    "https://www.overijssel.nl/loket/terinzageleggingen/2026-08-13-terinzagelegging-twee-vergunningen-uitvoering-dijkversterking-zwolle-olst",
+    "https://www.wdodelta.nl/ijsseldijkzwolle-olst"
+   ]
+  },
+  {
+   "cat": "dijk",
+   "date": "30 jun 2026",
+   "sort": "2026-06-30",
+   "added": "2026-09-24",
+   "title": "Zuiderzeeland houdt vast aan versterking IJsselmeerdijk",
+   "summary": "Het waterschap zet de versterking door, ook nu het extreemste KNMI-scenario minder realistisch lijkt. Het werk start in september. Op ongeveer 12 km komt een golfremmende vooroever, op de overige 5 km een klassieke versterking.",
+   "urls": [
+    "https://www.infrasite.nl/waterbouw-deltas/2026/06/30/waterschap-zuiderzeeland-zet-dijkversterking-door-ondanks-milder-klimaatscenario/",
+    "https://www.omroepflevoland.nl/nieuws/514141/waterschap-houdt-vast-aan-dijkversterkingen-ondanks-milder-klimaatscenario"
+   ]
+  },
+  {
+   "cat": "dijk",
+   "date": "22 jun 2026",
+   "sort": "2026-06-22",
+   "added": "2026-09-24",
+   "title": "Kennisprogramma Zeespiegelstijging afgerond",
+   "summary": "De conclusie is dat de huidige strategie met zandsuppleties, keringen en open-afsluitbare stormvloedkeringen nog lang werkt. Bij 0,5 tot 1 meter stijging wordt zoetwater het grote probleem. De resultaten zijn input voor het nieuwe Deltaplan.",
+   "urls": [
+    "https://www.deltaprogramma.nl/actueel/nieuws/2026/06/22/kennisprogramma-zeespiegelstijging-afgerond",
+    "https://www.h2owaternetwerk.nl/h2o-actueel/kennisprogramma-zeespiegelstijging-afgerond-wat-wordt-ons-nieuwe-deltaplan-2"
+   ]
+  },
+  {
+   "cat": "dijk",
+   "date": "2026",
+   "sort": "2026-06-01",
+   "added": "2026-09-24",
+   "title": "Stand van zaken bij lopende dijkversterkingen",
+   "summary": "Lekdijk Irenesluis-Culemborgse Veer: stukken lagen ter inzage tot 9 juli. Grebbedijk: bouw start voorjaar 2027. Neder-Betuwe: uitvoering loopt sinds januari. Hansweert: 5,2 km opgeleverd op 8 mei. Baarlo: drie aannemers geselecteerd (20 aug).",
+   "urls": [
+    "https://www.hdsr.nl/buurt/sterke-lekdijk/irenesluis/nieuws/nieuws/2026/waterschap-legt-officiele-stukken/",
+    "https://www.grebbedijk.com/updates/plannen-versterking-grebbedijk-ter-inzage/210",
+    "https://dijkversterking.scheldestromen.nl/projecten/hansweert/",
+    "https://www.peelenmaas.nl/nieuws/2026/08/20/nieuwe-stap-in-dijkversterking-in-baarlo"
+   ]
+  },
+  {
+   "cat": "dijk",
+   "date": "19 mei 2026",
+   "sort": "2026-05-19",
+   "added": "2026-09-24",
+   "title": "HWBP-2 bijna klaar: alleen de Markermeerdijken nog in uitvoering",
+   "summary": "Van de 87 projecten uit HWBP-2 zijn alleen de Markermeerdijken nog bezig; oplevering in het tweede kwartaal van 2027. De programmering gaat verder via het programmavoorstel HWBP 2026-2037.",
+   "urls": [
+    "https://www.infrasite.nl/waterbouw-deltas/2026/05/19/nog-maar-een-dijkversterking-te-gaan-in-miljardenprogramma-hwbp-2/",
+    "https://www.hwbp.nl/documenten/2025/03/03/programmavoorstel-2026-2037"
+   ]
+  },
+  {
+   "cat": "dijk",
+   "date": "dec 2025 – jan 2026",
+   "sort": "2026-01-15",
+   "added": "2026-09-24",
+   "title": "HWBP: nieuwe bestuursafspraken en achterstand in tempo",
+   "summary": "De waterschappen trekken 1,25 miljard euro extra uit voor 2030-2036 en het Rijk reserveert 1 miljard in het Deltafonds. Er moet nog ongeveer 1.360 km primaire kering versterkt worden. Het tempo is gemiddeld 33 km per jaar, terwijl 54 km nodig is.",
+   "urls": [
+    "https://unievanwaterschappen.nl/waterschappen-blijven-investeren-in-waterveiligheid-en-hwbp/",
+    "https://www.hwbp.nl/actueel/nieuws/2025/12/22/werkwijze",
+    "https://landenwater.nl/nieuws/hwbp-nog-1360-kilometer-primaire-waterkeringen-versterken"
+   ]
+  },
+  {
+   "cat": "ai",
+   "date": "16 sep 2026",
+   "sort": "2026-09-16",
+   "added": "2026-09-24",
+   "title": "Dutch Robotics Award voor dronedijkproject Skydike",
+   "summary": "W2R Drone Projects won de Project Award met Project Skydike, een droneproject rond waterkeringen. De inhoud van het project hebben we niet kunnen nalezen.",
+   "urls": [
+    "https://www.nlrobotics.nl/nieuws/talent-en-innovatie-in-de-spotlight-winnaars-robotica-awards-2026",
+    "https://www.w2r-droneprojects.com/"
+   ]
+  },
+  {
+   "cat": "ai",
+   "date": "15 sep 2026",
+   "sort": "2026-09-15",
+   "added": "2026-09-24",
+   "title": "Autodesk: AI-agents in Forma, uitrol vanaf 2027",
+   "summary": "De nieuwe Autodesk Assistant gebruikt verbonden projectdata en laat zien wat een wijziging betekent voor planning, kosten en uitvoering. Met Assistant Builder kun je eigen AI-agents aankoppelen. Neural CAD is nog een verkenning.",
+   "urls": [
+    "https://adsknews.autodesk.com/en/pressrelease/autodesk-advances-agentic-ai-in-its-three-industry-clouds",
+    "https://www.engineering.com/au-2026-autodesks-ai-assistant-is-evolving/",
+    "https://aecmag.com/ai/anagnost-pitches-project-intelligence-across-autodesk"
+   ]
+  },
+  {
+   "cat": "ai",
+   "date": "19 aug 2026",
+   "sort": "2026-08-19",
+   "added": "2026-09-24",
+   "title": "Bentley YII Awards: 24 van de 36 finalisten gebruiken AI",
+   "summary": "Onder meer bij kust- en hoogwaterwerken, geotechniek en stormwater. De winnaars worden op 6 en 7 oktober in Singapore bekendgemaakt.",
+   "urls": [
+    "https://www.nasdaq.com/press-release/bentley-systems-announces-finalists-yii-awards-2026-2026-08-19",
+    "https://highways.today/2026/08/20/bentley-yii-2026-finalists/"
+   ]
+  },
+  {
+   "cat": "ai",
+   "date": "2026",
+   "sort": "2026-07-01",
+   "unsure": true,
+   "added": "2026-09-24",
+   "title": "Claude en ChatGPT direct in Civil 3D en Dynamo via MCP-servers",
+   "summary": "Via community-koppelingen (MCP-servers) kan een AI-model zelf alignments, profielen, surfaces en corridors bouwen en Dynamo-grafieken schrijven en uitvoeren. Eén versie ondersteunt Civil 3D 2027. Het zijn geen officiële Autodesk-tools, dus test ze eerst op een kopie van je tekening.",
+   "urls": [
+    "https://github.com/Joshua8-AI/Civil3D-mcp",
+    "https://hmktools.com/autocad-mcp",
+    "https://forums.autodesk.com/t5/civil-3d-ideas/mcp-to-connect-claude-to-c3d-ai-to-generate-infrastructure-parts/idi-p/14138155"
+   ]
+  },
+  {
+   "cat": "ai",
+   "date": "2026",
+   "sort": "2026-06-15",
+   "unsure": true,
+   "added": "2026-09-24",
+   "title": "AI vindt scheuren in dijken op dronebeelden",
+   "summary": "Een neuraal netwerk van Inholland vindt minstens 80% van de droogtescheuren en herkent ook vegetatie en muskusratten. HHNK wil elk voorjaar drones inzetten. STOWA en Rijkswaterstaat bouwen binnen PIW aan een AI-toolbox.",
+   "urls": [
+    "https://www.inholland.nl/nieuws/met-ai-gedreven-dijkinspectie-werken-aan-waterveiligheid/",
+    "https://publicaties.stowa.nl/stowa-ter-info-91/kunstmatige-intelligentie-ai-scheuren-in-dijken-detecteren-lachgas-reduceren-en-nog-veel-meer"
+   ]
+  },
+  {
+   "cat": "ai",
+   "date": "2026",
+   "sort": "2026-05-01",
+   "unsure": true,
+   "added": "2026-09-24",
+   "title": "Onderzoek: machine learning voor dijkgedrag en dijkopbouw",
+   "summary": "Een studie benchmarkt ML-modellen voor dijkgedrag bij hoogwater. Een tweede combineert ERT-metingen, boringen en ML om de interne opbouw van een dijk te bepalen. H2O beschrijft hoe je met ML de grondwaterstand in dijken voorspelt.",
+   "urls": [
+    "https://www.tandfonline.com/doi/abs/10.1080/15732479.2026.2634881",
+    "https://doi.org/10.3390/w18070826",
+    "https://www.h2owaternetwerk.nl/vakartikelen/de-grondwaterstand-in-dijken-voorspellen-met-machine-learning"
+   ]
+  },
+  {
+   "cat": "ai",
+   "date": "28 apr 2026",
+   "sort": "2026-04-28",
+   "added": "2026-09-24",
+   "title": "Officiële Claude-connector voor Autodesk Fusion",
+   "summary": "Claude kan in Fusion geometrie lezen en onderdelen aanpassen. Fusion is werktuigbouw, geen civiel, maar het laat zien welke kant AI in CAD opgaat.",
+   "urls": [
+    "https://www.anthropic.com/news/claude-for-creative-work",
+    "https://develop3d.com/ai/claude-for-cad-blender-autodesk-fusion/"
+   ]
+  },
+  {
+   "cat": "ai",
+   "date": "2026",
+   "sort": "2026-03-01",
+   "unsure": true,
+   "added": "2026-09-24",
+   "title": "EU AI Act: waterschappen moeten zorgen voor AI-geletterdheid",
+   "summary": "De Unie van Waterschappen helpt bij het invoeren. Verwacht dus ook bij opdrachtgevers meer regels over hoe AI mag worden ingezet.",
+   "urls": [
+    "https://www.h2owaternetwerk.nl/h2o-actueel/eu-verplicht-tot-ai-geletterdheid-unie-van-waterschappen-helpt-op-weg-met-implementatie"
+   ]
+  },
+  {
+   "cat": "ai",
+   "date": "nov 2025",
+   "sort": "2025-11-15",
+   "added": "2026-09-24",
+   "title": "iML-WKW: AI-modelleerlab van Deltares, KNMI en Rijkswaterstaat",
+   "summary": "Een lab van €14,5 miljoen dat tot 2029 werkt aan snelle AI-surrogaatmodellen voor onder meer waterstandsvoorspelling.",
+   "urls": [
+    "https://www.rijkswaterstaat.nl/nieuws/archief/2025/11/deltares-knmi-en-rijkswaterstaat-krijgen-financiering-voor-nieuw-modelleer-lab"
+   ]
+  },
+  {
+   "cat": "ai",
+   "date": "doorlopend",
+   "sort": "2000-01-01",
+   "tip": true,
+   "added": "2026-09-24",
+   "title": "Tip: laat AI Dynamo-Python schrijven met de juiste context",
+   "summary": "Geef de Dynamo Primer-pagina over Python en Civil 3D mee, noem je Civil 3D-versie, vraag om kleine stukjes code en test ze meteen. Dan hoeft het model niet te gokken hoe de API werkt. Dynamo in 2027 heeft ook AI-autocomplete voor nodes.",
+   "urls": [
+    "https://primer2.dynamobim.org/dynamo-for-civil-3d/advanced-topics/python-and-civil-3d"
+   ]
+  },
+  {
+   "cat": "software",
+   "date": "22–23 sep 2026",
+   "sort": "2026-09-22",
+   "added": "2026-09-24",
+   "title": "Esri Industry Days 2026 in Utrecht, met AEC-dag voor infra en bouw",
+   "summary": "Esri Nederland organiseerde in het Beatrixgebouw een AEC-dag over locatie- en datagebruik, hergebruik van informatie en procesoptimalisatie over de levenscyclus van infraprojecten, met een paneldiscussie over digitalisering en AI in de sector.",
+   "urls": [
+    "https://www.emerce.nl/wire/esri-brengt-sectoren-samen-rond-ruimtelijke-analyse-data-ai-esri-industry-days-utrecht",
+    "https://cloudexpo.nl/nieuws/esri-industry-days-de-rol-van-locatie-data-en-tech-bij-maatschappelijke-opgaven"
+   ]
+  },
+  {
+   "cat": "software",
+   "date": "sep 2026",
+   "sort": "2026-09-10",
+   "unsure": true,
+   "added": "2026-09-24",
+   "title": "ArcGIS Pro 3.7 Patch 2 uit",
+   "summary": "Esri bracht een bugfix-patch uit voor ArcGIS Pro 3.7. De aankondigingspagina gaf een toegangsfout, dus de precieze datum en inhoud zijn niet op de bron zelf gecontroleerd.",
+   "urls": [
+    "https://support.esri.com/en-us/patches-updates/2026/arcgis-pro-3-7-patch-2-3-7-2-announcement"
+   ]
+  },
+  {
+   "cat": "inmeten",
+   "date": "13 sep 2026",
+   "sort": "2026-09-13",
+   "unsure": true,
+   "added": "2026-09-24",
+   "title": "CloudCompare 2.14 beta",
+   "summary": "De laatste stabiele versie is nog 2.13.2. Met CloudComPy script je puntenwolkbewerkingen in Python, bijvoorbeeld op AHN- of drone-opnames van dijken.",
+   "urls": [
+    "https://www.cloudcompare.org/release/",
+    "https://www.simulation.openfields.fr/documentation/CloudComPy/html/"
+   ]
+  },
+  {
+   "cat": "software",
+   "date": "27 aug 2026",
+   "sort": "2026-08-27",
+   "added": "2026-09-24",
+   "title": "Trimble Novapoint 2026.5",
+   "summary": "Met een nieuwe Quadri-versie. Sinds 2026.4 draait Novapoint ook op AutoCAD 2027.",
+   "urls": [
+    "https://help.trimble.com/doc/novapoint/novapoint/whats-new/novapoint-release-notes/novapoint-2026.5"
+   ]
+  },
+  {
+   "cat": "software",
+   "date": "13 aug 2026",
+   "sort": "2026-08-13",
+   "added": "2026-09-24",
+   "title": "ArcGIS Pro 3.6.5-patch; 3.7 vraagt .NET 10",
+   "summary": "3.7 (mei) heeft .NET Desktop Runtime 10 nodig, wat add-ins raakt. Nieuw zijn onder meer het paneel Analyze Map en hydrologietools voor duikers.",
+   "urls": [
+    "https://www.esri.com/arcgis-blog/products/arcgis-pro/announcements/arcgis-pro-3-7-moves-to-net-10",
+    "https://geospatialtraining.com/whats-new-in-arcgis-pro-3-7-a-practical-guide-to-the-may-2026-release/"
+   ]
+  },
+  {
+   "cat": "software",
+   "date": "23 jul 2026",
+   "sort": "2026-07-23",
+   "added": "2026-09-24",
+   "title": "Fugro breidt GroundIQ uit; GeoDin-plugin voor Civil 3D",
+   "summary": "GroundIQ maakt 3D-grondmodellen met AI. De GeoDin Ground-plugin ondersteunt Civil 3D 2023 t/m 2026.",
+   "urls": [
+    "https://www.fugro.com/news/business-news/2026/fugro-establishes-next-generation-ground-intelligence-capabilities-in-australia",
+    "https://www.geodin.com/integrations/autodesk"
+   ]
+  },
+  {
+   "cat": "software",
+   "date": "2 jun 2026",
+   "sort": "2026-06-02",
+   "added": "2026-09-24",
+   "title": "D-Stability 2026.01 en GEOLib 2.9.0",
+   "summary": "GEOLib is de Python-bibliotheek van Deltares waarmee je D-Stability- en D-Geo Flow-modellen maakt, doorrekent en uitleest. Handig om veel dwarsprofielen uit Civil 3D in één keer te laten doorrekenen.",
+   "urls": [
+    "https://github.com/Deltares/geolib/releases",
+    "https://pypi.org/project/d-geolib/",
+    "https://download.deltares.nl/d-stability"
+   ]
+  },
+  {
+   "cat": "software",
+   "date": "7 mei 2026",
+   "sort": "2026-05-07",
+   "unsure": true,
+   "added": "2026-09-24",
+   "title": "Riskeer 26.1.1.1",
+   "summary": "Nieuwe versie van de centrale BOI-applicatie voor het beoordelen en ontwerpen van primaire keringen.",
+   "urls": [
+    "https://github.com/Deltares/Riskeer/releases",
+    "https://iplo.nl/thema/water/applicaties-modellen/waterveiligheidsmodellen/riskeer/"
+   ]
+  },
+  {
+   "cat": "software",
+   "date": "28 apr 2026",
+   "sort": "2026-04-28",
+   "added": "2026-09-24",
+   "title": "pydra-core: Hydra-NL-berekeningen in Python",
+   "summary": "Python-pakket van HKV en Rijkswaterstaat met overschrijdingsfrequentielijnen, hydraulisch belastingniveau en overslagberekeningen. Handig om de kruinhoogte naast Civil 3D te scripten.",
+   "urls": [
+    "https://pypi.org/project/pydra-core/",
+    "https://github.com/HKV-products-services/pydra_core"
+   ]
+  },
+  {
+   "cat": "software",
+   "date": "14 apr 2026",
+   "sort": "2026-04-14",
+   "tip": true,
+   "added": "2026-09-24",
+   "title": "Bonsai (BlenderBIM) kan IFC 4.3-infra volledig lezen",
+   "summary": "Een gratis manier om IFC-exports uit Civil 3D te controleren, inclusief alignments en infrageometrie.",
+   "urls": [
+    "https://extensions.blender.org/add-ons/bonsai/versions/",
+    "https://community.osarch.org"
+   ]
+  },
+  {
+   "cat": "software",
+   "date": "9 mrt 2026",
+   "sort": "2026-03-09",
+   "added": "2026-09-24",
+   "title": "QGIS 4.0 uit; 4.2 LTR in oktober",
+   "summary": "De eerste grote versie sinds 3.0. Plugins moeten naar Qt6. Wil je een stabiele versie (LTR), wacht dan op 4.2.",
+   "urls": [
+    "https://blog.qgis.org/2026/03/09/qgis-4-0-norrkoping-is-released/"
+   ]
+  },
+  {
+   "cat": "inmeten",
+   "date": "2026",
+   "sort": "2026-03-01",
+   "unsure": true,
+   "added": "2026-09-24",
+   "title": "Eerste deel AHN6 beschikbaar (Noordoost-Nederland)",
+   "summary": "De puntenwolk heeft kleur uit luchtfoto's, in nieuwe tegels van 1×1 km. AHN5 staat volledig in de Dataroom.",
+   "urls": [
+    "https://www.ahn.nl/eerste-deel-ahn-6-beschikbaar",
+    "https://www.ahn.nl/dataroom"
+   ]
+  },
+  {
+   "cat": "software",
+   "date": "2026",
+   "sort": "2026-02-15",
+   "unsure": true,
+   "added": "2026-09-24",
+   "title": "Bentley: OpenRoads 2026 met Copilot, PLAXIS 2025.1.2",
+   "summary": "Een AI-assistent in OpenRoads en OpenRail, en OpenSite+ voor generatief terreinontwerp. PLAXIS kreeg snellere output en kan boringen uit OpenGround importeren. Een PLAXIS 2026 is nog niet gevonden.",
+   "urls": [
+    "https://blog.bentley.com/software/openroads-designer-2026-and-the-roads-behind-the-summer-of-football/",
+    "https://www.geoengineer.org/news/new-release-plaxis-20251"
+   ]
+  },
+  {
+   "cat": "markt",
+   "date": "23 sep 2026",
+   "sort": "2026-09-23",
+   "added": "2026-09-24",
+   "title": "Elmon wint raamcontract waterwerken bij Waterschap Rivierenland",
+   "summary": "Het raamcontract voor vernieuwing van besturingssystemen van gemalen, sluizen en rwzi's heeft een plafondwaarde van 100 miljoen euro. Elmon versloeg 11 andere inschrijvers.",
+   "urls": [
+    "https://www.infrasite.nl/waterbouw-deltas/2026/09/23/__trashed-12/"
+   ]
+  },
+  {
+   "cat": "markt",
+   "date": "22 sep 2026",
+   "sort": "2026-09-22",
+   "added": "2026-09-24",
+   "title": "WSP trekt bod op Arcadis in",
+   "summary": "Het Canadese WSP zet het ongevraagde bod van ongeveer 5,2 miljard euro niet door; Arcadis had het twee keer afgewezen. Het aandeel Arcadis daalde ongeveer 7%. Op 29 september presenteert Arcadis een nieuwe strategie.",
+   "urls": [
+    "https://www.globenewswire.com/news-release/2026/09/22/3366803/0/en/wsp-announces-decision-to-withdraw-proposed-offer-for-arcadis-n-v.html",
+    "https://www.arcadis.com/en/news/global/2026/arcadis-comments-on-wsps-decision-to-not-proceed-with-its-offer"
+   ]
+  },
+  {
+   "cat": "markt",
+   "date": "15 sep 2026",
+   "sort": "2026-09-15",
+   "added": "2026-09-24",
+   "title": "Deltafonds-begroting 2027 gepubliceerd",
+   "summary": "Uit eerdere cijfers: tot 2050 is ongeveer 29 miljard euro beschikbaar, terwijl het Deltaprogramma ongeveer 38 miljard kost. Het tekort is gedaald naar ongeveer 9 miljard. De inhoud van de nieuwe begroting is nog niet nagelezen.",
+   "urls": [
+    "https://www.rijksoverheid.nl/documenten/2026/09/15/j-deltafonds-2027",
+    "https://www.deltaprogramma.nl/deltaprogramma/deltafonds"
+   ]
+  },
+  {
+   "cat": "markt",
+   "date": "8 sep 2026",
+   "sort": "2026-09-08",
+   "added": "2026-09-24",
+   "title": "Deltaprogramma waarschuwt: tekort aan mensen en grondstoffen",
+   "summary": "Er is al lang te weinig uitvoeringscapaciteit, en zand, klei en grind zijn schaars. Het kabinet wil samen met opleidingen en werkgevers meer capaciteit regelen. Goed nieuws voor wie dijken ontwerpt.",
+   "urls": [
+    "https://www.infrasite.nl/waterbouw-deltas/2026/09/08/harde-waarschuwing-deltaprogramma-tekort-aan-personeel-en-grondstoffen-zet-waterveiligheid-onder-druk/"
+   ]
+  },
+  {
+   "cat": "markt",
+   "date": "sep 2026",
+   "sort": "2026-09-20",
+   "unsure": true,
+   "added": "2026-09-24",
+   "title": "HHNK zoekt aannemer voor Havendijk Den Helder en Waddenzeedijk Den Oever-Den Helder",
+   "summary": "Hoogheemraadschap Hollands Noorderkwartier start de aannemersselectie voor versterking van ca. 1 km afgekeurde Havendijk in Den Helder en ruim 12 km Waddenzeedijk tussen Den Oever en Den Helder. Exacte aanbestedingsdatum niet op de bron bevestigd.",
+   "urls": [
+    "https://www.hhnk.nl/dijkversterking-den-oever-den-helder",
+    "https://www.hhnk.nl/havendijk"
+   ]
+  },
+  {
+   "cat": "markt",
+   "date": "15 sep 2026",
+   "sort": "2026-09-15",
+   "added": "2026-09-24",
+   "title": "Vereniging van Waterbouwers: minder papierwerk kan honderden miljoenen besparen",
+   "summary": "Reactie op Prinsjesdag: de sector verwelkomt de extra €1,5 mrd voor infrastructuur, maar noemt dit een fractie van de benodigde €80 mrd en pleit voor drastische vermindering van administratieve lasten.",
+   "urls": [
+    "https://www.infrasite.nl/waterbouw-deltas/2026/09/15/waterbouwers-minder-papierwerk-kan-jaarlijks-honderden-miljoenen-besparen/"
+   ]
+  },
+  {
+   "cat": "markt",
+   "date": "21 aug 2026",
+   "sort": "2026-08-21",
+   "added": "2026-09-24",
+   "title": "Waterschap Limburg zoekt ingenieurs voor beoordeling 188 km dijk",
+   "summary": "Aanbesteding voor ingenieurs- en adviesdiensten. Twee bureaus ondersteunen het waterschap tot 2034.",
+   "urls": [
+    "https://www.infrasite.nl/waterbouw-deltas/2026/08/21/waterschap-limburg-start-aanbesteding-voor-beoordeling-van-188-kilometer-dijk/"
+   ]
+  },
+  {
+   "cat": "markt",
+   "date": "20 aug 2026",
+   "sort": "2026-08-20",
+   "added": "2026-09-24",
+   "title": "Boskalis: orderportefeuille 6,8 miljard",
+   "summary": "Bij Dredging & Inland Infra groeit de portefeuille, bij Offshore Energy daalt die. Samen met Van Oord won Boskalis ook de havenuitbreiding van Luleå in Zweden, circa 500 miljoen euro.",
+   "urls": [
+    "https://boskalis.com/press/press-releases-and-company-news/half-year-results-2026-boskalis-delivers-solid-performance-amid-challenging-market-conditions"
+   ]
+  },
+  {
+   "cat": "markt",
+   "date": "18 aug 2026",
+   "sort": "2026-08-18",
+   "added": "2026-09-24",
+   "title": "Lage Waal remt dijkversterking Echteld-Ochten: kleitekort",
+   "summary": "Door de lage waterstand kon er geen klei per schip worden aangevoerd. Een voorbeeld van hoe kwetsbaar de materiaalketen is.",
+   "urls": [
+    "https://www.infrasite.nl/waterbouw-deltas/2026/08/18/lage-waalafvoer-remt-dijkversterking-tekort-aan-klei-dreigt/"
+   ]
+  },
+  {
+   "cat": "markt",
+   "date": "24 jul 2026",
+   "sort": "2026-07-24",
+   "added": "2026-09-24",
+   "title": "Heijmans: sterk halfjaar, topman wil meer investeringen in infra",
+   "summary": "Omzet 1,5 miljard, orderportefeuille 4,1 miljard. In infra zit de groei vooral in energie en het hoogspanningsnet.",
+   "urls": [
+    "https://www.infrasite.nl/bedrijven/2026/07/24/heijmans-boekt-sterk-halfjaar-maar-topman-waarschuwt-infrastructuur-vraagt-om-meer-investeringen/"
+   ]
+  },
+  {
+   "cat": "markt",
+   "date": "jan–apr 2026",
+   "sort": "2026-04-15",
+   "added": "2026-09-24",
+   "title": "Nieuwe HWBP-projecten in de markt",
+   "summary": "Ternaard – Peazens-Moddergat: 11,5 km, ongeveer 130 miljoen euro. Baarlo – Hout-Blerick in de markt. Sprok-Sterreschans-Heteren: marktconsultatie voor een alliantie. Witteveen+Bos wint de adviesopdracht Sloehaven-Vlissingen.",
+   "urls": [
+    "https://www.infrasite.nl/waterbouw-deltas/2026/01/27/dijk-tussen-ternaard-en-peazens-moddergat-op-de-schop-in-hwbp-project-van-130-miljoen/",
+    "https://www.infrasite.nl/hoogwaterbescherming/2026/04/24/dijkversterking-sprok-sterreschans-heteren-waterschap-toetst-alliantie-aanpak-in-marktconsultatie/",
+    "https://www.infrasite.nl/hoogwaterbescherming/2026/04/15/witteveenbos-wint-adviesopdracht-voor-dijkversterking-sloehaven-vlissingen/"
+   ]
+  },
+  {
+   "cat": "markt",
+   "date": "18 feb 2026",
+   "sort": "2026-02-18",
+   "added": "2026-09-24",
+   "title": "Veilige Vecht gegund aan GMB, Heijmans en DEME",
+   "summary": "Ongeveer 20 km dijk tussen Dalfsen en Zwolle. De ontwerpfase loopt nu, de uitvoering begint vanaf medio 2028.",
+   "urls": [
+    "https://www.infrasite.nl/waterbouw-deltas/2026/02/18/gmb-heijmans-en-deme-slepen-20-kilometer-lange-dijkversterking-veilige-vecht-binnen/"
+   ]
+  },
+  {
+   "cat": "markt",
+   "date": "doorlopend",
+   "sort": "2000-01-01",
+   "tip": true,
+   "added": "2026-09-24",
+   "title": "Arbeidsmarkt: salarisindicatie Civil 3D- en BIM-modelleurs",
+   "summary": "Vacatures in de waterbouw noemen ongeveer 4.000 tot 5.700 euro bruto per maand, en voor senioren tot ongeveer 6.000 euro. Aannemers zoals GMB zoeken actief. Dit is een indicatie uit vacatures, geen salarisonderzoek.",
+   "urls": [
+    "https://www.werkenbijgmb.eu/vacatures/286/(junior)-bim-modelleur",
+    "https://www.vacat.nl/vacatures-civil_3d_ontwerper_gww/"
+   ]
+  },
+  {
+   "cat": "kennis",
+   "date": "22 sep 2026",
+   "sort": "2026-09-22",
+   "added": "2026-09-24",
+   "title": "TU Delft opent golfoverslag-simulator voor dijkerosieonderzoek",
+   "summary": "Het Waterbouwkundig Laboratorium opende een nieuwe indoor-simulator om overslaande golven op dijken te onderzoeken, een belangrijke oorzaak van dijkerosie.",
+   "urls": [
+    "https://www.infrasite.nl/waterbouw-deltas/2026/09/22/tu-delft-opent-simulator-om-overslaande-golven-op-dijken-te-onderzoeken/"
+   ]
+  },
+  {
+   "cat": "kennis",
+   "date": "16 sep 2026",
+   "sort": "2026-09-16",
+   "added": "2026-09-24",
+   "title": "Waterinnovatieprijs voor natuurvriendelijke vooroever IJsselmeerdijk",
+   "summary": "Zuiderzeeland won met 12 km vooroever. Die versterkt de dijk en voegt tegelijk natuur toe.",
+   "urls": [
+    "https://www.h2owaternetwerk.nl/h2o-actueel/waterinnovatieprijs-2026-gaat-naar-vooroever-wc-papier-en-zuivering",
+    "https://www.waterforum.net/innovatie-en-waterschap-een-opmerkelijke-combinatie/"
+   ]
+  },
+  {
+   "cat": "kennis",
+   "date": "17 jul 2026",
+   "sort": "2026-07-17",
+   "unsure": true,
+   "added": "2026-09-24",
+   "title": "Macrostabiliteit: kennisdocument Actuele Sterkte bijgewerkt",
+   "summary": "Betere schematisering van de ondergrond op basis van detailonderzoek, een probabilistische faalkans en verfijning met overleefde belastingen.",
+   "urls": [
+    "https://publicwiki.deltares.nl/spaces/HWBPMacro/pages/217120825/Actuele+Sterkte"
+   ]
+  },
+  {
+   "cat": "grondwerk",
+   "date": "mei 2026",
+   "sort": "2026-05-15",
+   "added": "2026-09-24",
+   "title": "PFAS en stikstof bij grondverzet: stand van de regels",
+   "summary": "Bij grondverzet boven 25 m³ vragen veel gemeenten PFAS-data; een analyse kost €180–350 per monster. Voor stikstof moeten dijkversterkingen binnen 25 km van Natura 2000 de depositie berekenen. RVO heeft de voortoets bijgewerkt.",
+   "urls": [
+    "https://struktonmilieutechniek.nl/our-stories/news/2026/05/pfas-regelgeving-nederland/",
+    "https://www.rvo.nl/sites/default/files/2026-01/5.%20Actualisatie%20Voortoets%20Stikstofdepositie.pdf"
+   ]
+  },
+  {
+   "cat": "kennis",
+   "date": "22 apr 2026",
+   "sort": "2026-04-22",
+   "added": "2026-09-24",
+   "title": "KNMI'23-kerncijfers voor extreme neerslag gecorrigeerd",
+   "summary": "De uurneerslag en de 10-jaars dagsom zijn gecorrigeerd voor modelbias. Dit is van belang voor de ontwerpneerslag bij regionale keringen. Nieuwe KNMI-scenario's zijn in de maak.",
+   "urls": [
+    "https://www.klimaatscenarios-data.knmi.nl/kerncijfers",
+    "https://www.knmi.nl/over-het-knmi/nieuws/op-weg-naar-nieuwe-knmi-klimaatscenario-s"
+   ]
+  },
+  {
+   "cat": "kennis",
+   "date": "apr 2026",
+   "sort": "2026-04-10",
+   "added": "2026-09-24",
+   "title": "Tweede generatie Eurocodes (incl. EC7) op schema",
+   "summary": "Uiterlijk 30 september 2027 moeten de Eurocodes met Nationale Bijlagen gepubliceerd zijn. NEN zorgt voor een Nederlandse vertaling en geeft webinars over de nieuwe EC7.",
+   "urls": [
+    "https://www.nen.nl/nieuws/actueel/tweede-generatie-eurocodes-op-schema-voor-publicatie-in-europa/"
+   ]
+  },
+  {
+   "cat": "kennis",
+   "date": "9 apr 2026",
+   "sort": "2026-04-09",
+   "added": "2026-09-24",
+   "title": "TU Delft: rol van belastingvariatie in geloofwaardige faalkansen",
+   "summary": "Een artikel in Georisk over de balans tussen onzekerheid in belasting en in sterkte bij faalkansen van dijken.",
+   "urls": [
+    "https://www.tandfonline.com/doi/full/10.1080/17499518.2026.2654177"
+   ]
+  },
+  {
+   "cat": "kennis",
+   "date": "2 apr 2026",
+   "sort": "2026-04-02",
+   "added": "2026-09-24",
+   "title": "Handleiding Veiligheidsontwerp v2.0 vervangt OI2014v4",
+   "summary": "Vooral procesmatig, met ruimte voor robuuste en adaptieve keuzes. De ENW waarschuwt dat concrete technische handvatten voor latere ontwerpfasen ontbreken.",
+   "urls": [
+    "https://iplo.nl/publish/pages/246865/handleiding_veiligheidsontwerp_v2-0.pdf",
+    "https://enwinfo.nl/adviezen/advies-boi-handleiding-veiligheidsontwerp/"
+   ]
+  },
+  {
+   "cat": "kennis",
+   "date": "mrt 2026",
+   "sort": "2026-03-05",
+   "added": "2026-09-24",
+   "title": "BOI: hydraulische belastingen worden geactualiseerd",
+   "summary": "De beleidskaders zijn vastgesteld en toegelicht in een KKP-webinar. Er komt ook een vernieuwd instrumentarium voor zandige keringen.",
+   "urls": [
+    "https://iplo.nl/thema/water/waterveiligheid/primaire-waterkeringen/boi-portaal/nieuwsbrieven-boi/iplo-update-water-boi-nieuwsbrief-maart-2026/hydraulische-belastingen/"
+   ]
+  },
+  {
+   "cat": "kennis",
+   "date": "2026",
+   "sort": "2026-02-01",
+   "added": "2026-09-24",
+   "title": "Piping: nieuwe probabilistische methode, onderzoek naar fijne fractie",
+   "summary": "De methode telt erosie over meerdere hoogwaters op en neemt aangetoonde sterkte mee. In 2026 loopt ook onderzoek naar hoe de fijne fractie in rivierzand invloed heeft.",
+   "urls": [
+    "https://tl.iplo.nl/@192940/piping-zand-meevoerende-wellen-onderzoek/",
+    "https://publicwiki.deltares.nl/spaces/HWBPPiping/pages/210371281/Aanpak+en+afweegkader"
+   ]
+  },
+  {
+   "cat": "kennis",
+   "date": "doorlopend",
+   "sort": "2000-01-01",
+   "tip": true,
+   "added": "2026-09-24",
+   "title": "Referentie: circulaire Lauwersmeerdijk",
+   "summary": "Klei, beton en asfalt zijn volledig hergebruikt, met een WAB-mengsel dat voor 85% circulair is. Een goed voorbeeld voor duurzaamheidseisen in een ontwerp.",
+   "urls": [
+    "https://lauwersmeerdijk.noorderzijlvest.nl/duurzame-dijk"
+   ]
+  },
+  {
+   "cat": "leren",
+   "date": "start 24 sep 2026",
+   "sort": "2026-09-24",
+   "added": "2026-09-24",
+   "title": "PAOTM: Geohydrologie van waterkeringen",
+   "summary": "Start vandaag in Amersfoort (€1.995 excl. btw). Houd de site in de gaten voor een volgende editie.",
+   "urls": [
+    "https://paotm.nl/aanbod/geohydrologie-van-waterkeringen/"
+   ]
+  },
+  {
+   "cat": "leren",
+   "date": "sep 2026",
+   "sort": "2026-09-20",
+   "unsure": true,
+   "added": "2026-09-24",
+   "title": "Deltares Academy: Dijktechniek",
+   "summary": "Over faalmechanismen, piping, macrostabiliteit met D-Stability, bekleding en versterkingstechnieken.",
+   "urls": [
+    "https://academy.deltares.nl/-/dijktechniek-duplicate-2"
+   ]
+  },
+  {
+   "cat": "leren",
+   "date": "11 nov 2026",
+   "sort": "2026-11-11",
+   "added": "2026-09-24",
+   "title": "HAN: AI in de praktijk (basis)",
+   "summary": "Praktische AI-cursus in Arnhem, €650.",
+   "urls": [
+    "https://www.han.nl/opleidingen/cursus/ai-in-de-praktijk-basis/"
+   ]
+  },
+  {
+   "cat": "leren",
+   "date": "Q1 2027",
+   "sort": "2027-01-15",
+   "added": "2026-09-24",
+   "title": "PAOTM: Ontwerpen en beoordelen van waterbouwkundige kunstwerken",
+   "summary": "De volgende editie is in het eerste kwartaal van 2027.",
+   "urls": [
+    "https://paotm.nl/aanbod/ontwerpen-en-beoordelen-van-waterbouwkundige-kunstwerken/"
+   ]
+  },
+  {
+   "cat": "leren",
+   "date": "doorlopend",
+   "sort": "2000-01-02",
+   "tip": true,
+   "added": "2026-09-24",
+   "title": "Autodesk Certified Professional: Civil 3D for Infrastructure Design",
+   "summary": "Examen via Pearson VUE, ook online. Autodesk heeft een gratis voorbereidingscursus.",
+   "urls": [
+    "https://www.autodesk.com/certification/all-certifications/civil-3d-infrastructure-design-professional",
+    "https://www.autodesk.com/learn/ondemand/course/civil3d-infrastructure-design-cert-prep"
+   ]
+  },
+  {
+   "cat": "leren",
+   "date": "doorlopend",
+   "sort": "2000-01-01",
+   "tip": true,
+   "added": "2026-09-24",
+   "title": "Autodesk University 2026 gratis terugkijken",
+   "summary": "Met een Digital Pass kun je de keynotes en een deel van de sessies terugkijken, waaronder die over Forma, Civil 3D en de AI-assistent.",
+   "urls": [
+    "https://www.autodesk.com/autodesk-university/"
+   ]
+  },
+  {
+   "cat": "internationaal",
+   "date": "8 sep 2026",
+   "sort": "2026-09-08",
+   "added": "2026-09-24",
+   "title": "VK: bouw gestart aan £13 mln Skinningrove Flood Alleviation Scheme",
+   "summary": "Environment Agency en de lokale council starten met aannemer BAM een schema tegen overstromingen vanuit de Skinningrove Beck: vervanging van een brug, einde aan handmatig bediende keermiddelen en bescherming van ruim 100 woningen. Oplevering in 2028.",
+   "urls": [
+    "https://www.gov.uk/government/news/construction-begins-on-13m-skinningrove-flood-alleviation-scheme",
+    "https://www.newcivilengineer.com/latest/13m-skinningrove-flood-alleviation-scheme-will-end-need-for-manual-flood-gates-11-08-2026/"
+   ]
+  },
+  {
+   "cat": "internationaal",
+   "date": "23 sep 2026",
+   "sort": "2026-09-23",
+   "added": "2026-09-24",
+   "title": "VS: $141,5 mln contract voor bypasskanaal met floodwall en aarden dijk in Fort Worth",
+   "summary": "US Army Corps of Engineers gunde Walsh Construction een contract voor een ca. 1,2 km lang bypasskanaal inclusief floodwall en earthen levee bij Fort Worth (Texas). Oplevering maart 2029, totale cumulatieve waarde $169,4 mln.",
+   "urls": [
+    "https://www.globalsecurity.org/military/library/news/2026/09/dod-contracts_4609970.htm"
+   ]
+  },
+  {
+   "cat": "internationaal",
+   "date": "22 sep 2026",
+   "sort": "2026-09-22",
+   "unsure": true,
+   "added": "2026-09-24",
+   "title": "VS: leveesysteem Adams & Cow Bayous in Texas nader ingevuld",
+   "summary": "De geactualiseerde plannen (Coastal Texas Project) omvatten circa 32 km nieuwe aarden dijken en 5 km betonnen keermuren, plus baggerwerk en nieuwe gemalen. Oplevering voorzien in 2033, geraamde kosten $2,4 miljard (65% federaal gefinancierd).",
+   "urls": [
+    "https://www.therecordlive.com/story/2026/09/23/news/levee-system-plans-include-dredging-adams-cow-bayous/38686.html"
+   ]
+  },
+  {
+   "cat": "internationaal",
+   "date": "sep 2026",
+   "sort": "2026-09-10",
+   "added": "2026-09-24",
+   "title": "VS: New Orleans onderzoekt bescherming tegen 200-jaarsstorm",
+   "summary": "Een studie van 3 miljoen dollar kijkt naar een hogere norm dan de huidige 100-jaarsstorm. In Pennsylvania heeft ongeveer 65% van de levees geen FEMA-accreditatie.",
+   "urls": [
+    "https://hoodline.com/2026/09/new-orleans-levee-study-targets-200-year-storm-protection-years-away/",
+    "https://hoodline.com/2026/09/pennsylvania-s-aging-levees-guard-26-billion-in-property-as-storms-intensify/"
+   ]
+  },
+  {
+   "cat": "internationaal",
+   "date": "aug 2026",
+   "sort": "2026-08-20",
+   "added": "2026-09-24",
+   "title": "VK: Thames Estuary 2100, review na 15 jaar",
+   "summary": "De zeespiegel stijgt daar ongeveer 4,1 mm per jaar, sneller dan eerder maar binnen de projectie. Over de vervanging van de Thames Barrier wordt uiterlijk in 2040 besloten. Van Oord en VBA zitten in een Engels kustraamwerk van 1,23 miljard pond.",
+   "urls": [
+    "https://www.gov.uk/government/publications/thames-estuary-2100-15-year-monitoring-review-non-technical-summary/thames-estuary-2100-15-year-monitoring-review-2026",
+    "https://www.constructionnews.co.uk/contracts/van-oord-and-vba-land-1-23bn-environment-agency-coastal-framework-09-06-2026/"
+   ]
+  },
+  {
+   "cat": "internationaal",
+   "date": "23–27 aug 2026",
+   "sort": "2026-08-25",
+   "added": "2026-09-24",
+   "title": "Water as Leverage op de World Water Week in Stockholm",
+   "summary": "Sessies over projecten in Cartagena en Nakuru (Kenia), met de nadruk op nature-based solutions.",
+   "urls": [
+    "https://www.dutchwatersector.com/events/stockholm-world-water-week-2026"
+   ]
+  },
+  {
+   "cat": "internationaal",
+   "date": "2026",
+   "sort": "2026-03-01",
+   "added": "2026-09-24",
+   "title": "Duitsland: Niedersachsen rekent met Klimadeich en +1 m zeespiegel",
+   "summary": "Het kustprogramma 2026 heeft €80,9 miljoen budget. De dijken worden ontworpen met 100 cm zeespiegeltoeslag en ruimte om later nog 1 m op te hogen.",
+   "urls": [
+    "https://www.umwelt.niedersachsen.de/download/226922/Anhang_A_-_Bau-_und_Finanzierungsprogramm_Kuestenschutz_2026.pdf",
+    "https://www.nwzonline.de/norden/klimadeiche-sollen-vor-anstieg-des-meeresspiegels-schuetzen-stellen-deichbauer-aber-auch-vor-probleme_a_51,10,3990397184.html"
+   ]
+  },
+  {
+   "cat": "stedelijk",
+   "date": "sep 2026",
+   "sort": "2026-09-15",
+   "added": "2026-09-24",
+   "title": "RIONED start implementatie herziene EU-richtlijn Stedelijk Afvalwater",
+   "summary": "Gemeenten moeten straks een strategisch rioleringsplan maken en maatregelen nemen tegen riooloverstorten. De consultatie van de implementatiewet loopt tot 3 november 2026.",
+   "urls": [
+    "https://www.riool.net/nieuws/akkoord-voor-herziene-europese-richtlijn-stedelijk-afvalwater",
+    "https://www.landenwater.nl/nieuws/rioned-bekijkt-gevolgen-nieuwe-europese-richtlijn-stedelijk-afvalwater"
+   ]
+  },
+  {
+   "cat": "stedelijk",
+   "date": "aug 2026",
+   "sort": "2026-08-25",
+   "added": "2026-09-24",
+   "title": "GWSW 1.7 uitgebracht",
+   "summary": "Nieuwe versie van het Gegevenswoordenboek Stedelijk Water, de standaard voor rioleringsdata. Let op als je rioleringsgegevens uitwisselt vanuit Civil 3D of InfoDrainage.",
+   "urls": [
+    "https://www.riool.net/over-rioned/rionednieuws"
+   ],
+   "unsure": true
+  },
+  {
+   "cat": "stedelijk",
+   "date": "jul 2026",
+   "sort": "2026-07-29",
+   "added": "2026-09-24",
+   "title": "CROW: klimaatbestendigheid in wegontwerp",
+   "summary": "CROW publiceerde een discussienota als eerste stap om hitte en wateroverlast structureel op te nemen in de richtlijnen voor wegontwerp. Ontwerprichtlijnen en praktijkpilots volgen.",
+   "urls": [
+    "https://vrijwilligers.fietsersbond.nl/2026/07/29/crow-pakt-klimaatbestendigheid-op-in-wegontwerp/",
+    "https://www.crow.nl/Onderwerpen/wegontwerp-en-weginrichting/"
+   ]
+  },
+  {
+   "cat": "stedelijk",
+   "date": "10 mrt 2026",
+   "sort": "2026-03-10",
+   "added": "2026-09-24",
+   "title": "CROW: vrije doorloopruimte leidend bij voetpaden",
+   "summary": "Een vaste minimale trottoirbreedte is vervangen door vrije doorloopruimte per drukteniveau (2,00 tot 3,60 m). Palen en straatmeubilair tellen niet meer mee als loopruimte.",
+   "urls": [
+    "https://stadszaken.nl/artikel/8849/vrije-doorloopruimte-voortaan-leidend-bij-ontwerp-voetpaden"
+   ]
+  },
+  {
+   "cat": "stedelijk",
+   "date": "21 feb 2026",
+   "sort": "2026-02-21",
+   "added": "2026-09-24",
+   "title": "CROW Leidraad Toegankelijkheid vernieuwd",
+   "summary": "Opvolger van de richtlijn uit 2014 voor toegankelijk ontwerp van de buitenruimte: looproutes, bushaltes en route-informatie.",
+   "urls": [
+    "https://www.crow.nl/actueel/leidraad-toegankelijkheid-helpt-openbare-ruimte-op-orde-te-krijgen/"
+   ]
+  },
+  {
+   "cat": "stedelijk",
+   "date": "feb 2026",
+   "sort": "2026-02-19",
+   "added": "2026-09-24",
+   "title": "Nieuwe Wibon-regels en 3D-KLIC in voorbereiding",
+   "summary": "EZ werkt aan aanvullende regels voor grondroerders en betere zichtbaarheid van kabels en leidingen. Het Kadaster onderzoekt een KLIC met diepteligging in 3D (IMKL 3.0).",
+   "urls": [
+    "https://www.kadaster.nl/-/denk-mee-over-de-nieuwe-wibon",
+    "https://www.kadaster.nl/zakelijk/registraties/landelijke-voorzieningen/klic/klic-nieuws"
+   ]
+  },
+  {
+   "cat": "stedelijk",
+   "date": "7 apr 2026",
+   "sort": "2026-04-07",
+   "added": "2026-09-24",
+   "title": "InfoDrainage 2027: beter samenwerken met Civil 3D",
+   "summary": "Betere uitwisseling met Civil 3D-poolobjecten en nieuwe functies om modellen van verschillende fases of teams samen te voegen. Civil 3D 2026.2 kreeg al 75+ Dynamo-nodes voor drainage.",
+   "urls": [
+    "https://www.autodesk.com/blogs/water/2026/04/07/infodrainage-2027-whats-new/",
+    "https://www.autodesk.com/blogs/aec/2025/12/11/whats-new-in-civil-3d-2026-2/"
+   ]
+  },
+  {
+   "cat": "stedelijk",
+   "date": "2025–2026",
+   "sort": "2026-01-15",
+   "added": "2026-09-24",
+   "title": "Tweede ronde klimaatstresstests (DPRA)",
+   "summary": "Gemeenten doen opnieuw stresstests en risicodialogen, nu met de KNMI'23-scenario's en de vernieuwde Klimaateffectatlas. Dit levert ontwerpopgaven op voor wateroverlast en hitte.",
+   "urls": [
+    "https://ruimtelijkeadaptatie.nl/stresstest/bijsluiter/",
+    "https://klimaatadaptatienederland.nl/beleid/nationale-aanpak/dpra/deltaplan/"
+   ],
+   "unsure": true
+  },
+  {
+   "cat": "stedelijk",
+   "date": "2026–2027",
+   "sort": "2026-01-10",
+   "added": "2026-09-24",
+   "title": "Voorbeelden binnenstedelijke rioleringsprojecten",
+   "summary": "Zaanstad (Zaandijk): ongeveer 9 km riolering en 60.000 m² verharding. Tilburg: herinrichting Besterdring. Enschede: bouwteam riolering en herinrichting Het Lang.",
+   "urls": [
+    "https://www.tender.app/aanbestedingen/riolering-en-herinrichting-g-gershwinstraat-e-o-te-zaandijk-gemeente-zaanstad-",
+    "http://www.aanbestedingsnieuws.nl/bouwteam-het-lang-enschede-riolering-en-herinrichting/"
+   ]
+  },
+  {
+   "cat": "grondwerk",
+   "date": "30 jun 2026",
+   "sort": "2026-06-30",
+   "added": "2026-09-24",
+   "title": "Noord-Holland stelt PFAS-beleidsregel voor grond vast",
+   "summary": "Gestaffelde normen voor PFAS in grond, met regels voor tijdelijk grondverzet bij projecten. Van kracht sinds 21 juli. PFAS-beleid verschilt dus per provincie.",
+   "urls": [
+    "https://lokaleregelgeving.overheid.nl/CVDR764630"
+   ]
+  },
+  {
+   "cat": "grondwerk",
+   "date": "26 jun 2026",
+   "sort": "2026-06-26",
+   "added": "2026-09-24",
+   "title": "Stikstofpakket: minder vergunningen nodig voor bouw en infra",
+   "summary": "Activiteiten met zeer weinig stikstofneerslag hebben straks geen vergunning meer nodig. Het wetsvoorstel gaat in oktober 2026 naar de Tweede Kamer.",
+   "urls": [
+    "https://www.rijksoverheid.nl/actueel/nieuws/2026/06/26/kabinet-haalt-nederland-van-het-stikstofslot-met-stevig-pakket-weer-ruimte-voor-boer-natuur-en-bouw"
+   ]
+  },
+  {
+   "cat": "grondwerk",
+   "date": "3 mrt 2026",
+   "sort": "2026-03-03",
+   "added": "2026-09-24",
+   "title": "Trimble Earthworks ondersteunt meer machines",
+   "summary": "Machinebesturing nu ook voor graafmachines met swing boom en voor scrapers. Werkt met LandXML en IFC, dus ook met modellen uit Civil 3D. WorksManager kreeg een 3D-viewer om ontwerp en inmeting te vergelijken.",
+   "urls": [
+    "https://news.trimble.com/Trimble-Drives-Construction-Productivity-with-Expansion-of-Earthworks-Portfolio",
+    "https://help.fieldsystems.trimble.com/worksmanager/release-notes-feb-2026.htm"
+   ]
+  },
+  {
+   "cat": "grondwerk",
+   "date": "2026",
+   "sort": "2026-05-01",
+   "added": "2026-09-24",
+   "title": "Grondstoffen: genoeg zand en klei, te weinig vergunningen",
+   "summary": "De vergunde voorraad is genoeg tot ongeveer 2030. Daarna dreigt een tekort, terwijl dijken en kust juist meer klei en zand vragen.",
+   "urls": [
+    "https://iplo.nl/thema/bodem/regelgeving/hergebruik-bouwstoffen-grond-of-baggerspecie/scenariostudie-grondstoffenwinning/"
+   ],
+   "unsure": true
+  },
+  {
+   "cat": "grondwerk",
+   "date": "2026",
+   "sort": "2026-04-01",
+   "added": "2026-09-24",
+   "title": "Elektrisch grondverzet groeit",
+   "summary": "Van Oord heeft de eerste zware elektrische graafmachine van Nederland in gebruik. Mobiele elektrische graafmachines met wisselbare accu's komen breder op de markt.",
+   "urls": [
+    "https://www.vanoord.com/nl/updates/van-oord-neemt-eerste-zware-elektrische-graafmachine-van-nederland-gebruik/"
+   ],
+   "unsure": true
+  },
+  {
+   "cat": "grondwerk",
+   "date": "2026",
+   "sort": "2026-02-01",
+   "added": "2026-09-24",
+   "title": "PFAS: Handelingskader en EU-verbod in beweging",
+   "summary": "Het landelijke Handelingskader PFAS wordt in 2026 geactualiseerd. Een besluit over het EU-brede PFAS-verbod volgt op zijn vroegst in 2026 of 2027.",
+   "urls": [
+    "https://iplo.nl/thema/bodem/regelgeving/hergebruik-bouwstoffen-grond-of-baggerspecie/kwaliteitseisen-toepassen-grond-baggerspecie/handelingskader-pfas/algemeen-handelingskader/"
+   ],
+   "unsure": true
+  },
+  {
+   "cat": "inmeten",
+   "date": "21 sep 2026",
+   "sort": "2026-09-21",
+   "added": "2026-09-24",
+   "title": "ILT wil dronetoezicht risicogestuurd aanpakken",
+   "summary": "In het jaarplan voor 2027 richt de ILT het toezicht op de grootste risico's. Vanaf 2027 is er ook budget voor het toezicht op U-space.",
+   "urls": [
+    "https://www.dronewatch.nl/2026/09/21/ilt-wil-toezicht-op-drones-meer-risicogestuurd-aanpakken/"
+   ]
+  },
+  {
+   "cat": "inmeten",
+   "date": "14 sep 2026",
+   "sort": "2026-09-14",
+   "added": "2026-09-24",
+   "title": "Metashape 2.4 preview; Pix4D 4.10.1",
+   "summary": "Metashape 2.4 exporteert puntenwolken naar SLPK, handig richting ArcGIS. Pix4D bracht in februari versie 4.10.1 uit.",
+   "urls": [
+    "https://www.agisoft.com/pdf/metashape_changelog.pdf"
+   ]
+  },
+  {
+   "cat": "inmeten",
+   "date": "2026–2027",
+   "sort": "2026-09-01",
+   "added": "2026-09-24",
+   "title": "U-space verplicht boven steden vanaf 2027",
+   "summary": "Dronevluchten in stedelijk gebied moeten dan via U-space; de schatting is €50 tot €150 extra per vlucht. Remote ID is sinds 2026 verplicht voor drones boven 250 gram.",
+   "urls": [
+    "https://www.noflyzone.nl/regelgeving/"
+   ],
+   "unsure": true
+  },
+  {
+   "cat": "inmeten",
+   "date": "feb 2026",
+   "sort": "2026-02-12",
+   "added": "2026-09-24",
+   "title": "Wingtra SURVEY61: nauwkeurig zonder grondcontrolepunten",
+   "summary": "Een nieuwe payload voor grondwerk en topografie: ongeveer 3 cm nauwkeurigheid zonder grondcontrolepunten, en herhaalde volumemetingen wijken tot 70% minder af.",
+   "urls": [
+    "https://lidarmag.com/2026/02/12/wingtra-announces-survey61-and-a-new-era-of-high-accuracy-gcp-free-surveys/"
+   ]
+  },
+  {
+   "cat": "inmeten",
+   "date": "2026",
+   "sort": "2026-03-15",
+   "added": "2026-09-24",
+   "title": "DJI in Europa gewoon beschikbaar, in de VS niet",
+   "summary": "Nieuwe DJI-drones krijgen in de VS geen goedkeuring meer. In de EU gelden geen vergelijkbare beperkingen. Alternatieven zijn onder meer Wingtra en Skydio.",
+   "urls": [
+    "https://www.sphengineering.com/news/dji-alternatives"
+   ],
+   "unsure": true
+  },
+  {
+   "cat": "inmeten",
+   "date": "nov 2025",
+   "sort": "2025-11-04",
+   "added": "2026-09-24",
+   "title": "DJI Zenmuse L3: LiDAR met lang bereik",
+   "summary": "LiDAR met een bereik tot 950 m en twee camera's van 100 MP, voor centimeternauwkeurige kaarten tot 100 km² per dag. Werkt met de Matrice 400 en DJI Terra.",
+   "urls": [
+    "https://enterprise.dji.com/news/detail/zenmuse-l3-release"
+   ]
+  },
+  {
+   "cat": "inmeten",
+   "date": "2026",
+   "sort": "2026-06-01",
+   "added": "2026-09-24",
+   "title": "Handheld SLAM-scanners: sneller as-built inmeten",
+   "summary": "Scanners van €15.000 tot €90.000 met 1 tot 5 cm nauwkeurigheid, met steeds vaker Gaussian Splatting en automatische scan-to-BIM. Handig voor as-builts van grondwerk.",
+   "urls": [
+    "https://www.geocentrum.nl/blog/3067597_de-top-10-handheld-lidar-slam-scanners-van-2026"
+   ],
+   "unsure": true
+  },
+  {
+   "cat": "inmeten",
+   "date": "2025–2026",
+   "sort": "2026-01-20",
+   "added": "2026-09-24",
+   "title": "Rijkswaterstaat: InSAR voor zakkingsmonitoring",
+   "summary": "Satellietmetingen met millimeternauwkeurigheid per jaar als aanvulling op landmeten, voor zettingen van kunstwerken en infrastructuur.",
+   "urls": [
+    "https://rwsinnoveert.nl/focuspunten/vervanging-renovatie/@209475/insar/"
+   ],
+   "unsure": true
+  },
+  {
+   "cat": "dijk",
+   "date": "22 sep 2026",
+   "sort": "2026-09-22",
+   "added": "2026-09-25",
+   "title": "Aanbesteding besturing Maeslantkering opnieuw vertraagd na harde ICT-kritiek",
+   "summary": "Rijkswaterstaat stelt de aanbesteding voor het nieuwe besturingssysteem van de Maeslantkering voor de tweede keer uit. Het Adviescollege ICT-toetsing bekritiseert dat de stuurgroep te veel op een harde deadline stuurt in plaats van op betrouwbaarheid; het huidige systeem kent bijna honderd bekende softwarefouten.",
+   "urls": [
+    "https://www.infrasite.nl/waterbouw-deltas/2026/09/22/aanbesteding-besturing-maeslantkering-opnieuw-vertraagd-na-harde-ict-kritiek/",
+    "https://www.computable.nl/2026/09/22/acict-bekritiseert-rijkswaterstaat-over-vernieuwing-ot-maeslantkering/"
+   ]
+  },
+  {
+   "cat": "dijk",
+   "date": "22 sep 2026",
+   "sort": "2026-09-22",
+   "added": "2026-09-25",
+   "title": "Eerste reparaties aan Delflandse veendijken afgerond",
+   "summary": "Hoogheemraadschap van Delfland rondde preventieve reparaties af op vier locaties waar de droogte scheuren in veendijken veroorzaakte: droge klei werd vervangen door vochtige klei in laagjes van 10 cm. Onderdeel van een breder herstelplan voor 284 locaties met scheurvorming.",
+   "urls": [
+    "https://www.waterforum.net/eerste-reparaties-aan-delflandse-veendijken-afgerond/"
+   ]
+  },
+  {
+   "cat": "dijk",
+   "date": "23 sep 2026",
+   "sort": "2026-09-23",
+   "added": "2026-09-25",
+   "title": "Kabinet presenteert acht mogelijke landinwaartse rivierreserveringen",
+   "summary": "Onder de noemer Ruimte voor de Rivier 2.0 wijst het Rijk acht locaties langs IJssel, Waal, Maas en Merwede aan die mogelijk gereserveerd worden voor toekomstige rivierverruiming. Definitieve besluitvorming volgt in december 2026; voorlopig verandert er niets aan het huidige grondgebruik.",
+   "urls": [
+    "https://www.ruimtevoorderivier.nl/besluiten-2026",
+    "https://www.h2owaternetwerk.nl/h2o-actueel/kabinet-beslist-over-acht-nieuwe-landinwaartse-reserveringen-rivieren"
+   ]
+  },
+  {
+   "cat": "markt",
+   "date": "23 sep 2026",
+   "sort": "2026-09-23",
+   "added": "2026-09-25",
+   "title": "Rijkswaterstaat gunt raamovereenkomst voor continue brugmonitoring (BWiM)",
+   "summary": "Een raamovereenkomst van 3 miljoen euro voor Bridge Weigh-in-Motion-systemen, waarmee voertuiggewichten en aslasten continu op meer bruggen en viaducten gemeten kunnen worden. Eerder is zo'n systeem al op de Scharsterrijnbrug geplaatst.",
+   "urls": [
+    "https://www.infrasite.nl/aanbesteden/2026/09/23/rijkswaterstaat-gaat-verkeersbelasting-op-meer-bruggen-continu-monitoren-met-bwim/"
+   ]
+  },
+  {
+   "cat": "markt",
+   "date": "22 sep 2026",
+   "sort": "2026-09-22",
+   "added": "2026-09-25",
+   "title": "Algemene Rekenkamer: onderhoud aan infrastructuur al decennia achtergesteld",
+   "summary": "Nederland besteedt volgens de Rekenkamer al sinds 1997 te weinig aan beheer en onderhoud van infrastructuur; achterstallig onderhoud is sinds 2016 verdubbeld en raakt inmiddels ook veiligheidsnormen. Voor onderhoud tot 2040 is €6-7 miljard beschikbaar.",
+   "urls": [
+    "https://www.infrasite.nl/onderhoud/2026/09/22/rekenkamer-onderhoud-aan-infrastructuur-decennia-achtergesteld/"
+   ]
+  },
+  {
+   "cat": "internationaal",
+   "date": "24 sep 2026",
+   "sort": "2026-09-24",
+   "added": "2026-09-25",
+   "title": "VS: extra $169,4 mln gegund voor North Bypass Channel in Fort Worth",
+   "summary": "US Army Corps of Engineers gunde Walsh Construction een vastgeprijsd vervolgcontract voor het North Bypass Channel bij Fort Worth: een beplante aarden dijk, gewapend-betonnen floodwalls en een voetgangersbrug. Onderdeel van hetzelfde Central City Flood Risk Management-programma als het eerder gemelde bypasskanaal-contract; werk start winter/lente 2027, oplevering 2029.",
+   "urls": [
+    "https://www.trwd.com/usace-awards-contract-for-central-city-north-bypass-channel/"
+   ]
+  },
+  {
+   "cat": "software",
+   "date": "sep 2026",
+   "sort": "2026-09-18",
+   "unsure": true,
+   "added": "2026-09-25",
+   "title": "ArcGIS for Autodesk Forma bijgewerkt (v1.1.1)",
+   "summary": "Esri's integratie-app tussen ArcGIS en Autodesk Forma kreeg een betrouwbaardere ArcGIS Enterprise-aanmelding, stabielere Living Atlas-content en betere renderprestaties bij grote datasets. Sluit aan bij de op AU2026 aangekondigde koppeling van Civil 3D als Forma Connected Client.",
+   "urls": [
+    "https://doc.esri.com/en/arcgis-autodesk-forma/latest/get-started/what-s-new.html"
+   ]
+  },
+  {
+   "cat": "stedelijk",
+   "date": "17 sep 2026",
+   "sort": "2026-09-17",
+   "added": "2026-09-25",
+   "title": "Terugblik Nationale Graafschadepreventiedag 2026",
+   "summary": "Op de Universiteit Twente bespraken grondwerkers, RDI en andere ketenpartijen hoe graafschade aan kabels en leidingen te verminderen is, met onder meer praktijktesten met grondradar en 3D-scans en een nieuwe KLIC-animatie.",
+   "urls": [
+    "https://www.cumela.nl/nieuws/samen-werken-aan-minder-graafschade",
+    "https://www.kabelenleidingoverleg.nl/nieuws/primeurs-graafschadepreventiedag-2026/"
+   ]
+  },
+  {
+   "cat": "grondwerk",
+   "date": "24 sep 2026",
+   "sort": "2026-09-24",
+   "added": "2026-09-25",
+   "title": "Elektrische graafmachine Staad 17W productierijp, 40+ verkopen in NL",
+   "summary": "Op de Grondverzetdagen kreeg de volledig elektrische Staad 17W (ca. 18 ton) veel lof: het toestel is productierijp, werkt met een wisselbare Powerbox 300 (~11 werkuren) en een 'Energy as a Service'-dienst voor batterijwissel op locatie. Ook een elektrische 23LCR-rupsgraafmachine (26 ton) werd getoond.",
+   "urls": [
+    "https://www.cumela.nl/nieuws/veel-lof-over-staad-17w-op-grondverzetdagen"
+   ]
+  },
+  {
+   "cat": "inmeten",
+   "date": "22 sep 2026",
+   "sort": "2026-09-22",
+   "added": "2026-09-25",
+   "title": "EASA herziet dronewetgeving: startblokkering en Remote ID vanaf 100 gram",
+   "summary": "EASA presenteerde een herzien regelgevingspakket met een verplichte startblokkering voor nieuwe drones zonder geldig exploitantnummer en een Remote ID-plicht vanaf 100 gram (met uitzondering voor bestaande toestellen). Een aparte regeling voor kritieke infrastructuur is geschrapt.",
+   "urls": [
+    "https://www.dronewatch.nl/2026/09/22/easa-brengt-startblokkering-voor-drones-dichterbij-en-komt-modelvliegers-tegemoet/"
+   ]
+  },
+  {
+   "cat": "inmeten",
+   "date": "23 sep 2026",
+   "sort": "2026-09-23",
+   "added": "2026-09-25",
+   "title": "Ernstig Bluetooth-lek kan DJI-drone tijdens vlucht overnemen",
+   "summary": "Een kwetsbaarheid (CVE-2026-78306) in de Bluetooth-interface van DJI-drones maakt het mogelijk zonder authenticatie commando's te sturen, tot mogelijke overname van de vluchtbesturing. Treft 16 modellen, waaronder de Air 3/3S en Mavic 3/4-serie; op te lossen met een firmware-update.",
+   "urls": [
+    "https://www.dronewatch.nl/2026/09/23/ernstig-bluetooth-lek-kan-leiden-tot-overname-van-dji-drone-tijdens-vlucht/"
+   ]
+  },
+  {
+   "cat": "inmeten",
+   "date": "vanaf 26 nov 2026",
+   "sort": "2026-09-24",
+   "added": "2026-09-25",
+   "title": "Meer ruimte voor drones rond civiele luchthavens vanaf 26 november",
+   "summary": "Delen van de CTR's rond Schiphol, Rotterdam, Groningen, Maastricht en Lelystad gaan open voor drones in de Open categorie; in de buitenste zones is dan geen radiocontact met de luchtverkeersleiding meer nodig. Rond militaire luchthavens verandert niets.",
+   "urls": [
+    "https://www.dronewatch.nl/2026/09/24/vanaf-26-november-meer-ruimte-voor-drones-rond-civiele-luchthavens/"
+   ]
+  },
+  {
+   "cat": "dijk",
+   "date": "28 sep–2 nov 2026",
+   "sort": "2026-09-28",
+   "added": "2026-09-28",
+   "title": "Dijkversterking centrum Wijk bij Duurstede van start",
+   "summary": "Hoogheemraadschap De Stichtse Rijnlanden (HDSR) start de dijkversterking tussen de inlaatsluis en Kasteel Duurstede, met damwanden en grondwerk in twee fasen. De Rijndijk en Havenweg zijn tot 2 november afgesloten voor verkeer.",
+   "urls": [
+    "https://www.wijksnieuws.nl/lokaal/verkeer-en-vervoer/1309020/werkzaamheden-dijkversterking-centrum-wijk-bij-duurstede-28-s"
+   ]
+  },
+  {
+   "cat": "kennis",
+   "date": "25 sep 2026",
+   "sort": "2026-09-25",
+   "added": "2026-09-28",
+   "title": "Rechter: Staat niet aansprakelijk voor schade door overstroming Limburg 2021",
+   "summary": "Twee Limburgers verloren hun rechtszaak tegen de Staat over schade door de overstroming van juli 2021; zij stelden dat een gebrekkige sifon (waar de Geul onder het Julianakanaal doorloopt) onvoldoende capaciteit had. De rechter oordeelde dat niet is aangetoond dat de constructie gebrekkig was of dat slecht onderhoud de schade veroorzaakte.",
+   "urls": [
+    "https://www.infrasite.nl/waterbouw-deltas/2026/09/25/rechter-staat-niet-aansprakelijk-voor-schade-door-overstroming-limburg-in-2021/"
+   ]
+  },
+  {
+   "cat": "grondwerk",
+   "date": "25 sep 2026",
+   "sort": "2026-09-25",
+   "added": "2026-09-28",
+   "title": "Limburg scherpt regels aan voor bouwstof Beaumix bij verbreding A2",
+   "summary": "De provincie Limburg verscherpt de voorwaarden voor toepassing van het omstreden funderingsmateriaal Beaumix (restproduct van afvalverbranding) bij de verbreding van de A2; in grondwaterbeschermingsgebieden wordt het gebruik in principe verboden.",
+   "urls": [
+    "https://www.infrasite.nl/wegen/2026/09/25/limburg-scherpt-regels-aan-voor-gebruik-bouwstof-beaumix/"
+   ]
+  },
+  {
+   "cat": "stedelijk",
+   "date": "25 sep 2026",
+   "sort": "2026-09-25",
+   "added": "2026-09-28",
+   "title": "CROW-ambitie 2027-2031: “We gaan meer richting geven, al is dat wennen”",
+   "summary": "CROW-directeur Pieter Litjens schetst een koerswijziging voor 2027-2031 met meer sturing via AI-inzet, releasemanagement en gebiedsgerichte programma's, plus aandacht voor duurzame materiaalstromen zoals betonrecycling.",
+   "urls": [
+    "https://www.crow.nl/actueel/crow-ambitie-we-gaan-meer-richting-geven-al-is-dat-wennen/"
+   ]
+  },
+  {
+   "cat": "stedelijk",
+   "date": "23 sep 2026",
+   "sort": "2026-09-23",
+   "added": "2026-09-28",
+   "title": "Doorontwikkelde beheersystematieken en Leidraad groen beschikbaar (CROW)",
+   "summary": "CROW publiceert drie nieuwe documenten voor onderbouwde beheerkeuzes in de openbare ruimte: een fundamenteel kader, een algemene leidraad en een groenspecifieke leidraad, met één gedeelde systematiek voor groen, wegen en kunstwerken. Richtlijnen voor wegverhardingen en kunstwerken volgen in 2026-2027.",
+   "urls": [
+    "https://www.crow.nl/actueel/doorontwikkelde-beheersystematieken-en-leidraad-groen-beschikbaar/"
+   ]
+  },
+  {
+   "cat": "markt",
+   "date": "24 sep 2026",
+   "sort": "2026-09-24",
+   "added": "2026-09-28",
+   "title": "Rijksvastgoedbedrijf gunt onderhoud defensieterreinen (170 mln) aan drie aannemers, waaronder Boskalis",
+   "summary": "Het Rijksvastgoedbedrijf gunde het raamcontract voor groot onderhoud van wegen en riolering op defensielocaties (170 miljoen euro) aan drie combinaties: NTP-Schagen (Noord/Oost), Boskalis (Zuid) en Van Wijk Nieuwegein (West). Het gaat onder meer om vliegbasis Leeuwarden en de Kromhout- en Bernhardkazerne.",
+   "urls": [
+    "https://www.infrasite.nl/wegen/2026/09/24/170-miljoen-euro-voor-onderhoud-defensiewegen-en-riolering-rvb-kiest-drie-aannemers/",
+    "https://www.cobouw.nl/339547/rijksvastgoedbedrijf-gunt-groot-onderhoud-defensieterreinen-voor-170-miljoen-euro-aan-drie-aannemers"
+   ]
+  },
+  {
+   "cat": "markt",
+   "date": "sep 2026",
+   "sort": "2026-09-25",
+   "unsure": true,
+   "added": "2026-09-28",
+   "title": "Rijkswaterstaat schrapt natuureiland Ketelmeer wegens hoge kosten",
+   "summary": "RWS schrapt het plan voor een natuureiland (met dijken, rietmoeras en een 'vissenbos' van verankerd dood hout) in het Ketelmeer als KRW-maatregel, omdat de kosten fors hoger uitvielen dan begroot. In plaats daarvan wordt ingezet op uitbreiding van rietvelden langs de oevers.",
+   "urls": [
+    "https://www.h2owaternetwerk.nl/h2o-actueel/een-nieuw-eilandje-in-het-ketelmeer-van-gebaggerd-ijsselzand"
+   ]
+  },
+  {
+   "cat": "inmeten",
+   "date": "25 sep 2026",
+   "sort": "2026-09-25",
+   "added": "2026-09-28",
+   "title": "TU Delft geeft kleine drone 'snorharen' om in het donker te navigeren",
+   "summary": "Onderzoekers van TU Delft rustten een kleine drone uit met kunstmatige tastsensoren ('snorharen'), waarmee het toestel volledig in het donker kan navigeren zonder camera, lidar of gps — een alternatieve sensortechniek voor omstandigheden waarin optische systemen tekortschieten.",
+   "urls": [
+    "https://www.dronewatch.nl/2026/09/25/tu-delft-geeft-kleine-drone-snorharen-om-in-het-donker-te-navigeren/"
+   ]
+  },
+  {
+   "cat": "inmeten",
+   "date": "27 sep 2026",
+   "sort": "2026-09-27",
+   "added": "2026-09-28",
+   "title": "Europese primeur: Britse civiele drone vliegt BVLOS naar Noorse wateren",
+   "summary": "Het Britse bedrijf Flylogix voerde de eerste civiele grensoverschrijdende BVLOS-dronevlucht in Europa uit: 290 zeemijl (ca. 537 km) van de Shetlandeilanden naar een Noors offshore-platform (Equinor Statfjord B) en terug, in bijna vijf uur, voor een methaanmeting.",
+   "urls": [
+    "https://www.dronewatch.nl/2026/09/27/primeur-in-europa-britse-civiele-drone-vliegt-bvlos-naar-noorse-wateren/"
+   ]
+  },
+  {
+   "cat": "leren",
+   "date": "30 sep 2026",
+   "sort": "2026-09-30",
+   "added": "2026-09-28",
+   "title": "Geonovum-expertmeeting: AI voor geo-informatie en standaarden",
+   "summary": "Geonovum organiseert op 30 september in Utrecht een expertmeeting waarin professionals van overheden en maatschappelijke organisaties kennis uitwisselen over de inzet van AI bij het maken, verwerken en toepassen van geo-informatie en standaarden.",
+   "urls": [
+    "https://www.geonovum.nl/agenda"
+   ]
+  },
+  {
+   "cat": "markt",
+   "date": "25 sep 2026",
+   "sort": "2026-09-25",
+   "added": "2026-09-29",
+   "title": "Schiphol zet vijf raamovereenkomsten uit voor 9 jaar onderhoud en bouw (circa 2,95 mld)",
+   "summary": "Schiphol zoekt bouwers en installateurs voor vijf raamovereenkomsten met een totale waarde van circa 2,95 miljard euro, onderdeel van een vernieuwingsprogramma van circa 10 miljard tot 2035. Volgens de luchthaven is het de grootste vernieuwings- en onderhoudsopgave uit de geschiedenis.",
+   "urls": [
+    "https://www.infrasite.nl/aanbesteden/2026/09/25/schiphol-trekt-miljarden-uit-voor-onderhoud-en-bouw-op-luchthaven/"
+   ]
+  },
+  {
+   "cat": "markt",
+   "date": "25 sep 2026",
+   "sort": "2026-09-25",
+   "added": "2026-09-29",
+   "title": "Movares koopt Nieman Groep",
+   "summary": "Ingenieursbureau Movares neemt Nieman Groep over, om klanten over een groter deel van de bouwlevenscyclus te kunnen ondersteunen. Financiële details zijn niet openbaar gemaakt.",
+   "urls": [
+    "https://www.infrasite.nl/bouwen/2026/09/25/movares-koopt-nieman-groep-en-verbreedt-advieswerk-in-bouw/"
+   ]
+  },
+  {
+   "cat": "markt",
+   "date": "28 sep 2026",
+   "sort": "2026-09-28",
+   "added": "2026-09-29",
+   "title": "Groningen Seaports start aanbesteding voor laad- en losvoorziening in Farmsum",
+   "summary": "Groningen Seaports heeft een aanbesteding gestart voor een nieuwe laad- en losvoorziening voor petrochemische producten in de Oosterhornhaven (Delfzijl). De opdrachtgever voert zelf werk aan de betonconstructie uit, dus de aannemer van de civiele werken moet nauw afstemmen.",
+   "urls": [
+    "https://www.infrasite.nl/waterbouw-deltas/2026/09/28/groningen-seaports-start-aanbesteding-voor-laad-en-losvoorziening-petrochemische-producten/"
+   ]
+  },
+  {
+   "cat": "inmeten",
+   "date": "28 sep 2026",
+   "sort": "2026-09-28",
+   "added": "2026-09-29",
+   "title": "DJI Matrice 5TD in aantocht: geïntegreerde LiDAR en vliegen zonder GNSS? (lekken)",
+   "summary": "Volgens lekken uit de Chinese CAAC-registratie komt er een opvolger van de Matrice 4TD (2,6 kg) met geïntegreerde LiDAR en RTK-antenne, en vliegen zonder GNSS via vision en LiDAR. Onofficieel: DJI heeft niets aangekondigd en er is geen releasedatum.",
+   "urls": [
+    "https://www.dronewatch.nl/2026/09/28/dji-matrice-5td-in-aantocht-geintegreerde-lidar-en-vliegen-zonder-gnss/"
+   ]
+  },
+  {
+   "cat": "kennis",
+   "date": "28 sep 2026",
+   "sort": "2026-09-28",
+   "added": "2026-09-29",
+   "title": "STOWA op FlashFloodBreaker-partnerbijeenkomst in Metz",
+   "summary": "Twaalf organisaties uit zes EU-landen, waaronder STOWA, evalueerden het Interreg NWE-project FlashFloodBreaker over voorbereiding op plotselinge overstromingen. Hulpdiensten uit vier landen oefenden reddingen in stilstaand en stromend water.",
+   "urls": [
+    "https://www.stowa.nl/nieuws/flashfloodbreaker-partnerbijeenkomst-metz"
+   ]
+  },
+  {
+   "cat": "internationaal",
+   "date": "15 sep 2026",
+   "sort": "2026-09-15",
+   "added": "2026-09-29",
+   "title": "VK: Graham gaat het Oxford Flood Alleviation Scheme uitvoeren",
+   "summary": "Aannemer Graham krijgt de opdracht voor de 5 km lange Oxford Flood Alleviation Scheme van de Environment Agency (circa £176 mln; bronnen noemen uiteenlopende bedragen). Bouwstart in 2027, looptijd tot 5 jaar.",
+   "urls": [
+    "https://www.newcivilengineer.com/latest/graham-to-deliver-176m-oxford-flood-defence-project-15-09-2026/",
+    "https://www.constructionnews.co.uk/contracts/graham-lands-five-year-oxford-flood-defence-job-15-09-2026/"
+   ]
+  },
+  {
+   "cat": "dijk",
+   "date": "29 sep 2026",
+   "sort": "2026-09-29",
+   "added": "2026-09-30",
+   "title": "Valcon ontwikkelt nieuwe inspectiemethode voor de zuigerstangen van de Oosterscheldekering",
+   "summary": "Rijkswaterstaat laat Valcon voor 700.000 euro een geautomatiseerde inspectiemethode ontwikkelen voor de bijna 40 jaar oude zuigerstangen, omdat visuele inspectie te weinig zegt over de beschermlaag. Het R&D-traject moet uiterlijk 1 april 2028 klaar zijn.",
+   "urls": [
+    "https://www.infrasite.nl/waterbouw-deltas/2026/09/29/valcon-ontwikkelt-nieuwe-inspectiemethode-voor-blinde-vlek-oosterscheldekering/"
+   ]
+  },
+  {
+   "cat": "dijk",
+   "date": "28 sep 2026",
+   "sort": "2026-09-28",
+   "added": "2026-09-30",
+   "title": "Dijkwachten Hollandse Delta trainen bij het Watersnoodmuseum",
+   "summary": "Ruim 300 vrijwillige dijkwachten van Waterschap Hollandse Delta trainen deze week (28 sep t/m 2 okt) in Ouwerkerk ter voorbereiding op het hoogwaterseizoen.",
+   "urls": [
+    "https://www.dordrecht.net/nieuws/124993/dijkwachten-trainen-bij-watersnoodmuseum-voorbereid-als-het-erop-aankomt"
+   ],
+   "unsure": true
+  },
+  {
+   "cat": "markt",
+   "date": "29 sep 2026",
+   "sort": "2026-09-29",
+   "added": "2026-09-30",
+   "title": "Koninginnensluis ongeveer een half jaar dicht voor tweede renovatiefase",
+   "summary": "Rijkswaterstaat en Heijmans starten op 1 oktober met fase 2 (sluismuren, dekstenen, sluiskolk). De sluis is circa zes maanden dicht.",
+   "urls": [
+    "https://www.infrasite.nl/sluizen/2026/09/29/koninginnensluis-half-jaar-dicht-voor-tweede-fase-renovatie/"
+   ]
+  },
+  {
+   "cat": "markt",
+   "date": "29 sep 2026",
+   "sort": "2026-09-29",
+   "added": "2026-09-30",
+   "title": "Houtribdijk (N307): gewichtsbeperkingen voor zwaar verkeer, TLN vraagt perspectief",
+   "summary": "Rijkswaterstaat voert per 21 oktober gewichtsbeperkingen in op de Houtribdijk tussen Lelystad en Enkhuizen. Volgens de kop kunnen die jaren duren; TLN vraagt om duidelijkheid over de langetermijnaanpak.",
+   "urls": [
+    "https://www.infrasite.nl/wegen/2026/09/29/houtribdijk-wellicht-jarenlang-dicht-voor-zwaar-verkeer-tln-vraagt-perspectief-van-rws/"
+   ]
+  },
+  {
+   "cat": "dijk",
+   "date": "30 sep 2026",
+   "sort": "2026-09-30",
+   "added": "2026-10-01",
+   "title": "Lob van Gennep: ontwerp-projectbesluit vastgesteld, plannen vanaf 6 november ter inzage",
+   "summary": "Waterschap Limburg stelde op 29 september het ontwerp-projectbesluit vast voor het HWBP-project Lob van Gennep (dijkversterking plus extra waterberging bij extreem hoogwater, met effect op de Maas benedenstrooms). Noord-Brabant en Gelderland schoten rentedragend geld voor, waarmee de kostenstijging door hogere rente is opgelost. De plannen liggen zes weken ter inzage vanaf 6 november.",
+   "urls": [
+    "https://brabant.nl/actueel/nieuws/hoogwaterveiligheidsproject-lob-van-gennep",
+    "https://www.maasduinencentraal.nl/nieuws/nieuws/114814/project-lob-van-gennep-kan-vooruit"
+   ]
+  },
+  {
+   "cat": "dijk",
+   "date": "1 okt 2026",
+   "sort": "2026-10-01",
+   "added": "2026-10-01",
+   "title": "Stormseizoen gestart: 1 oktober tot 1 april",
+   "summary": "Op 1 oktober begint het stormseizoen met een grotere kans op hoogwater; in Rotterdam wonen rond de 50.000 mensen buitendijks. Jaarlijks terugkerend bericht.",
+   "urls": [
+    "https://noordereiland.org/2026/1-okt-bijeenkomst-hoogwater/"
+   ]
+  },
+  {
+   "cat": "stedelijk",
+   "date": "30 sep 2026",
+   "sort": "2026-09-30",
+   "added": "2026-10-01",
+   "title": "VNG: Nationale Adaptatiestrategie blijft te vaag over wie wat doet en betaalt",
+   "summary": "De VNG reageert kritisch op de ontwerp-Nationale Adaptatiestrategie. Gemeenten willen een concreet uitvoeringsplan met duidelijke verantwoordelijkheden en structurele financiering voor klimaatadaptatie in de stad.",
+   "urls": [
+    "https://gemeente.nu/ruimte-milieu/gemeenten-willen-van-klimaatstrategie-een-concreet-werkplan"
+   ]
+  },
+  {
+   "cat": "grondwerk",
+   "date": "1 okt 2026",
+   "sort": "2026-10-01",
+   "added": "2026-10-01",
+   "title": "Per 1 oktober: nieuwe regels voor graven in verontreinigde grond (Verzamelbesluit bodem en water)",
+   "summary": "De Bal-activiteiten voor graven in bodem tot en boven de interventiewaarde worden samengevoegd tot één activiteit. Meldings- en indieningsformulieren in het Omgevingsloket wijzigen en bij meldingen voor grond- en baggeropslag moet extra informatie worden opgegeven. Het besluit zelf dateert van juni; de inwerkingtreding is vandaag.",
+   "urls": [
+    "https://adblom.nl/omgevingswet/verzamelbesluit-omgevingswet-2026/",
+    "https://iplo.nl/digitaal-stelsel/storingen-onderhoud-release-informatie/release-informatie/2026/grote-verandering-indieningsformulieren-graven/",
+    "https://zoek.officielebekendmakingen.nl/stb-2026-164.html"
+   ]
+  },
+  {
+   "cat": "inmeten",
+   "date": "30 sep 2026",
+   "sort": "2026-09-30",
+   "added": "2026-10-01",
+   "title": "SkylandX presenteert handheld scanner MetaCam Air 3 met eigen survey-lidar",
+   "summary": "SkylandX lanceert de MetaCam Air 3, een handheld reality-capture-systeem met eigen lidar (360° × 240°) en meerdere panorama- en SLAM-camera's. Nauwkeurigheid en prijs zijn niet geverifieerd.",
+   "urls": [
+    "https://www.gim-international.com/news/skylandx-sharpens-focus-on-surveying-with-in-house-lidar-scanner"
+   ],
+   "unsure": true
+  },
+  {
+   "cat": "markt",
+   "date": "30 sep 2026",
+   "sort": "2026-09-30",
+   "added": "2026-10-01",
+   "title": "BAM wint busbaan en asfaltvervanging Europalaan-Zuid in Utrecht (circa 4,55 mln euro)",
+   "summary": "Gemeente Utrecht gunt de uitbreiding van de busbaan en de asfaltvervanging op de Europalaan-Zuid aan BAM Infra, inclusief een nieuwe keerlus en buffer bij P+R Westraven. Oplevering volgens zoekresultaten zomer 2027.",
+   "urls": [
+    "https://www.infrasite.nl/wegen/2026/09/30/bam-wint-klus-voor-uitbreiding-busbaan-en-asfaltvervanging-europalaan-in-utrecht/"
+   ]
+  },
+  {
+   "cat": "markt",
+   "date": "30 sep 2026",
+   "sort": "2026-09-30",
+   "added": "2026-10-01",
+   "title": "Provincie Limburg zoekt bouwteampartner voor verbouwing N278 en N598",
+   "summary": "Limburg zoekt een bouwteampartner voor de reconstructie van delen van de N278 en N598 in Zuid-Limburg, met twee nieuwe rotondes en vrijliggende fietspaden. Bedrag en deadline zijn niet bekend.",
+   "urls": [
+    "https://www.infrasite.nl/wegen/2026/09/30/limburg-zoekt-bouwteampartner-voor-flinke-verbouwing-n278-en-n598/"
+   ]
+  },
+  {
+   "cat": "software",
+   "date": "28 sep 2026",
+   "sort": "2026-09-28",
+   "added": "2026-10-02",
+   "title": "Arcadis breidt AI-samenwerking met Autodesk uit",
+   "summary": "Arcadis is het eerste wereldwijde ontwerpbureau met een overeenkomst met Autodesk om AI-tools en agents te ontwikkelen. Arcadis koppelt eigen MCP-mogelijkheden aan Autodesk Assistant, zodat eigen data bruikbaar is in AI-workflows en eigendom van Arcadis blijft.",
+   "urls": [
+    "https://enr.com/articles/63741-arcadis-to-collaborate-with-autodesk-on-ai-tools-for-design-and-engineering",
+    "https://constructiondigital.com/news/arcadis-accelerates-use-of-ai-through-autodesk-collaboration"
+   ]
+  },
+  {
+   "cat": "dijk",
+   "date": "1 okt 2026",
+   "sort": "2026-10-01",
+   "added": "2026-10-02",
+   "title": "Versterking Afsluitdijk afgerond: gemaal en nieuwe spuisluizen officieel in gebruik",
+   "summary": "Op 1 oktober nam de minister bij Den Oever het nieuwe gemaal (6 pompen, samen 275 m³/s) en de nieuwe spuisluizen in gebruik. Daarmee is de versterking van de 32 km lange Afsluitdijk (start 2019, combinatie Levvel) klaar. De spuicapaciteit naar de Waddenzee is 45% groter; na 2045 is volgens RWS extra pompcapaciteit nodig door zeespiegelstijging.",
+   "urls": [
+    "https://www.rijkswaterstaat.nl/nieuws/archief/2026/10/versterking-afsluitdijk-afgerond-gemaal-en-nieuwe-spuisluizen-officieel-in-gebruik",
+    "https://www.transport-online.nl/140396/versterking-afsluitdijk-na-jarenlange-werkzaamheden-officieel-afgerond/",
+    "https://www.schuttevaer.nl/nieuws/actueel/2026/10/01/afsluitdijk-klaar-voor-stormseizoen-werkzaamheden-afgerond/"
+   ]
+  },
+  {
+   "cat": "dijk",
+   "date": "4 okt 2026",
+   "sort": "2026-10-04",
+   "added": "2026-10-02",
+   "title": "40 jaar Oosterscheldekering; renovatie hydraulische installaties loopt",
+   "summary": "De kering werd op 4 oktober 1986 geopend en wordt dit weekend herdacht, onder meer in het Watersnoodmuseum. De hydraulische installaties naderen het einde van hun technische levensduur en worden van april 2026 tot december 2032 vernieuwd.",
+   "urls": [
+    "https://www.wereldregio.nl/nieuws/algemeen/44604/40-jaar-oosterscheldekering-in-het-watersnoodmuseum",
+    "https://www.rijkswaterstaat.nl/water/projectenoverzicht/oosterscheldekering-vernieuwing-hydraulische-installaties"
+   ],
+   "unsure": true
+  },
+  {
+   "cat": "stedelijk",
+   "date": "30 sep 2026",
+   "sort": "2026-09-30",
+   "added": "2026-10-02",
+   "title": "Standaard RAW Bepalingen 2025: wijziging september 2026 is gereed",
+   "summary": "CROW bracht de septemberwijziging van de Standaard RAW Bepalingen 2025 uit, met aanpassingen in de systematiek en uitbreidingen, onder meer op duurzaamheid. De wijzigingen zijn direct bruikbaar in RAW-contracten.",
+   "urls": [
+    "https://crow.nl/actueel/standaard-raw-bepalingen-2025-wijziging-september-2026-is-gereed/"
+   ]
+  },
+  {
+   "cat": "stedelijk",
+   "date": "1 okt 2026",
+   "sort": "2026-10-01",
+   "added": "2026-10-02",
+   "title": "Uniforme validatiesystematiek asfalt van kracht",
+   "summary": "Het AsfaltKwaliteitsLoket beoordeelt nieuwe aanvragen vanaf 1 oktober 2026 volgens één uniforme validatiesystematiek, bedoeld om duurzame asfaltinnovaties gestandaardiseerd en sneller in te voeren.",
+   "urls": [
+    "https://crow.nl/actueel/uniforme-validatiesystematiek-asfalt-van-kracht/"
+   ]
+  },
+  {
+   "cat": "stedelijk",
+   "date": "1 okt 2026",
+   "sort": "2026-10-01",
+   "added": "2026-10-02",
+   "title": "CROW-KpVV: beheer is cruciaal voor een voetgangersvriendelijke openbare ruimte",
+   "summary": "Een nieuwe gids beschrijft kwaliteitseisen en organisatie van voetgangersvriendelijk beheer op strategisch, tactisch en operationeel niveau, voor gemeenten die inrichting en onderhoud van de openbare ruimte doen.",
+   "urls": [
+    "https://crow.nl/actueel/het-belang-van-beheer-voor-een-voetgangersvriendelijke-openbare-ruimte/"
+   ]
+  },
+  {
+   "cat": "ai",
+   "date": "29 sep 2026",
+   "sort": "2026-09-29",
+   "added": "2026-10-02",
+   "title": "Trendspek haalt 6 mln op voor AI-analyse van drone-inspectiedata",
+   "summary": "Het Australische Trendspek bundelt data van drones, LiDAR, fotogrammetrie en BIM tot een blijvend 3D-assetrecord. De financiering (valuta niet bevestigd) gaat naar AI-analyse en uitbreiding naar Canada, de VS en de EU.",
+   "urls": [
+    "https://spatialsource.com.au/6-million-to-turn-drone-data-into-3d-asset-records",
+    "https://www.industryevents.com/news/asset-analysis-platform-trendspek-banks-6-million-to-keep-critical-infrastructur-20260929"
+   ]
+  },
+  {
+   "cat": "leren",
+   "date": "27 okt en 3 nov 2026",
+   "sort": "2026-10-27",
+   "added": "2026-10-02",
+   "title": "Cursus 'AI binnen Infra & Landmeetkunde' (Zondag Opleidingen)",
+   "summary": "Tweedaagse praktijkcursus over slimmer werken met AI in infra en landmeetkunde. Data volgens de cursuspagina 27 oktober en 3 november; een andere bron noemt 26 oktober en 2 november, dus controleer dit via de cursuspagina.",
+   "urls": [
+    "https://zondagopleidingen.nl/opleiding/ai-binnen-infra-landmeetkunde/"
+   ],
+   "unsure": true
+  },
+  {
+   "cat": "markt",
+   "date": "30 sep 2026",
+   "sort": "2026-09-30",
+   "added": "2026-10-02",
+   "title": "Haskoning neemt Nelissen Ingenieursbureau over",
+   "summary": "Haskoning neemt het Eindhovense Nelissen over om de dienstverlening voor de gebouwde omgeving uit te breiden (installatietechniek, bouwfysica, duurzaamheid). Meer consolidatienieuws dan infra-nieuws.",
+   "urls": [
+    "https://www.infrasite.nl/bedrijven/2026/09/30/haskoning-neemt-nelissen-ingenieursbureau-over/",
+    "https://www.consultancy.nl/nieuws/70625/haskoning-breidt-dienstverlening-voor-gebouwde-omgeving-uit-met-overname-nelissen"
+   ]
+  },
+  {
+   "cat": "markt",
+   "date": "sluit 12 okt 2026",
+   "sort": "2026-10-12",
+   "added": "2026-10-02",
+   "title": "Wetterskip Fryslân: aanbesteding dijkversterking Ternaard-Peazens-Moddergat (ca. 130 mln)",
+   "summary": "Europese aanbesteding voor circa 11,5 km Waddenzeedijk in het HWBP, uitvoering vanaf 2027. De sluitingsdatum 12 oktober komt uit een zoekresultaat en is niet bevestigd op de bronpagina; check TenderNed.",
+   "urls": [
+    "https://www.infrasite.nl/waterbouw-deltas/2026/01/27/dijk-tussen-ternaard-en-peazens-moddergat-op-de-schop-in-hwbp-project-van-130-miljoen/",
+    "https://www.commissiemer.nl/advies/dijkverbetering-ternaardpeazens-moddergat/"
+   ],
+   "unsure": true
+  }
+ ],
+ "events": [
+  {
+   "name": "Arcadis Capital Markets Day",
+   "start": "2026-09-29",
+   "end": "2026-09-29",
+   "dateLabel": "sep 2026",
+   "place": "Amsterdam",
+   "why": "Arcadis presenteert na het afgeketste bod van WSP zijn nieuwe strategie.",
+   "url": "https://www.arcadis.com/en/news/global/2026/arcadis-comments-on-wsps-decision-to-not-proceed-with-its-offer"
+  },
+  {
+   "name": "Infra Aanbestedingscongres",
+   "start": "2026-10-06",
+   "end": "2026-10-06",
+   "dateLabel": "okt 2026",
+   "place": "De Kuip, Rotterdam",
+   "why": "Eerste editie van een nieuw congres over aanbesteden in de infra/waterbouw: EU-regelgeving, duurzaamheidscriteria en samenwerkingsmodellen.",
+   "url": "https://inkoopjobs.nl/evenementen/infra-aanbestedingscongres-2026/"
+  },
+  {
+   "name": "Delft Software Days (DSD-INT 2026)",
+   "start": "2026-09-24",
+   "end": "2026-11-26",
+   "dateLabel": "24 sep t/m 26 nov",
+   "place": "Delft en online · veel sessies gratis",
+   "why": "Gebruikersdagen en cursussen voor de D-GEO Suite (D-Stability, GEOLib) en andere Deltares-software. Zwaartepunt van het programma is 2-5 nov (Delft3D User Days).",
+   "url": "https://softwaredays.deltares.nl/-/dsd-int-2026"
+  },
+  {
+   "name": "Bentley Year in Infrastructure",
+   "start": "2026-10-06",
+   "end": "2026-10-07",
+   "dateLabel": "6–7 okt 2026",
+   "place": "Singapore",
+   "why": "Uitreiking van de YII Awards. Veel finalisten gebruiken AI voor kust- en hoogwaterwerken.",
+   "url": "https://www.bentley.com/news/"
+  },
+  {
+   "name": "KNW Jaarcongres 2026",
+   "start": "2026-10-09",
+   "end": "2026-10-09",
+   "dateLabel": "okt 2026",
+   "place": "Het Klooster, Amersfoort",
+   "why": "Jaarlijkse netwerkdag van het Koninklijk Nederlands Waternetwerk.",
+   "url": "https://waternetwerk.nl/knw-activiteiten/1025-2610-knw-jaarcongres-2026"
+  },
+  {
+   "name": "digiGO D-Day 2026",
+   "start": "2026-10-28",
+   "end": "2026-10-28",
+   "dateLabel": "okt 2026",
+   "place": "Spant!, Bussum · €60",
+   "why": "Digitalisering en open BIM-standaarden (IFC, NLCS, ILS) in bouw en infra.",
+   "url": "https://www.digigo.nu/d-day-2026/"
+  },
+  {
+   "name": "Waterbouwdag 2026",
+   "start": "2026-10-29",
+   "end": "2026-10-29",
+   "dateLabel": "okt 2026",
+   "place": "Beatrixgebouw, Utrecht",
+   "why": "Dé kennisdag van de Nederlandse waterbouw, met veel over dijkversterking.",
+   "url": "https://www.waterbouwdag.org/"
+  },
+  {
+   "name": "Civil Infra Benelux: IFC, wat kun je ermee?",
+   "start": "2026-11-04",
+   "end": "2026-11-04",
+   "dateLabel": "4 nov, 14:30-18:00",
+   "place": "Haskoning, Delft",
+   "why": "Gebruikersgroep met een eigen werkgroep Civil 3D. Direct relevant.",
+   "url": "https://civilinfrabnl.nl/"
+  },
+  {
+   "name": "Nationaal AI & Data Congres",
+   "start": "2026-11-05",
+   "end": "2026-11-05",
+   "dateLabel": "nov 2026",
+   "place": "Amsterdam",
+   "why": "Algemeen AI-congres, niet specifiek voor de bouw.",
+   "url": "https://www.delex.nl/shop/opleidingen/nationaal-ai-data-congres-donderdag-5-november-2026"
+  },
+  {
+   "name": "Nationaal Deltacongres 2026",
+   "start": "2026-11-12",
+   "end": "2026-11-12",
+   "dateLabel": "nov 2026",
+   "place": "Omnisport, Apeldoorn · vol, wachtlijst en online",
+   "why": "Het jaarcongres van het Deltaprogramma, dit jaar na de herijking.",
+   "url": "https://www.deltaprogramma.nl/nationaaldeltacongres/2026"
+  },
+  {
+   "name": "GeoBuzz 2026",
+   "start": "2026-11-16",
+   "end": "2026-11-17",
+   "dateLabel": "16–17 nov 2026",
+   "place": "Congrescentrum 1931, 's-Hertogenbosch",
+   "why": "Groot congres over geo-informatie, inmeting en ondergronddata.",
+   "url": "https://geobuzz.nl/"
+  },
+  {
+   "name": "AI Live!",
+   "start": "2026-11-17",
+   "end": "2026-11-17",
+   "dateLabel": "nov 2026",
+   "place": "Locatie niet bevestigd",
+   "why": "Groot algemeen AI-event in Nederland.",
+   "url": "https://congresagenda.nl/en/event/ai-live-het-grootste-ai-event-van-nederland-2/",
+   "unconfirmed": true
+  },
+  {
+   "name": "Symposium Dynamisch Kustbeheer (STOWA/PIW)",
+   "start": "2026-11-25",
+   "end": "2026-11-26",
+   "dateLabel": "25–26 nov 2026",
+   "place": "Ouddorp",
+   "why": "Kennisdagen over waterkeringen en duinen, meer beheer dan ontwerp.",
+   "url": "https://www.stowa.nl/agenda/tweedaags-symposium-dynamisch-kustbeheer-goeree-overflakkee"
+  },
+  {
+   "name": "DigiBouw 2026",
+   "start": "2026-11-25",
+   "end": "2026-11-26",
+   "dateLabel": "25–26 nov 2026",
+   "place": "Jaarbeurs Utrecht",
+   "why": "Beurs over digitaal en datagedreven bouwen.",
+   "url": "https://www.digibouw.nl/"
+  },
+  {
+   "name": "InfraTech 2027",
+   "start": "2027-01-12",
+   "end": "2027-01-15",
+   "dateLabel": "12–15 jan 2027",
+   "place": "Rotterdam Ahoy",
+   "why": "De belangrijkste infrabeurs van Nederland, met de thema's Digitalisering en Klimaat & Water.",
+   "url": "https://www.infratech.nl/en"
+  },
+  {
+   "name": "Aquatech Amsterdam / AIWW",
+   "start": "2027-03-09",
+   "end": "2027-03-12",
+   "dateLabel": "9–12 mrt 2027",
+   "place": "RAI Amsterdam",
+   "why": "Internationale waterbeurs. Vooral watertechnologie, minder dijken.",
+   "url": "https://www.aquatechtrade.com/amsterdam"
+  },
+  {
+   "name": "Aqua Nederland 2027",
+   "start": "2027-03-16",
+   "end": "2027-03-18",
+   "dateLabel": "16–18 mrt 2027",
+   "place": "Evenementenhal Gorinchem",
+   "why": "Vakbeurs voor de waterketen, beperkt relevant.",
+   "url": "https://www.aquanederland.nl/en/",
+   "unconfirmed": true
+  },
+  {
+   "name": "Infra Relatiedagen 2027",
+   "start": "2027-02-16",
+   "end": "2027-02-18",
+   "dateLabel": "16–18 feb 2027",
+   "place": "Evenementenhal Hardenberg",
+   "why": "27e editie van dit grond-, weg- en waterbouwevenement: 8 hallen, 350+ exposanten (waaronder waterbouw en materieel), ca. 15.000 bezoekers.",
+   "url": "https://www.infrarelatiedagen.nl/en/"
+  }
+ ],
+ "recurring": [
+  {
+   "name": "Dijkwerkersdag (HWBP)",
+   "when": "voorjaar 2027",
+   "why": "De belangrijkste netwerkdag voor dijkversterking. De vorige was op 2 april 2026.",
+   "url": "https://www.hwbp.nl/actueel/dijkwerkersdag"
+  },
+  {
+   "name": "Civil Infra Academy (Cadac)",
+   "when": "mei 2027?",
+   "why": "In 2026 met de sessie AI in AutoCAD en Civil 3D. Past het beste bij jouw profiel.",
+   "url": "https://www.cadac.com/events/civil-infra-academy-2026/"
+  },
+  {
+   "name": "Kennisdag Instandhouding Waterkeringen (STOWA)",
+   "when": "mrt–apr 2027",
+   "why": "De 23e editie was op 19 maart 2026.",
+   "url": "https://www.stowa.nl/PIW"
+  },
+  {
+   "name": "Kennisdag Regionale Keringen (STOWA)",
+   "when": "juni 2027",
+   "why": "De editie van 2026 was op 18 juni.",
+   "url": "https://www.stowa.nl/agenda"
+  },
+  {
+   "name": "KKP-webinars (STOWA)",
+   "when": "doorlopend",
+   "why": "Geregeld webinars over macrostabiliteit, piping en het beoordelen van dijken.",
+   "url": "https://kkp.stowa.nl/agenda"
+  }
+ ],
+ "sources": [
+  {
+   "cat": "civil3d",
+   "name": "Autodesk AEC-blog (releases)",
+   "url": "https://www.autodesk.com/blogs/aec/"
+  },
+  {
+   "cat": "civil3d",
+   "name": "cadpilot, Jump on C3D",
+   "url": "https://cadpilot.com/home/jump-on-c3d/"
+  },
+  {
+   "cat": "civil3d",
+   "name": "Between the Lines",
+   "url": "https://btl-blog.com/"
+  },
+  {
+   "cat": "civil3d",
+   "name": "HuizBlog (NL, Dutch Content)",
+   "url": "https://blog.huiz.net/"
+  },
+  {
+   "cat": "civil3d",
+   "name": "Dynamo-forum, Civil 3D",
+   "url": "https://forum.dynamobim.com/c/civil3d"
+  },
+  {
+   "cat": "civil3d",
+   "name": "Cadac nieuws",
+   "url": "https://www.cadac.com/nieuws/"
+  },
+  {
+   "cat": "dijk",
+   "name": "HWBP-nieuws",
+   "url": "https://www.hwbp.nl/actueel/nieuws"
+  },
+  {
+   "cat": "dijk",
+   "name": "Deltaprogramma",
+   "url": "https://www.deltaprogramma.nl/actueel/nieuws"
+  },
+  {
+   "cat": "dijk",
+   "name": "Infrasite, Hoogwaterbescherming",
+   "url": "https://www.infrasite.nl/hoogwaterbescherming/"
+  },
+  {
+   "cat": "dijk",
+   "name": "STOWA",
+   "url": "https://www.stowa.nl"
+  },
+  {
+   "cat": "dijk",
+   "name": "Unie van Waterschappen",
+   "url": "https://unievanwaterschappen.nl"
+  },
+  {
+   "cat": "ai",
+   "name": "AEC Magazine, AI",
+   "url": "https://aecmag.com/ai/"
+  },
+  {
+   "cat": "ai",
+   "name": "Deltares nieuws",
+   "url": "https://www.deltares.nl/en/news"
+  },
+  {
+   "cat": "ai",
+   "name": "Rijkswaterstaat Innoveert",
+   "url": "https://rwsinnoveert.nl/"
+  },
+  {
+   "cat": "software",
+   "name": "Deltares op GitHub",
+   "url": "https://github.com/Deltares"
+  },
+  {
+   "cat": "software",
+   "name": "AHN, uitgelicht",
+   "url": "https://www.ahn.nl/uitgelicht"
+  },
+  {
+   "cat": "software",
+   "name": "DINOloket nieuws",
+   "url": "https://www.dinoloket.nl/nieuws"
+  },
+  {
+   "cat": "software",
+   "name": "digiGO (NLCS, ILS)",
+   "url": "https://www.digigo.nu"
+  },
+  {
+   "cat": "software",
+   "name": "HKV op GitHub",
+   "url": "https://github.com/HKV-products-services"
+  },
+  {
+   "cat": "markt",
+   "name": "TenderNed",
+   "url": "https://www.tenderned.nl"
+  },
+  {
+   "cat": "markt",
+   "name": "Cobouw",
+   "url": "https://www.cobouw.nl"
+  },
+  {
+   "cat": "markt",
+   "name": "Waterforum",
+   "url": "https://www.waterforum.net"
+  },
+  {
+   "cat": "markt",
+   "name": "Land+Water",
+   "url": "https://www.landenwater.nl"
+  },
+  {
+   "cat": "kennis",
+   "name": "BOI-portaal (IPLO)",
+   "url": "https://iplo.nl/thema/water/waterveiligheid/primaire-waterkeringen/boi-portaal/"
+  },
+  {
+   "cat": "kennis",
+   "name": "ENW-adviezen",
+   "url": "https://enwinfo.nl/adviezen/"
+  },
+  {
+   "cat": "kennis",
+   "name": "Deltares wiki Macrostabiliteit",
+   "url": "https://publicwiki.deltares.nl/display/HWBPMacro/Publicaties"
+  },
+  {
+   "cat": "kennis",
+   "name": "KNMI nieuws",
+   "url": "https://www.knmi.nl/over-het-knmi/nieuws"
+  },
+  {
+   "cat": "kennis",
+   "name": "H2O Waternetwerk",
+   "url": "https://www.h2owaternetwerk.nl/h2o-actueel"
+  },
+  {
+   "cat": "leren",
+   "name": "PAOTM waterbouw",
+   "url": "https://paotm.nl/en/vakgebied/hydraulic-engineering/"
+  },
+  {
+   "cat": "leren",
+   "name": "Deltares Academy",
+   "url": "https://academy.deltares.nl"
+  },
+  {
+   "cat": "internationaal",
+   "name": "Dutch Water Sector",
+   "url": "https://www.dutchwatersector.com"
+  },
+  {
+   "cat": "internationaal",
+   "name": "NLWKN (Niedersachsen)",
+   "url": "https://www.nlwkn.niedersachsen.de"
+  },
+  {
+   "cat": "agenda",
+   "name": "STOWA-agenda",
+   "url": "https://www.stowa.nl/agenda"
+  },
+  {
+   "cat": "agenda",
+   "name": "KKP-agenda",
+   "url": "https://kkp.stowa.nl/agenda"
+  },
+  {
+   "cat": "agenda",
+   "name": "Cadac events",
+   "url": "https://www.cadac.com/events"
+  },
+  {
+   "cat": "agenda",
+   "name": "Civil Infra Benelux",
+   "url": "https://civilinfrabnl.nl/"
+  },
+  {
+   "cat": "stedelijk",
+   "name": "Stichting RIONED",
+   "url": "https://www.riool.net/nieuws"
+  },
+  {
+   "cat": "stedelijk",
+   "name": "CROW actueel",
+   "url": "https://www.crow.nl/actueel/"
+  },
+  {
+   "cat": "stedelijk",
+   "name": "Kennisportaal Klimaatadaptatie",
+   "url": "https://klimaatadaptatienederland.nl"
+  },
+  {
+   "cat": "stedelijk",
+   "name": "Kadaster KLIC-nieuws",
+   "url": "https://www.kadaster.nl/zakelijk/registraties/landelijke-voorzieningen/klic/klic-nieuws"
+  },
+  {
+   "cat": "grondwerk",
+   "name": "IPLO Bodem",
+   "url": "https://iplo.nl/thema/bodem/"
+  },
+  {
+   "cat": "grondwerk",
+   "name": "Trimble News",
+   "url": "https://news.trimble.com"
+  },
+  {
+   "cat": "grondwerk",
+   "name": "PFASkaart Nederland",
+   "url": "https://www.pfaskaartnederland.nl"
+  },
+  {
+   "cat": "inmeten",
+   "name": "Dronewatch",
+   "url": "https://www.dronewatch.nl"
+  },
+  {
+   "cat": "inmeten",
+   "name": "GIM International",
+   "url": "https://www.gim-international.com"
+  },
+  {
+   "cat": "inmeten",
+   "name": "Geo Week News",
+   "url": "https://www.geoweeknews.com"
+  },
+  {
+   "cat": "inmeten",
+   "name": "AHN Dataroom",
+   "url": "https://www.ahn.nl/dataroom"
+  },
+  {
+   "cat": "dijk",
+   "name": "Ruimte voor de Rivier 2.0",
+   "url": "https://www.ruimtevoorderivier.nl"
+  },
+  {
+   "cat": "grondwerk",
+   "name": "Cumela nieuws",
+   "url": "https://www.cumela.nl/nieuws"
+  }
+ ],
+ "archive": [
+  {
+   "date": "2026-10-01",
+   "headline": "Lob van Gennep: Waterschap Limburg stelde het ontwerp-projectbesluit vast; de plannen liggen vanaf 6 november zes weken ter inzage."
+  },
+  {
+   "date": "2026-09-30",
+   "headline": "Valcon ontwikkelt voor Rijkswaterstaat een geautomatiseerde inspectiemethode voor de zuigerstangen van de Oosterscheldekering (700.000 euro, klaar uiterlijk april 2028)."
+  },
+  {
+   "date": "2026-09-29",
+   "headline": "Schiphol zet vijf raamovereenkomsten uit voor 9 jaar onderhoud en bouw, samen circa 2,95 miljard euro."
+  },
+  {
+   "date": "2026-09-28",
+   "headline": "Waterschap HDSR start de dijkversterking in het centrum van Wijk bij Duurstede; de Rijndijk en Havenweg zijn tot 2 november afgesloten."
+  },
+  {
+   "date": "2026-09-25",
+   "headline": "Rijkswaterstaat stelt de aanbesteding voor de nieuwe besturing van de Maeslantkering opnieuw uit, na kritiek van de ICT-waakhond op de betrouwbaarheid van de aanpak."
+  },
+  {
+   "date": "2026-09-24",
+   "headline": "Deltacommissaris Verdaas: nieuwe Deltawerken nodig, met vervanging van de Maeslantkering, nieuwe gemalen bij IJmuiden en later de Afsluitdijk, en rivierverruiming."
+  },
+  {
+   "date": "2026-09-24",
+   "headline": "Waterschappen bereiden zich voor op het stormseizoen: oefeningen met het sluiten van coupures in Delfzijl."
+  },
+  {
+   "date": "2026-09-24",
+   "headline": "Deltacommissaris Verdaas wil de uitgaven aan water verdubbelen, naar minstens 2% van het bbp."
+  }
+ ],
+ "footnote": "Deze editie is samengesteld door meerdere zoekagents op basis van zoekresultaten. Niet alle bronsites konden direct worden geopend, dus lees details na via de links. Datums waar ‘datum onzeker’ of ‘onbevestigd’ bij staat, zijn niet op de bron zelf gecontroleerd."
+}
