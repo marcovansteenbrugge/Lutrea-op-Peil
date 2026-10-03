@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1c1c1c">
+<title>BRBNT-dashboard · Lutrea Op Peil</title>
+<style>
+
+:root{
+  --brand:#FFDD25; --page:#1c1c1c; --card:#2e2e2e; --line:#3d3d3d;
+  --text:#f5f5f5; --text2:#c9c9c9; --muted:#9a9a9a;
+  --groen:#4cc38a; --amber:#F0A13E; --rood:#ff7276; --blauw:#7fb2f0; --nvt:#7a7a7a;
+  --font:"Montserrat",ui-sans-serif,system-ui,"Segoe UI",sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--text);font:14px/1.45 var(--font)}
+main{max-width:1200px;margin:0 auto;padding:20px 16px 48px}
+a{color:inherit;text-decoration-color:#ffffff55;text-underline-offset:2px}
+a:hover{text-decoration-color:var(--brand)}
+h1{font-size:22px;margin:0;letter-spacing:-.01em}
+h3{font-size:15px;margin:0}
+h4{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
+small,.sub{color:var(--muted);font-size:12px}
+.muted{color:var(--muted)}
+.klein{font-size:12.5px;color:var(--text2)}
+.nowrap{white-space:nowrap}
+code{font-family:ui-monospace,Consolas,monospace;font-size:11.5px;border:1px solid var(--line);border-radius:5px;padding:0 5px;color:var(--text2)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;min-width:0}
+.card + .card{margin-top:14px}
+.kaartkop{display:flex;justify-content:space-between;align-items:baseline;gap:6px 12px;flex-wrap:wrap;margin-bottom:10px}
+.leeg{color:var(--muted);font-size:12.5px;margin:8px 0 0}
+.leeg.ruim{margin-top:14px}
+.kop{margin-bottom:16px}
+.vh{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px}
+.groot{font-size:28px;font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums}
+.groot small{font-size:14px;font-weight:600}
+.groot.goed{color:var(--groen)} .groot.slecht{color:var(--rood)}
+summary{list-style:none;cursor:pointer}
+summary::-webkit-details-marker{display:none}
+.pijl::before{content:'▸';color:var(--text2);font-size:14px;display:inline-block;transition:transform .15s}
+details[open] > summary .pijl::before{transform:rotate(90deg)}
+
+/* tabs: vier tegels, zonder script */
+.tegels{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:18px}
+.tegel{display:flex;flex-direction:column;gap:4px;cursor:pointer;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;transition:border-color .1s,background .1s}
+.tegel:hover{border-color:#5a5a5a}
+.tegel .q{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.tegel .v{font-size:28px;font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums}
+.tegel .v small{font-size:14px;color:var(--muted);font-weight:600}
+.tegel .s{font-size:12px;color:var(--text2)}
+#t-standaard:checked ~ .tegels [for=t-standaard],#t-nu:checked ~ .tegels [for=t-nu],#t-volgende:checked ~ .tegels [for=t-volgende],#t-effort:checked ~ .tegels [for=t-effort]{background:#353535;border-color:var(--brand);box-shadow:inset 0 3px 0 var(--brand)}
+#t-standaard:checked ~ .tegels [for=t-standaard] .q,#t-nu:checked ~ .tegels [for=t-nu] .q,#t-volgende:checked ~ .tegels [for=t-volgende] .q,#t-effort:checked ~ .tegels [for=t-effort] .q{color:var(--brand)}
+#t-standaard:focus-visible ~ .tegels [for=t-standaard],#t-nu:focus-visible ~ .tegels [for=t-nu],#t-volgende:focus-visible ~ .tegels [for=t-volgende],#t-effort:focus-visible ~ .tegels [for=t-effort]{outline:2px solid var(--brand);outline-offset:2px}
+.paneel{display:none}
+#t-standaard:checked ~ #p-standaard,#t-nu:checked ~ #p-nu,#t-volgende:checked ~ #p-volgende,#t-effort:checked ~ #p-effort{display:block}
+@media (max-width:900px){.tegels{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* status: altijd kleur plus teken en woord */
+.s-groen{--s:var(--groen)} .s-amber{--s:var(--amber)} .s-rood{--s:var(--rood)} .s-nvt{--s:var(--nvt)}
+.badge{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:1px 9px 1px 3px;font-size:11.5px;font-weight:700;color:var(--s);background:color-mix(in srgb,var(--s) 14%,transparent);border:1px solid color-mix(in srgb,var(--s) 45%,transparent);white-space:nowrap}
+.badge i{width:15px;height:15px;border-radius:50%;background:var(--s);color:#141414;display:grid;place-items:center;font-style:normal;font-size:10px;font-weight:900}
+
+/* Standaard: per laag in- en uitklappen */
+details.laag{border-top:1px solid #ffffff10}
+details.laag:first-of-type{border-top:0}
+details.laag > summary{display:grid;grid-template-columns:16px minmax(120px,200px) minmax(60px,1fr) 44px 124px 12px;grid-template-areas:"nr nm bar fr bd pl";gap:12px;align-items:center;padding:8px 4px;border-radius:8px}
+details.laag > summary:hover{background:#ffffff08}
+.laag .nr{grid-area:nr;color:var(--muted);font-weight:800;font-size:12px}
+.laag .nm{grid-area:nm;font-weight:700}
+.laag .nm small{display:block;font-weight:500;font-size:11.5px}
+.laag .sbar{grid-area:bar}
+.laag .fr{grid-area:fr;text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+.laag .badge{grid-area:bd;justify-self:start}
+.laag .pijl{grid-area:pl}
+.sbar{height:10px;border-radius:5px;background:#ffffff12;overflow:hidden;display:block}
+.sbar > span{display:block;height:100%;background:var(--s);border-radius:5px}
+@media (max-width:600px){details.laag > summary{grid-template-columns:16px minmax(0,1fr) auto 12px;grid-template-areas:"nr nm fr pl" ". bar bd .";row-gap:6px}}
+.criteria{padding:2px 4px 10px 32px}
+.crit{display:grid;grid-template-columns:20px 34px minmax(0,1fr);gap:8px;padding:6px 0;font-size:13px;border-top:1px solid #ffffff0a}
+.crit:first-child{border-top:0}
+.crit .ic{width:18px;height:18px;border-radius:50%;background:var(--s);color:#141414;display:grid;place-items:center;font-size:10px;font-weight:900;margin-top:1px}
+.crit .id{font-variant-numeric:tabular-nums;color:var(--text2)}
+.crit.s-rood .id{color:var(--rood)}
+.crit small{display:block}
+.crit ul{margin:4px 0 0;padding-left:18px;font-size:12px;color:var(--text2)}
+details.sectie{margin-top:10px;border-top:1px solid var(--line)}
+details.sectie + details.sectie{margin-top:0}
+details.sectie > summary{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 4px;border-radius:8px}
+details.sectie > summary:hover{background:#ffffff08}
+details.sectie > summary h4{margin:0}
+.sectie-inhoud{padding:0 4px 8px 24px}
+@media (max-width:600px){.sectie-inhoud{padding-left:4px}}
+.teller{display:inline-grid;place-items:center;min-width:22px;height:20px;padding:0 7px;border-radius:999px;font-size:11.5px;font-weight:800;line-height:1;color:#141414;background:var(--s);font-variant-numeric:tabular-nums}
+.sig{display:grid;grid-template-columns:78px minmax(0,1fr);gap:10px;align-items:baseline;padding:5px 0;font-size:13px}
+.sig .badge{justify-self:start}
+.sig small{display:block;font-size:12px;overflow-wrap:anywhere}
+@media (max-width:600px){.criteria{padding-left:4px}}
+.cijfers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px 20px;margin-bottom:16px}
+.cijfers > div{display:flex;flex-direction:column;gap:2px}
+@media (max-width:800px){.cijfers{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.grafiek{position:relative;height:170px;margin:26px 0 4px 40px}
+.grafiek .lijn{position:absolute;left:0;right:0;border-top:1px dashed #ffffff1a}
+.grafiek .lijn.nul{border-top:1px solid #555}
+.grafiek .lab{position:absolute;left:-40px;width:32px;text-align:right;font-size:11px;color:var(--muted);transform:translateY(50%)}
+.staven{position:absolute;inset:0;display:flex;align-items:flex-end;gap:4px}
+.staaf{position:relative;flex:1;min-width:3px;border-radius:3px 3px 0 0}
+.staaf.ok{background:var(--groen)} .staaf.fout{background:var(--rood)} .staaf.anders{background:var(--nvt)}
+.staaf:is(:hover,:focus){outline:2px solid var(--text);outline-offset:1px}
+.as{display:flex;justify-content:space-between;gap:8px;font-size:11px;color:var(--muted);margin:6px 0 10px 40px}
+.legenda{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--text2)}
+.legenda > span{display:inline-flex;align-items:center;gap:6px}
+.legenda b{color:var(--text)}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.dot.ok{background:var(--groen)} .dot.fout{background:var(--rood)} .dot.anders{background:var(--nvt)}
+
+/* tooltips zonder script: het kind wordt zichtbaar bij aanwijzen of focus */
+.tip{display:none;position:absolute;left:0;z-index:5;width:max-content;max-width:min(440px,100%);background:#141414;border:1px solid #555;border-radius:8px;padding:8px 10px;font-size:12px;line-height:1.45;color:var(--text2);box-shadow:0 8px 24px #000a;font-weight:500;text-align:left;pointer-events:none}
+.tip b{color:var(--text)}
+:is(.staaf,.f):is(:hover,:focus) > .tip{display:block}
+.staaf .tip{bottom:calc(100% + 8px);max-width:340px}
+.staaf.rechts .tip{left:auto;right:0}
+@media (max-width:640px){.staaf{position:static}.staaf .tip,.staaf.rechts .tip{left:0;right:0;width:auto;max-width:none}}
+
+/* Waar we staan */
+.verdeling{display:flex;gap:2px;height:18px;border-radius:5px;overflow:hidden;margin:4px 0 10px}
+.v-gebouwd,.f.gebouwd{background:var(--groen);color:#10261b}
+.v-lopend,.f.lopend{background:var(--brand);color:#282828}
+.v-vrijgegeven,.f.vrijgegeven{background:var(--blauw);color:#14233a}
+.v-vrijgegeven-na{background:color-mix(in srgb,var(--blauw) 35%,var(--card))}
+.f.vrijgegeven-na{background:color-mix(in srgb,var(--blauw) 22%,transparent);border:1.5px solid var(--blauw);color:var(--blauw)}
+.v-wacht{background:var(--amber)}
+.f.wacht{background:color-mix(in srgb,var(--amber) 22%,transparent);border:1.5px solid var(--amber);color:var(--amber)}
+.v-vervallen{background:color-mix(in srgb,var(--rood) 60%,var(--card))}
+.f.vervallen{border:1.5px dashed var(--rood);color:var(--rood)}
+.v-niet{background:#4a4a4a}
+.f.niet{border:1.5px solid #555;color:var(--muted)}
+.legenda .f{width:14px;height:12px;padding:0}
+.plan{display:grid;grid-template-columns:minmax(0,250px) minmax(0,1fr) 64px;gap:14px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.plan .t{font-weight:700;font-size:13.5px}
+.plan .t small{display:block;font-weight:500}
+.plan .t a{text-decoration:none}.plan .t a:hover{text-decoration:underline}
+.plan .tel{text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
+.plan .tel small{display:block;font-weight:500;font-size:11px}
+@media (max-width:720px){.plan{grid-template-columns:1fr 56px}.plan .strip{grid-column:1/-1;grid-row:2}}
+.strip{position:relative;display:flex;flex-wrap:wrap;gap:3px}
+.strip .tip{top:calc(100% + 6px)}
+.f{width:26px;height:22px;border-radius:4px;display:grid;place-items:center;font-size:10px;font-weight:700;font-variant-numeric:tabular-nums;cursor:default}
+.f:is(:hover,:focus){outline:2px solid var(--text);outline-offset:1px}
+
+/* Volgende stap: per plan in- en uitklappen, met een chip per soort */
+details.stapplan{border-top:1px solid var(--line)}
+details.stapplan > summary{display:grid;grid-template-columns:12px minmax(0,1fr) auto;gap:6px 12px;align-items:center;padding:11px 4px;border-radius:8px}
+details.stapplan > summary:hover{background:#ffffff08}
+.stapplan .t{font-weight:700;font-size:13.5px}
+.stapplan .t small{display:block;font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
+.chip{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:2px 10px;font-size:12px;font-weight:600;white-space:nowrap}
+.chip b{font-weight:800}
+.chip.besluit,.soort.besluit{color:#241703;background:var(--amber)}
+.chip.vrij,.soort.vrij{color:var(--amber);border:1px solid color-mix(in srgb,var(--amber) 60%,transparent)}
+.chip.bouw,.soort.bouw{color:var(--blauw);border:1px solid color-mix(in srgb,var(--blauw) 60%,transparent)}
+.chip.lopend,.soort.lopend{color:#282828;background:var(--brand)}
+@media (max-width:600px){details.stapplan > summary{grid-template-columns:12px minmax(0,1fr)}.chips{grid-column:2;justify-content:flex-start}}
+.inhoud{padding:2px 4px 14px 28px}
+.inhoud ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px;font-size:13px}
+.inhoud li{display:grid;grid-template-columns:74px 1fr;gap:10px;align-items:baseline}
+.inhoud li small{margin-left:4px}
+.soort{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;border-radius:5px;padding:1px 6px;text-align:center}
+.doc{margin:12px 0 0;font-size:13px}
+.doc a{text-decoration:none;color:var(--brand)}.doc a:hover{text-decoration:underline}
+@media (max-width:600px){.inhoud{padding-left:4px}}
+
+/* Effort: tokens of tijd kiezen, met de grote blokken als schakelaar */
+.maten{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+.maten > .maat{display:flex;flex-direction:column;gap:2px;cursor:pointer;margin:0;transition:border-color .1s,background .1s}
+.maat:hover{border-color:#5a5a5a}
+.maat .l{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+.maat .keuze{margin-top:8px;font-size:11.5px;color:var(--muted)}
+.maat .keuze::before{content:'○ klik om dit in de donuts te tonen'}
+#m-tok:checked ~ .maten [for=m-tok],#m-tijd:checked ~ .maten [for=m-tijd]{border-color:var(--brand);box-shadow:inset 0 3px 0 var(--brand);background:#353535}
+#m-tok:checked ~ .maten [for=m-tok] .keuze::before,#m-tijd:checked ~ .maten [for=m-tijd] .keuze::before{content:'● de donuts tonen dit';color:var(--brand)}
+#m-tok:focus-visible ~ .maten [for=m-tok],#m-tijd:focus-visible ~ .maten [for=m-tijd]{outline:2px solid var(--brand);outline-offset:2px}
+#m-tok:checked ~ * .als-tijd,#m-tijd:checked ~ * .als-tok{display:none}
+.totaal-inhoud{display:grid;grid-template-columns:200px minmax(0,1fr);gap:28px;align-items:center}
+@media (max-width:700px){.totaal-inhoud{grid-template-columns:1fr;gap:12px}.totaal-inhoud .ring{max-width:200px;margin:0 auto}}
+.lgrid{display:flex;flex-direction:column;max-width:660px}
+.lrij{display:grid;grid-template-columns:14px minmax(0,1fr) 92px 92px 104px;gap:10px;align-items:center;padding:6px 6px;border-radius:6px;font-size:13px;transition:opacity .1s}
+.drie .lrij{grid-template-columns:14px minmax(0,1fr) 92px 104px}
+.lrij.kop .kort{display:none}
+.lrij.kop{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding-top:0}
+.lrij.tot{border-top:1px solid var(--line);font-weight:700;margin-top:2px}
+.lrij[data-k]:hover{background:#ffffff0a}
+.lrij .r{text-align:right;font-variant-numeric:tabular-nums}
+.lrij .w{font-weight:700}
+@media (max-width:600px){.lrij{grid-template-columns:12px minmax(0,1fr) 38px 48px 78px;gap:6px;padding:6px 2px}.drie .lrij{grid-template-columns:12px minmax(0,1fr) 44px 78px}.lrij.kop{font-size:9.5px;letter-spacing:.02em}.lrij.kop .lang{display:none}.lrij.kop .kort{display:inline}}
+.afw{margin:12px 0 0}
+.vlak{width:12px;height:12px;flex:none;vertical-align:-1px;margin-right:6px}
+.lrij .vlak{margin-right:0;display:block}
+.kaarten{display:grid;grid-template-columns:repeat(auto-fill,minmax(440px,1fr));gap:14px;margin-top:14px}
+.kaarten .card{margin:0}
+@media (max-width:520px){.kaarten{grid-template-columns:1fr}}
+.kk{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:10px}
+.kk small{white-space:nowrap}
+.lijf{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;align-items:center}
+@media (max-width:420px){.lijf{grid-template-columns:1fr}.lijf .ring{max-width:170px;margin:0 auto}}
+.ring svg{width:100%;height:auto;display:block}
+.ring path,.ring circle[data-k],.ring circle[data-d]{transition:opacity .1s;outline:none}
+.ring [data-d]:focus-visible,.ring [data-k]:focus-visible{stroke:#fff;stroke-width:2}
+.cg{fill:var(--text);font-size:17px;font-weight:800;text-anchor:middle;font-family:var(--font)}
+.ck{fill:var(--muted);font-size:10px;text-anchor:middle;font-family:var(--font)}
+.cd{visibility:hidden}
+.zonder{display:flex;flex-wrap:wrap;gap:4px;align-items:center;justify-content:center;margin-top:6px;font-size:11px}
+.fchip{border:1px dashed #666;border-radius:5px;padding:0 5px;color:var(--text2);cursor:default;transition:opacity .1s}
+.fchip:is(:hover,:focus){border-color:var(--text);outline:none}
+.detail{display:grid;font-size:12.5px;color:var(--text2);line-height:1.55}
+.detail > *{grid-area:1/1;visibility:hidden}
+.detail > .d0{visibility:visible}
+.detail b{color:var(--text)}
+.deel{display:flex;flex-direction:column;gap:7px;min-width:0}
+.dk{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.fase{font-weight:800;font-size:12px;color:var(--text);background:#404040;border-radius:5px;padding:1px 7px}
+.mdl{display:inline-flex;align-items:center;font-size:12.5px;font-weight:600;color:var(--text)}
+.pl{font-size:11px;font-weight:700;border-radius:999px;padding:0 8px;white-space:nowrap}
+.pl.ok{color:var(--groen);border:1px solid color-mix(in srgb,var(--groen) 50%,transparent)}
+.pl.let{color:var(--amber);border:1px solid color-mix(in srgb,var(--amber) 50%,transparent)}
+.pl.grijs{color:var(--muted);border:1px solid #555}
+.dt{margin:0;color:var(--text2);font-size:12.5px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ds{display:flex;flex-wrap:wrap;gap:6px 22px}
+.ds > div{display:flex;flex-direction:column}
+.ds b{font-size:17px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.2}
+.ds span{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.dv{font-size:11.5px;color:var(--muted)}
+.dm{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12.5px;color:var(--text2)}
+.hint{font-size:11.5px;color:var(--muted)}
+.kaart:has([data-d]:hover) [data-d],.kaart:has([data-d]:focus):not(:has([data-d]:hover)) [data-d]{opacity:.3}
+.kaart:has([data-d]:hover) :is(.c0,.d0),.kaart:has([data-d]:focus):not(:has([data-d]:hover)) :is(.c0,.d0){visibility:hidden}
+.kaart:has([data-d="0"]:hover) [data-d="0"],.kaart:has([data-d="0"]:focus):not(:has([data-d]:hover)) [data-d="0"]{opacity:1}
+.kaart:has([data-d="0"]:hover) :is([data-dc="0"],[data-di="0"]),.kaart:has([data-d="0"]:focus):not(:has([data-d]:hover)) :is([data-dc="0"],[data-di="0"]){visibility:visible}
+.kaart:has([data-d="1"]:hover) [data-d="1"],.kaart:has([data-d="1"]:focus):not(:has([data-d]:hover)) [data-d="1"]{opacity:1}
+.kaart:has([data-d="1"]:hover) :is([data-dc="1"],[data-di="1"]),.kaart:has([data-d="1"]:focus):not(:has([data-d]:hover)) :is([data-dc="1"],[data-di="1"]){visibility:visible}
+.kaart:has([data-d="2"]:hover) [data-d="2"],.kaart:has([data-d="2"]:focus):not(:has([data-d]:hover)) [data-d="2"]{opacity:1}
+.kaart:has([data-d="2"]:hover) :is([data-dc="2"],[data-di="2"]),.kaart:has([data-d="2"]:focus):not(:has([data-d]:hover)) :is([data-dc="2"],[data-di="2"]){visibility:visible}
+.totaal-inhoud:has([data-k]:hover) [data-k],.totaal-inhoud:has([data-k]:focus):not(:has([data-k]:hover)) [data-k]{opacity:.3}
+.totaal-inhoud:has([data-k]:hover) :is(.c0,.d0),.totaal-inhoud:has([data-k]:focus):not(:has([data-k]:hover)) :is(.c0,.d0){visibility:hidden}
+.totaal-inhoud:has([data-k="0"]:hover) [data-k="0"],.totaal-inhoud:has([data-k="0"]:focus):not(:has([data-k]:hover)) [data-k="0"]{opacity:1}
+.totaal-inhoud:has([data-k="0"]:hover) :is([data-kc="0"],[data-ki="0"]),.totaal-inhoud:has([data-k="0"]:focus):not(:has([data-k]:hover)) :is([data-kc="0"],[data-ki="0"]){visibility:visible}
+@media (max-width:480px){.groot{font-size:21px}.maten{gap:8px}.maat{padding:12px}.tegels{gap:8px}.tegel{padding:10px 12px}.tegel .v{font-size:22px}.tegel .s{font-size:11px}.tegel .s .badge{display:none}.cijfers .groot{font-size:21px}}
+footer{margin-top:28px;color:var(--muted);font-size:11.5px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media print{.paneel{display:block!important;break-before:page}.tegels{display:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><pattern id="arcering-opus" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#3a78d7"/><rect width="2.5" height="6" fill="#215fbc"/></pattern><pattern id="arcering-fable" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#c5521c"/><rect width="2.5" height="6" fill="#a63d02"/></pattern><pattern id="arcering-sonnet" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#0a9068"/><rect width="2.5" height="6" fill="#047554"/></pattern><pattern id="arcering-haiku" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#7b69c6"/><rect width="2.5" height="6" fill="#6451ac"/></pattern><pattern id="arcering-anders" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#8a8a8a"/><rect width="2.5" height="6" fill="#555"/></pattern></defs></svg>
+<main>
+<header class="kop"><h1>Lutrea Op Peil</h1><div class="sub">BRBNT-scan van 3 oktober 2026 om 10:23 UTC · <a href="https://github.com/marcovansteenbrugge/Lutrea-op-Peil/commit/7575f093ff228319c301a96214da2d371363e252" target="_blank" rel="noopener">commit 7575f09</a> · criteria versie 5</div></header>
+<input class="vh" type="radio" name="vraag" id="t-standaard" checked>
+<input class="vh" type="radio" name="vraag" id="t-nu">
+<input class="vh" type="radio" name="vraag" id="t-volgende">
+<input class="vh" type="radio" name="vraag" id="t-effort">
+<nav class="tegels" aria-label="Onderdelen"><label class="tegel" for="t-standaard"><span class="q">Standaard</span><span class="v s-amber" style="color:var(--s)">33<small>/34</small></span><span class="s"><span class="badge s-amber"><i aria-hidden="true">!</i>bijna</span> 1 criterium niet gehaald</span></label><label class="tegel" for="t-nu"><span class="q">Waar we staan</span><span class="v">5<small>/8 fasen</small></span><span class="s">gebouwd, in 2 plannen</span></label><label class="tegel" for="t-volgende"><span class="q">Volgende stap</span><span class="v">1<small>/2 plannen</small></span><span class="s">wachten op jou · 1 fase kan starten</span></label><label class="tegel" for="t-effort"><span class="q">Effort</span><span class="v">78k<small> tokens</small></span><span class="s">1u 28m doorlooptijd</span></label></nav>
+<section class="paneel" id="p-standaard" aria-label="Standaard"><div class="card"><div class="kaartkop"><h3>Zes lagen</h3><span class="sub">Gelijk aan de scan van 2 okt, 19:25 · klap een laag open voor de criteria</span></div><details class="laag s-groen"><summary><span class="nr">1</span><span class="nm">Werkregels</span><span class="sbar"><span style="width:100%"></span></span><span class="fr">5/5</span><span class="badge s-groen"><i aria-hidden="true">✓</i>op orde</span><span class="pijl" aria-hidden="true"></span></summary><div class="criteria"><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">1.1</b><span class="tx">CLAUDE.md staat in de root<small>CLAUDE.md, 74 regels</small></span></div><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">1.2</b><span class="tx">Sectie &quot;Plan en besluit&quot; met de markering op de huidige versie (v1)<small>Markering brbnt-plan-regel: v1 gevonden</small></span></div><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">1.3</b><span class="tx">Vereisten V1 tot en met V5 zijn aanwezig<small>V1 tot en met V5 aanwezig</small></span></div><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">1.4</b><span class="tx">Minstens één regel wordt aantoonbaar afgedwongen<small>4 van 23 regels noemen een bestaande test, hook of check</small></span></div><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">1.5</b><span class="tx">Elke bewaking die CLAUDE.md noemt, bestaat ook<small>Alle 4 genoemde bewakingen in de repo bestaan</small></span></div></div></details><details class="laag s-groen"><summary><span class="nr">2</span><span class="nm">Geheugen<small>1 n.v.t.</small></span><span class="sbar"><span style="width:100%"></span></span><span class="fr">7/7</span><span class="badge s-groen"><i aria-hidden="true">✓</i>op orde</span><span class="pijl" aria-hidden="true"></span></summary><div class="criteria"><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">2.1</b><span class="tx">memory/MEMORY.md staat in de repo<small>memory/MEMORY.md is gecommit</small></span></div><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">2.2</b><span class="tx">Index en map sluiten op elkaar, in beide richtingen<small>4 bestanden, 4 indexregels</small></span></div><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">2.3</b><span class="tx">Elke memory heeft name, description en een geldig type<small>Alle 4 compleet</small></span></div><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">2.4</b><span class="tx">Geen kapotte [[links]]<small>Alle links wijzen naar een bestaande memory</small></span></div><div class="crit s-nvt"><span class="ic" title="n.v.t.">–</span><b class="id">2.5</b><span class="tx">Elke feedback-memory heeft Why én How to apply<small>Geen feedback-memories</small></span></div><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">2.6</b><span class="tx">Elke project-memory heeft een Why<small>Alle 3 met Why</small></span></div><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">2.7</b><span class="tx">Elke memory noemt een datum als herkomst (user-memory uitgezonderd)<small>Alle 4 noemen een datum</small></span></div><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">2.8</b><span class="tx">Het geheugen leeft: iets gewijzigd in de laatste 30 dagen<small>4 memories gewijzigd in de laatste 30 dagen</small></span></div></div></details><details class="laag s-groen"><summary><span class="nr">3</span><span class="nm">Plan en besluit</span><span class="sbar"><span style="width:100%"></span></span><span class="fr">9/9</span><span class="badge s-groen"><i aria-hidden="true">✓</i>op orde</span><span class="pijl" aria-hidden="true"></span></summary><div class="criteria"><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">3.1</b><span class="tx">Docs-map met plan-beslis-index.md<small>docs/plan-beslis-index.md</small></span></div><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">3.2</b><span class="tx">Minstens één plan in het standaardformaat (plan + beslisdocument)<small>2 plan(nen)</small></span></div><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">3.3</b><span class="tx">De index en de statussen kloppen met wat sync berekent<small>sync (droogloop): niets aan te passen</small></span></div><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">3.4</b><span class="tx">Elk genomen besluit heeft wie, wanneer en via wat<small>Alle 8 besluiten volledig vastgelegd</small></span></div><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">3.5</b><span class="tx">Elke vrijgave heeft een naam, een tijdstip en een planversie<small>Alle 6 vrijgaven volledig</small></span></div><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">3.6</b><span class="tx">Elke gebouwde fase haalt de toets-poort (plan.mjs toets)<small>5 van 5 gebouwde fasen getoetst per criterium</small></span></div><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">3.7</b><span class="tx">De planversie in de kop is de hoogste versie uit het wijzigingslog<small>Kop en wijzigingslog gelijk</small></span></div><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">3.8</b><span class="tx">Commits voor planwerk dragen de fase-prefix uit het plan (F2: of CMS-F2:)<small>14 commit(s) met een fase-prefix</small></span></div><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">3.9</b><span class="tx">Niets wacht langer dan 7 dagen op de beslisser<small>1 plan(nen) wachten, korter dan 7 dagen</small></span></div></div></details><details class="laag s-amber"><summary><span class="nr">4</span><span class="nm">Afdwinging<small>1 n.v.t. · 3 niet te meten</small></span><span class="sbar"><span style="width:75%"></span></span><span class="fr">3/4</span><span class="badge s-amber"><i aria-hidden="true">!</i>bijna</span><span class="pijl" aria-hidden="true"></span></summary><div class="criteria"><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">4.1</b><span class="tx">Er is een testsuite en die draait in CI<small>2 testbestanden, workflow .github/workflows/tests.yml</small></span></div><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">4.2</b><span class="tx">De laatste run op de hoofdtak is geslaagd<small>Run #34 geslaagd</small></span></div><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">4.3</b><span class="tx">Minstens 90% van de laatste 30 runs is geslaagd (geannuleerd telt niet)<small>30 van 30 geslaagd (100%)</small></span></div><div class="crit s-nvt"><span class="ic" title="niet te meten">?</span><b class="id">4.4</b><span class="tx">Elk testbestand in de repo draait in CI<small>Geen CI-log met testbestanden om mee te vergelijken</small></span></div><div class="crit s-rood"><span class="ic" title="niet gehaald">✕</span><b class="id">4.5</b><span class="tx">Minstens één bewakingstest (architectuur of drift)<small>Geen test met drift, parity, architectuur of conformance in de naam</small></span></div><div class="crit s-nvt"><span class="ic" title="niet te meten">?</span><b class="id">4.6</b><span class="tx">Direct naar de hoofdtak pushen wordt tegengehouden<small>Geen pre-push-hook; branch protection bij GitHub wordt niet uitgelezen</small></span></div><div class="crit s-nvt"><span class="ic" title="n.v.t.">–</span><b class="id">4.7</b><span class="tx">Uitrollen gebeurt alleen na een groene test<small>Geen uitroljob in CI</small></span></div><div class="crit s-nvt"><span class="ic" title="niet te meten">?</span><b class="id">4.8</b><span class="tx">Alle skills die CLAUDE.md noemt, zijn beschikbaar<small>In CI zijn de skills van de ontwikkelaar niet te zien</small></span></div></div></details><details class="laag s-groen"><summary><span class="nr">5</span><span class="nm">Parallel werken<small>2 niet te meten</small></span><span class="sbar"><span style="width:100%"></span></span><span class="fr">3/3</span><span class="badge s-groen"><i aria-hidden="true">✓</i>op orde</span><span class="pijl" aria-hidden="true"></span></summary><div class="criteria"><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">5.1</b><span class="tx">Er is een poortafspraak (addendum-parallel-ontwikkeling.md)<small>.claude/skills/brbnt-parallel-setup/assets/addendum-parallel-ontwikkeling.md.template</small></span></div><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">5.2</b><span class="tx">De laatste 50 commits op de hoofdtak kwamen via een pull request, of CLAUDE.md legt vast dat direct op de hoofdtak mag<small>28 van 28 direct op main, zoals vastgelegd in CLAUDE.md: &quot;Alles gaat direct op main;&quot;</small></span></div><div class="crit s-nvt"><span class="ic" title="niet te meten">?</span><b class="id">5.3</b><span class="tx">Geen verweesde worktrees (zonder tak, of langer dan 14 dagen stil)<small>Worktrees staan op de machines van de ontwikkelaars; CI ziet ze niet</small></span></div><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">5.4</b><span class="tx">Geen remote takken meer van al gemergde PR's<small>Geen achtergebleven takken</small></span></div><div class="crit s-nvt"><span class="ic" title="niet te meten">?</span><b class="id">5.5</b><span class="tx">De dev-poorten volgen de poortformule<small>Poortformule vergelijken is nog niet gebouwd</small></span></div></div></details><details class="laag s-groen"><summary><span class="nr">6</span><span class="nm">Modelgebruik</span><span class="sbar"><span style="width:100%"></span></span><span class="fr">6/6</span><span class="badge s-groen"><i aria-hidden="true">✓</i>op orde</span><span class="pijl" aria-hidden="true"></span></summary><div class="criteria"><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">6.1</b><span class="tx">Elke gebouwde fase heeft een uitvoeringsrij<small>5 van 5</small></span></div><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">6.2</b><span class="tx">Niets geschat: elke meetwaarde is gemeten of staat als &quot;onbekend&quot;<small>5 rijen, alle gemeten of &quot;onbekend&quot;</small></span></div><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">6.3</b><span class="tx">Elke fase heeft een gepland model en effort<small>8 fasen gepland</small></span></div><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">6.4</b><span class="tx">Elke afwijking tussen gepland en gemeten effort staat in punt 12<small>Geen afwijkingen tussen gepland en gemeten</small></span></div><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">6.5</b><span class="tx">Fasen zijn behapbaar: geen enkele groter dan L<small>8 fasen, grootste M</small></span></div><div class="crit s-groen"><span class="ic" title="gehaald">✓</span><b class="id">6.6</b><span class="tx">Het onderzoek is apart vastgelegd (plan punt 3, of een onderzoeksdocument)<small>Alle plannen hebben onderzoek</small></span></div></div></details><details class="sectie niet-lijst"><summary><span class="pijl" aria-hidden="true"></span><h4>Niet gehaald</h4><span class="teller s-rood">1</span></summary><div class="sectie-inhoud"><div class="crit s-rood"><span class="ic" title="niet gehaald">✕</span><b class="id">4.5</b><span class="tx">Minstens één bewakingstest (architectuur of drift)<small>Geen test met drift, parity, architectuur of conformance in de naam · groeien met <code>brbnt-skill-scaffold</code></small></span></div></div></details></div><div class="card ci"><div class="kaartkop"><h3>CI: de laatste 30 afgeronde runs</h3><a href="https://github.com/marcovansteenbrugge/Lutrea-op-Peil/actions" target="_blank" rel="noopener">Actions op GitHub →</a></div>
+      <div class="cijfers">
+        <div><span class="groot goed">30<small>/30</small></span><span class="sub">geslaagd (100%); de norm is 90% (4.3)</span></div>
+        <div><span class="groot">9s</span><span class="sub">mediaan per run: de middelste van de 30</span></div>
+        <div><span class="groot">9s</span><span class="sub">gemiddeld per run: alles opgeteld, gedeeld door 30</span></div>
+        <div><span class="groot goed">✓ #34</span><span class="sub">laatste run op de hoofdtak, 2 okt, 19:25 (4.2)</span></div>
+      </div>
+      <div class="grafiek"><span class="lijn nul" style="bottom:0.00%"></span><span class="lab" style="bottom:0.00%">0m</span><span class="lijn" style="bottom:100.00%"></span><span class="lab" style="bottom:100.00%">1m</span><div class="staven"><span class="staaf ok links" tabindex="0" style="height:16.7%"><span class="tip"><b>#6 ✓ geslaagd</b> · 10s<br>B1 vastgelegd voor plan zoektermen; B3 wacht op antwoord<br><span class="muted">2 okt, 17:37 · main</span></span></span><span class="staaf ok links" tabindex="0" style="height:15.0%"><span class="tip"><b>#7 ✓ geslaagd</b> · 9s<br>B1 vastgelegd voor plan zoektermen; B3 wacht op antwoord<br><span class="muted">2 okt, 17:37 · claude/wizardly-wright-7iwf18</span></span></span><span class="staaf ok links" tabindex="0" style="height:15.0%"><span class="tip"><b>#8 ✓ geslaagd</b> · 9s<br>B3 vastgelegd voor plan zoektermen<br><span class="muted">2 okt, 17:37 · main</span></span></span><span class="staaf ok links" tabindex="0" style="height:10.0%"><span class="tip"><b>#9 ✓ geslaagd</b> · 6s<br>B3 vastgelegd voor plan zoektermen<br><span class="muted">2 okt, 17:37 · claude/wizardly-wright-7iwf18</span></span></span><span class="staaf ok links" tabindex="0" style="height:11.7%"><span class="tip"><b>#10 ✓ geslaagd</b> · 7s<br>F0: skeletpagina Op Peil zoektermen met eigen opslag (alleen eigenaar)<br><span class="muted">2 okt, 17:39 · main</span></span></span><span class="staaf ok links" tabindex="0" style="height:15.0%"><span class="tip"><b>#11 ✓ geslaagd</b> · 9s<br>F0: skeletpagina Op Peil zoektermen met eigen opslag (alleen eigenaar)<br><span class="muted">2 okt, 17:39 · claude/wizardly-wright-7iwf18</span></span></span><span class="staaf ok links" tabindex="0" style="height:15.0%"><span class="tip"><b>#12 ✓ geslaagd</b> · 9s<br>F0: toetsing en uitvoering vastgelegd<br><span class="muted">2 okt, 17:45 · main</span></span></span><span class="staaf ok links" tabindex="0" style="height:16.7%"><span class="tip"><b>#13 ✓ geslaagd</b> · 10s<br>F0: toetsing en uitvoering vastgelegd<br><span class="muted">2 okt, 17:45 · claude/wizardly-wright-7iwf18</span></span></span><span class="staaf ok links" tabindex="0" style="height:13.3%"><span class="tip"><b>#14 ✓ geslaagd</b> · 8s<br>F1: pagina Op Peil zoektermen met invoer, proefresultaten en besliskn…<br><span class="muted">2 okt, 17:47 · main</span></span></span><span class="staaf ok links" tabindex="0" style="height:18.3%"><span class="tip"><b>#15 ✓ geslaagd</b> · 11s<br>F1: pagina Op Peil zoektermen met invoer, proefresultaten en besliskn…<br><span class="muted">2 okt, 17:47 · claude/wizardly-wright-7iwf18</span></span></span><span class="staaf ok links" tabindex="0" style="height:15.0%"><span class="tip"><b>#16 ✓ geslaagd</b> · 9s<br>Plan zoektermen versie 2: hoofdgroepen (B5) en zoekfrequentie (B6)<br><span class="muted">2 okt, 18:54 · main</span></span></span><span class="staaf ok links" tabindex="0" style="height:21.7%"><span class="tip"><b>#17 ✓ geslaagd</b> · 13s<br>Plan zoektermen versie 2: hoofdgroepen (B5) en zoekfrequentie (B6)<br><span class="muted">2 okt, 18:54 · claude/wizardly-wright-7iwf18</span></span></span><span class="staaf ok links" tabindex="0" style="height:11.7%"><span class="tip"><b>#18 ✓ geslaagd</b> · 7s<br>B2, B5 en B6 vastgelegd; plan zoektermen versie 3 (elke dag zoeken)<br><span class="muted">2 okt, 18:57 · main</span></span></span><span class="staaf ok links" tabindex="0" style="height:10.0%"><span class="tip"><b>#19 ✓ geslaagd</b> · 6s<br>B2, B5 en B6 vastgelegd; plan zoektermen versie 3 (elke dag zoeken)<br><span class="muted">2 okt, 18:57 · claude/wizardly-wright-7iwf18</span></span></span><span class="staaf ok links" tabindex="0" style="height:13.3%"><span class="tip"><b>#20 ✓ geslaagd</b> · 8s<br>F1: hoofdgroepen op de zoektermenpagina (invoer, groepering, groep wi…<br><span class="muted">2 okt, 19:00 · main</span></span></span><span class="staaf ok rechts" tabindex="0" style="height:16.7%"><span class="tip"><b>#21 ✓ geslaagd</b> · 10s<br>F1: hoofdgroepen op de zoektermenpagina (invoer, groepering, groep wi…<br><span class="muted">2 okt, 19:01 · claude/wizardly-wright-7iwf18</span></span></span><span class="staaf ok rechts" tabindex="0" style="height:11.7%"><span class="tip"><b>#22 ✓ geslaagd</b> · 7s<br>F1: toetsing en uitvoering vastgelegd<br><span class="muted">2 okt, 19:08 · main</span></span></span><span class="staaf ok rechts" tabindex="0" style="height:11.7%"><span class="tip"><b>#23 ✓ geslaagd</b> · 7s<br>F1: toetsing en uitvoering vastgelegd<br><span class="muted">2 okt, 19:08 · claude/wizardly-wright-7iwf18</span></span></span><span class="staaf ok rechts" tabindex="0" style="height:16.7%"><span class="tip"><b>#24 ✓ geslaagd</b> · 10s<br>F1: toetsing hersteld en fase afgerond<br><span class="muted">2 okt, 19:08 · main</span></span></span><span class="staaf ok rechts" tabindex="0" style="height:11.7%"><span class="tip"><b>#25 ✓ geslaagd</b> · 7s<br>F1: toetsing hersteld en fase afgerond<br><span class="muted">2 okt, 19:08 · claude/wizardly-wright-7iwf18</span></span></span><span class="staaf ok rechts" tabindex="0" style="height:15.0%"><span class="tip"><b>#26 ✓ geslaagd</b> · 9s<br>F2: ochtendroutine zoekt op proeftermen en schrijft proefresultaten n…<br><span class="muted">2 okt, 19:09 · main</span></span></span><span class="staaf ok rechts" tabindex="0" style="height:15.0%"><span class="tip"><b>#27 ✓ geslaagd</b> · 9s<br>F2: ochtendroutine zoekt op proeftermen en schrijft proefresultaten n…<br><span class="muted">2 okt, 19:09 · claude/wizardly-wright-7iwf18</span></span></span><span class="staaf ok rechts" tabindex="0" style="height:26.7%"><span class="tip"><b>#28 ✓ geslaagd</b> · 16s<br>F2: uitvoering vastgelegd, toetsing na de run van maandag<br><span class="muted">2 okt, 19:10 · main</span></span></span><span class="staaf ok rechts" tabindex="0" style="height:13.3%"><span class="tip"><b>#29 ✓ geslaagd</b> · 8s<br>F2: uitvoering vastgelegd, toetsing na de run van maandag<br><span class="muted">2 okt, 19:10 · claude/wizardly-wright-7iwf18</span></span></span><span class="staaf ok rechts" tabindex="0" style="height:11.7%"><span class="tip"><b>#30 ✓ geslaagd</b> · 7s<br>B4 vastgelegd voor plan zoektermen<br><span class="muted">2 okt, 19:16 · main</span></span></span><span class="staaf ok rechts" tabindex="0" style="height:16.7%"><span class="tip"><b>#31 ✓ geslaagd</b> · 10s<br>B4 vastgelegd voor plan zoektermen<br><span class="muted">2 okt, 19:16 · claude/wizardly-wright-7iwf18</span></span></span><span class="staaf ok rechts" tabindex="0" style="height:11.7%"><span class="tip"><b>#32 ✓ geslaagd</b> · 7s<br>Beslisdocument zoektermen: regel 'Later nodig' bijgewerkt<br><span class="muted">2 okt, 19:22 · main</span></span></span><span class="staaf ok rechts" tabindex="0" style="height:13.3%"><span class="tip"><b>#33 ✓ geslaagd</b> · 8s<br>Beslisdocument zoektermen: regel 'Later nodig' bijgewerkt<br><span class="muted">2 okt, 19:22 · claude/wizardly-wright-7iwf18</span></span></span><span class="staaf ok rechts" tabindex="0" style="height:13.3%"><span class="tip"><b>#34 ✓ geslaagd</b> · 8s<br>Geheugenarchief: besluiten van 2 oktober over beslisser en zoektermen…<br><span class="muted">2 okt, 19:25 · main</span></span></span><span class="staaf ok rechts" tabindex="0" style="height:13.3%"><span class="tip"><b>#35 ✓ geslaagd</b> · 8s<br>Geheugenarchief: besluiten van 2 oktober over beslisser en zoektermen…<br><span class="muted">2 okt, 19:25 · claude/wizardly-wright-7iwf18</span></span></span></div></div>
+      <div class="as"><span>2 okt</span><span>oud → nieuw · hoogte = duur</span><span>2 okt</span></div>
+      <div class="legenda"><span><i class="dot ok"></i>✓ geslaagd 30</span><span><i class="dot fout"></i>✕ gefaald 0</span></div>
+      </div></section>
+<section class="paneel" id="p-nu" aria-label="Waar we staan"><div class="card"><div class="kaartkop"><h3>Alle fasen</h3><span class="sub">8 fasen in 2 plannen</span></div><div class="verdeling" role="img" aria-label="5 gebouwd, 1 klaar om te bouwen, 1 wacht op een besluit, 1 nog niet vrijgegeven"><span class="v-gebouwd" style="flex:5"></span><span class="v-vrijgegeven" style="flex:1"></span><span class="v-wacht" style="flex:1"></span><span class="v-niet" style="flex:1"></span></div>
+    <div class="legenda"><span><i class="f gebouwd" aria-hidden="true"></i>gebouwd <b>5</b></span><span><i class="f vrijgegeven" aria-hidden="true"></i>klaar om te bouwen <b>1</b></span><span><i class="f wacht" aria-hidden="true"></i>wacht op een besluit <b>1</b></span><span><i class="f niet" aria-hidden="true"></i>nog niet vrijgegeven <b>1</b></span></div></div>
+    <div class="card"><div class="kaartkop"><h3>Per plan</h3><span class="sub">wijs een fase aan voor de titel en de status</span></div><div class="plan"><div class="t"><a href="https://github.com/marcovansteenbrugge/Lutrea-op-Peil/blob/main/docs/zoektermen.plan.md" target="_blank" rel="noopener">Eigen zoektermen met proefperiode en beslismoment</a><small>in uitvoering · laatst gebouwd 02-10</small></div>
+    <div class="strip"><span class="f gebouwd" tabindex="0" aria-label="F0: gebouwd">0<span class="tip"><b>F0</b> Proef op de techniek: kan de ochtendroutine bij de opslag van je zoektermen? Er gaat geen mail uit en er wordt niets gepubliceerd.<br>✅ gebouwd op 02-10 17:44</span></span><span class="f gebouwd" tabindex="0" aria-label="F1: gebouwd">1<span class="tip"><b>F1</b> Je eigen pagina: zoektermen invullen met hoofdgroep, proefresultaten bekijken en per term live zetten of afwijzen<br>✅ gebouwd op 02-10 19:07</span></span><span class="f vrijgegeven" tabindex="0" aria-label="F2: klaar om te bouwen">2<span class="tip"><b>F2</b> De ochtendroutine zoekt op je proeftermen en zet de resultaten alleen op jouw pagina<br>▶ vrijgegeven, klaar om te bouwen</span></span><span class="f niet" tabindex="0" aria-label="F3: nog niet vrijgegeven">3<span class="tip"><b>F3</b> Termen die jij live zet, zoeken mee in de gewone nieuwsbrief<br>○ nog niet vrijgegeven</span></span></div>
+    <div class="tel">2/4<small>gebouwd</small></div></div><div class="plan"><div class="t"><a href="https://github.com/marcovansteenbrugge/Lutrea-op-Peil/blob/main/docs/data-ontvangers-test.plan.md" target="_blank" rel="noopener">Test voor data.json en de ontvangerslijst</a><small>in uitvoering · laatst gebouwd 02-10</small></div>
+    <div class="strip"><span class="f gebouwd" tabindex="0" aria-label="F0: gebouwd">0<span class="tip"><b>F0</b> Controle van het nieuwsbestand: klopt de opbouw en volgt het de regels van de ochtendroutine<br>✅ gebouwd op 02-10 17:25</span></span><span class="f gebouwd" tabindex="0" aria-label="F1: gebouwd">1<span class="tip"><b>F1</b> Controle dat de ontvangers in de ontvangerslijst en in de routine-instructie gelijk zijn<br>✅ gebouwd op 02-10 17:26</span></span><span class="f gebouwd" tabindex="0" aria-label="F2: gebouwd">2<span class="tip"><b>F2</b> De controles draaien vanzelf op GitHub bij elke wijziging, en de projectregels noemen ze als afgedwongen<br>✅ gebouwd op 02-10 17:27</span></span><span class="f wacht" tabindex="0" aria-label="F3: wacht op een besluit">3<span class="tip"><b>F3</b> De ochtendroutine draait de controle zelf voordat hij publiceert<br>⏳ wacht op B3 (Routine draait de controle vóór publiceren)</span></span></div>
+    <div class="tel">3/4<small>gebouwd</small></div></div></div></section>
+<section class="paneel" id="p-volgende" aria-label="Volgende stap"><div class="card"><div class="kaartkop"><h3>Per plan</h3><span class="sub">klap een plan open voor wat er nodig is</span></div><details class="stapplan"><summary><span class="pijl" aria-hidden="true"></span><span class="t">Eigen zoektermen met proefperiode en beslismoment<small>in uitvoering</small></span><span class="chips"><span class="chip bouw"><b>1</b> te bouwen</span></span></summary><div class="inhoud"><ul><li><span class="soort bouw">Bouwen</span><span><b>F2</b> De ochtendroutine zoekt op je proeftermen en zet de resultaten alleen op jouw pagina <small>vrijgegeven, kan starten</small></span></li></ul><p class="doc"><a href="https://github.com/marcovansteenbrugge/Lutrea-op-Peil/blob/main/docs/zoektermen.beslis.md" target="_blank" rel="noopener">Open het beslisdocument →</a></p></div></details><details class="stapplan"><summary><span class="pijl" aria-hidden="true"></span><span class="t">Test voor data.json en de ontvangerslijst<small>in uitvoering</small></span><span class="chips"><span class="chip besluit"><b>1</b> besluit</span></span></summary><div class="inhoud"><ul><li><span class="soort besluit">Besluit</span><span><b>B3</b> Routine draait de controle vóór publiceren <small>houdt F3 tegen</small></span></li></ul><p class="doc"><a href="https://github.com/marcovansteenbrugge/Lutrea-op-Peil/blob/main/docs/data-ontvangers-test.beslis.md" target="_blank" rel="noopener">Open het beslisdocument →</a></p></div></details></div></section>
+<section class="paneel" id="p-effort" aria-label="Effort"><input class="vh" type="radio" name="maat" id="m-tok" checked><input class="vh" type="radio" name="maat" id="m-tijd">
+    <div class="maten">
+      <label class="maat card" for="m-tok"><span class="l">Uitvoertokens</span><span class="groot">78.032</span><span class="sub">invoer (zonder cache) 166</span><span class="keuze"></span></label>
+      <label class="maat card" for="m-tijd"><span class="l">Doorlooptijd</span><span class="groot">1u 28m</span><span class="sub">som van start tot einde per uitvoering, inclusief wachten en toesteltest</span><span class="keuze"></span></label>
+    </div>
+    <div class="card"><div class="kaartkop"><h3>Per model en effort</h3><span class="sub">kleur = model · lichter = hoger effort · gearceerd = effort niet gemeten</span></div><div class="totaal-inhoud als-tok"><div class="ring"><svg viewBox="0 0 140 140" role="img" aria-label="Uitvoertokens per model en effort"><circle cx="70" cy="70" r="51.5" fill="none" stroke="#3a78d7" stroke-width="21" data-k="0" tabindex="0"/><g class="c0"><text x="70" y="72" class="cg">78k</text><text x="70" y="88" class="ck">uitvoertokens</text></g><g class="cd" data-kc="0"><text x="70" y="72" class="cg">78k</text><text x="70" y="88" class="ck">100% van het totaal</text></g></svg></div><div class="lgrid drie"><div class="lrij kop"><span></span><span></span><span class="r"><span class="lang">Uitvoeringen</span><span class="kort">Aantal</span></span><span class="r"><span class="lang">Uitvoertokens</span><span class="kort">Tokens</span></span></div><div class="lrij" data-k="0"><span><svg class="vlak" viewBox="0 0 12 12" aria-hidden="true"><rect width="12" height="12" rx="3" fill="#3a78d7"/></svg></span><span class="nm">Opus 5.5 · medium</span><span class="r">5</span><span class="r w">78.032</span></div><div class="lrij tot"><span></span><span class="nm">Totaal</span><span class="r">5</span><span class="r w">78.032</span></div></div></div><div class="totaal-inhoud als-tijd"><div class="ring"><svg viewBox="0 0 140 140" role="img" aria-label="Tijd per model en effort"><circle cx="70" cy="70" r="51.5" fill="none" stroke="#3a78d7" stroke-width="21" data-k="0" tabindex="0"/><g class="c0"><text x="70" y="72" class="cg">1u 28m</text><text x="70" y="88" class="ck">doorlooptijd</text></g><g class="cd" data-kc="0"><text x="70" y="72" class="cg">1u 28m</text><text x="70" y="88" class="ck">100% van het totaal</text></g></svg></div><div class="lgrid drie"><div class="lrij kop"><span></span><span></span><span class="r"><span class="lang">Uitvoeringen</span><span class="kort">Aantal</span></span><span class="r"><span class="lang">Tijd</span><span class="kort">Tijd</span></span></div><div class="lrij" data-k="0"><span><svg class="vlak" viewBox="0 0 12 12" aria-hidden="true"><rect width="12" height="12" rx="3" fill="#3a78d7"/></svg></span><span class="nm">Opus 5.5 · medium</span><span class="r">5</span><span class="r w">1u 28m</span></div><div class="lrij tot"><span></span><span class="nm">Totaal</span><span class="r">5</span><span class="r w">1u 28m</span></div></div></div><p class="klein afw">Alles draaide op het geplande model en effort.</p></div>
+    <div class="kaarten"><div class="kaart card"><div class="kk"><b>Eigen zoektermen met proefperiode en beslismoment</b><small>2 uitvoeringen</small></div><div class="lijf"><div class="ring"><div class="als-tok"><svg viewBox="0 0 140 140" role="img" aria-label="Eigen zoektermen met proefperiode en beslismoment: 66.034 uitvoertokens"><path d="M70.00 8.00 A62 62 0 0 1 117.95 30.69 L101.71 44.00 A41 41 0 0 0 70.00 29.00Z" fill="#3a78d7" stroke="#2e2e2e" stroke-width="1.5" data-d="0" tabindex="0"/><path d="M117.95 30.69 A62 62 0 1 1 70.00 8.00 L70.00 29.00 A41 41 0 1 0 101.71 44.00Z" fill="#3a78d7" stroke="#2e2e2e" stroke-width="1.5" data-d="1" tabindex="0"/><g class="c0"><text x="70" y="72" class="cg">66k</text><text x="70" y="88" class="ck">uitvoertokens</text></g><g class="cd" data-dc="0"><text x="70" y="72" class="cg">9,3k</text><text x="70" y="88" class="ck">F0</text></g><g class="cd" data-dc="1"><text x="70" y="72" class="cg">57k</text><text x="70" y="88" class="ck">F1</text></g></svg></div><div class="als-tijd"><svg viewBox="0 0 140 140" role="img" aria-label="Eigen zoektermen met proefperiode en beslismoment: 1u 28m"><path d="M70.00 8.00 A62 62 0 0 1 95.76 13.60 L87.03 32.71 A41 41 0 0 0 70.00 29.00Z" fill="#3a78d7" stroke="#2e2e2e" stroke-width="1.5" data-d="0" tabindex="0"/><path d="M95.76 13.60 A62 62 0 1 1 70.00 8.00 L70.00 29.00 A41 41 0 1 0 87.03 32.71Z" fill="#3a78d7" stroke="#2e2e2e" stroke-width="1.5" data-d="1" tabindex="0"/><g class="c0"><text x="70" y="72" class="cg">1u 28m</text><text x="70" y="88" class="ck">doorlooptijd</text></g><g class="cd" data-dc="0"><text x="70" y="72" class="cg">6m</text><text x="70" y="88" class="ck">F0</text></g><g class="cd" data-dc="1"><text x="70" y="72" class="cg">1u 22m</text><text x="70" y="88" class="ck">F1</text></g></svg></div></div><div class="detail"><div class="deel d0"><div class="ds"><div><b>66.034</b><span>uitvoertokens</span></div><div><b>1u 28m</b><span>doorlooptijd</span></div></div><div class="dm"><span class="nowrap"><svg class="vlak" viewBox="0 0 12 12" aria-hidden="true"><rect width="12" height="12" rx="3" fill="#3a78d7"/></svg>Opus 5.5 · medium <span class="muted">2×</span></span></div><div class="hint">Wijs een deel van de donut aan voor de details.</div></div><div class="deel" data-di="0"><div class="dk"><span class="fase">F0</span><span class="mdl"><svg class="vlak" viewBox="0 0 12 12" aria-hidden="true"><rect width="12" height="12" rx="3" fill="#3a78d7"/></svg>Opus 5.5 · medium</span></div>
+        <p class="dt">Proef op de techniek: kan de ochtendroutine bij de opslag van je zoektermen? Er gaat geen mail uit en er wordt niets gepubliceerd.</p>
+        <div class="ds"><div><b>9.291</b><span>uitvoertokens</span></div><div><b>6m</b><span>tijd</span></div><div><b>1</b><span>commit</span></div></div><div class="dv">38 invoertokens · gepland: Opus 5.5, medium</div></div><div class="deel" data-di="1"><div class="dk"><span class="fase">F1</span><span class="mdl"><svg class="vlak" viewBox="0 0 12 12" aria-hidden="true"><rect width="12" height="12" rx="3" fill="#3a78d7"/></svg>Opus 5.5 · medium</span></div>
+        <p class="dt">Je eigen pagina: zoektermen invullen met hoofdgroep, proefresultaten bekijken en per term live zetten of afwijzen</p>
+        <div class="ds"><div><b>56.743</b><span>uitvoertokens</span></div><div><b>1u 22m</b><span>tijd</span></div><div><b>2</b><span>commits</span></div></div><div class="dv">96 invoertokens · gepland: Opus 5.5, medium</div></div></div></div></div><div class="kaart card"><div class="kk"><b>Test voor data.json en de ontvangerslijst</b><small>3 uitvoeringen</small></div><div class="lijf"><div class="ring"><div class="als-tok"><svg viewBox="0 0 140 140" role="img" aria-label="Test voor data.json en de ontvangerslijst: 11.998 uitvoertokens"><path d="M70.00 8.00 A62 62 0 0 1 104.77 121.33 L93.00 103.94 A41 41 0 0 0 70.00 29.00Z" fill="#3a78d7" stroke="#2e2e2e" stroke-width="1.5" data-d="0" tabindex="0"/><path d="M104.77 121.33 A62 62 0 0 1 8.84 80.17 L29.55 76.72 A41 41 0 0 0 93.00 103.94Z" fill="#3a78d7" stroke="#2e2e2e" stroke-width="1.5" data-d="1" tabindex="0"/><path d="M8.84 80.17 A62 62 0 0 1 70.00 8.00 L70.00 29.00 A41 41 0 0 0 29.55 76.72Z" fill="#3a78d7" stroke="#2e2e2e" stroke-width="1.5" data-d="2" tabindex="0"/><g class="c0"><text x="70" y="72" class="cg">12k</text><text x="70" y="88" class="ck">uitvoertokens</text></g><g class="cd" data-dc="0"><text x="70" y="72" class="cg">4,9k</text><text x="70" y="88" class="ck">F0</text></g><g class="cd" data-dc="1"><text x="70" y="72" class="cg">3,8k</text><text x="70" y="88" class="ck">F1</text></g><g class="cd" data-dc="2"><text x="70" y="72" class="cg">3,3k</text><text x="70" y="88" class="ck">F2</text></g></svg></div><div class="als-tijd"><svg viewBox="0 0 140 140" role="img" aria-label="Test voor data.json en de ontvangerslijst: 0m"><circle cx="70" cy="70" r="51.5" fill="none" stroke="#6a6a6a" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 7"/><g class="c0"><text x="70" y="72" class="cg">onbekend</text><text x="70" y="88" class="ck">niet gemeten</text></g><g class="cd" data-dc="0"><text x="70" y="72" class="cg">0m</text><text x="70" y="88" class="ck">F0</text></g><g class="cd" data-dc="1"><text x="70" y="72" class="cg">0m</text><text x="70" y="88" class="ck">F1</text></g><g class="cd" data-dc="2"><text x="70" y="72" class="cg">0m</text><text x="70" y="88" class="ck">F2</text></g></svg></div></div><div class="detail"><div class="deel d0"><div class="ds"><div><b>11.998</b><span>uitvoertokens</span></div><div><b>0m</b><span>doorlooptijd</span></div></div><div class="dm"><span class="nowrap"><svg class="vlak" viewBox="0 0 12 12" aria-hidden="true"><rect width="12" height="12" rx="3" fill="#3a78d7"/></svg>Opus 5.5 · medium <span class="muted">3×</span></span></div><div class="hint">Wijs een deel van de donut aan voor de details.</div></div><div class="deel" data-di="0"><div class="dk"><span class="fase">F0</span><span class="mdl"><svg class="vlak" viewBox="0 0 12 12" aria-hidden="true"><rect width="12" height="12" rx="3" fill="#3a78d7"/></svg>Opus 5.5 · medium</span></div>
+        <p class="dt">Controle van het nieuwsbestand: klopt de opbouw en volgt het de regels van de ochtendroutine</p>
+        <div class="ds"><div><b>4.862</b><span>uitvoertokens</span></div><div><b>0m</b><span>tijd</span></div><div><b>1</b><span>commit</span></div></div><div class="dv">8 invoertokens · gepland: Opus 5.5, medium</div></div><div class="deel" data-di="1"><div class="dk"><span class="fase">F1</span><span class="mdl"><svg class="vlak" viewBox="0 0 12 12" aria-hidden="true"><rect width="12" height="12" rx="3" fill="#3a78d7"/></svg>Opus 5.5 · medium</span></div>
+        <p class="dt">Controle dat de ontvangers in de ontvangerslijst en in de routine-instructie gelijk zijn</p>
+        <div class="ds"><div><b>3.822</b><span>uitvoertokens</span></div><div><b>0m</b><span>tijd</span></div><div><b>1</b><span>commit</span></div></div><div class="dv">6 invoertokens · gepland: Opus 5.5, medium</div></div><div class="deel" data-di="2"><div class="dk"><span class="fase">F2</span><span class="mdl"><svg class="vlak" viewBox="0 0 12 12" aria-hidden="true"><rect width="12" height="12" rx="3" fill="#3a78d7"/></svg>Opus 5.5 · medium</span></div>
+        <p class="dt">De controles draaien vanzelf op GitHub bij elke wijziging, en de projectregels noemen ze als afgedwongen</p>
+        <div class="ds"><div><b>3.314</b><span>uitvoertokens</span></div><div><b>0m</b><span>tijd</span></div><div><b>1</b><span>commit</span></div></div><div class="dv">18 invoertokens · gepland: Opus 5.5, medium</div></div></div></div></div></div>
+    </section>
+<footer><span>Gemaakt door de skill brbnt-scan. Alles gemeten, niets geschat; wat niet te meten was, staat er als onbekend.</span><a href="https://github.com/marcovansteenbrugge/Lutrea-op-Peil" target="_blank" rel="noopener">Repository op GitHub →</a></footer>
+</main>
+<script id="brbnt-data" type="application/json">{"schema":2,"samenvatting":{"gegenereerd":"2026-10-03T10:23:49.598Z","commit":"7575f09","modus":"ci","versie":5,"gehaald":33,"totaal":34,"lagen":[{"nr":1,"gehaald":5,"totaal":5},{"nr":2,"gehaald":7,"totaal":7},{"nr":3,"gehaald":9,"totaal":9},{"nr":4,"gehaald":3,"totaal":4},{"nr":5,"gehaald":3,"totaal":3},{"nr":6,"gehaald":6,"totaal":6}],"oordelen":{"1.1":"gehaald","1.2":"gehaald","1.3":"gehaald","1.4":"gehaald","1.5":"gehaald","2.1":"gehaald","2.2":"gehaald","2.3":"gehaald","2.4":"gehaald","2.5":"nvt","2.6":"gehaald","2.7":"gehaald","2.8":"gehaald","3.1":"gehaald","3.2":"gehaald","3.3":"gehaald","3.4":"gehaald","3.5":"gehaald","3.6":"gehaald","3.7":"gehaald","3.8":"gehaald","3.9":"gehaald","4.1":"gehaald","4.2":"gehaald","4.3":"gehaald","4.4":"onbekend","4.5":"niet","4.6":"onbekend","4.7":"nvt","4.8":"onbekend","5.1":"gehaald","5.2":"gehaald","5.3":"onbekend","5.4":"gehaald","5.5":"onbekend","6.1":"gehaald","6.2":"gehaald","6.3":"gehaald","6.4":"gehaald","6.5":"gehaald","6.6":"gehaald"},"tests":null,"memories":4,"commits":28}}</script>
+</body>
+</html>
